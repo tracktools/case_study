@@ -179,9 +179,36 @@ obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 obs.loc[obs.obgnme=='qdrn','weight']=10
 obs.loc[obs.obgnme=='mr','weight']=100
 
+
+#=================
+
+pyemu.helpers.zero_order_tikhonov(pst)
+cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
+pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
+
+'''
+# regularization settings
+pst.reg_data.phimlim = 423
+pst.reg_data.phimaccept = 430
+pst.reg_data.fracphim = 0.05
+pst.reg_data.wfmin = 1.0e-5
+pst.reg_data.wfinit = 1.0
+pst.reg_data.iregadj = 1
+'''
+# pestpp-glm options 
+pst.pestpp_options['svd_pack'] = 'redsvd'
+pst.pestpp_options['uncertainty'] = 'false'
+
+# 8 lambdas, 8 scalings =>  64 upgrade vectors tested
+pst.pestpp_options['lambdas'] = str([0]+list(np.power(10,np.linspace(-3,3,7)))).strip('[]')
+pst.pestpp_options['lambda_scale_fac'] = str(list(np.power(10,np.linspace(-2,0,8)))).strip('[]')
+
+# set overdue rescheduling factor to twice the average model run
+pst.pestpp_options['overdue_resched_fac'] = 2
+pst.pestpp_options['panther_agent_no_ping_timeout_secs'] = 36000
+
 # ---- write pst   
 pst.write(os.path.join(pf.new_d, f'cal_{model_name}.pst'))
-
 
 # ---- run  pst   
 pyemu.helpers.run(f'pestpp-glm cal_{model_name}.pst', cwd=pf.new_d)
