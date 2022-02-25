@@ -1,0 +1,4 @@
+https://github.com/modflowpy/flopy/blob/develop/flopy/mbase.py    
+exe = which(exe_name)
+
+proc = Popen(argv, stdout=PIPE, stderr=STDOUT, cwd=model_ws)
