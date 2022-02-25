@@ -15,27 +15,31 @@ from tracktools import ParticleGenerator
 #-----------------------------------#
 
 case_ids = [2,3,4] # see surveys.xlsx
-#case_ids = [1]
-#  directory names
-# relative to working directory
-tpl_ml_dir = 'ml_tpl'
-ml_dir ='ml'
-data_dir = 'data'
-gis_dir = 'gis'
-grd_dir = 'grd'
-pp_dir = 'pp'
-
-
-# relative to case-dependent './ml_dir'
-sim_dir = 'sim'
-# case dependent external files 
-ext_dir = 'ext'
-# common external files 
-com_ext_dir = os.path.join('..','com_ext')
 
 mf6_exe = 'mf6'
 mp7_exe = 'mp7'
 gridgen_exe = 'gridgen'
+
+#input dirs
+data_dir = 'data'
+gis_dir = 'gis'
+
+# output dirs (relative to current dir)
+tpl_ml_dir = 'ml_tpl'
+ml_dir ='ml'
+grd_dir = 'grd'
+com_ext_dir = os.path.join(ml_dir,'com_ext')
+sim_dir = os.path.join(tpl_ml_dir,'sim')
+ext_dir = os.path.join(tpl_ml_dir,'ext')
+
+dir_list = [tpl_ml_dir, ml_dir, grd_dir, 
+        com_ext_dir, sim_dir, ext_dir]
+
+# clean and (re)-build directory tree
+for d in dir_list:
+    if os.path.exists(d):
+       shutil.rmtree(d)
+    os.mkdir(d)
 
 #-----------------------------------#
 #       Model settings                                                         
@@ -99,6 +103,7 @@ gsdis = flopy.mf6.ModflowGwfdis(bml, length_units='METERS',
                                       botm=botm)
 
 # ---- Create gridgen object
+
 g = Gridgen(gsdis, exe_name = gridgen_exe,  model_ws = grd_dir)
 
 # ---- set active domain (idomain) for 1st layer 
@@ -203,8 +208,6 @@ npf = flopy.mf6.ModflowGwfnpf(ml, icelltype=0,
                                      save_flows = True,
                                      save_specific_discharge = True )  
 
-#npf.k.store_as_external_file(os.path.join(com_ext_dir,'k.txt'))
-
 # ---- GHB package
 print('ModflowGwfghb...')
 
@@ -223,9 +226,6 @@ ghb = flopy.mf6.ModflowGwfghb(ml, stress_period_data = ghb_data,
                                          boundnames = True,
                                          save_flows = True)
 
-#ghb.stress_period_data.store_as_external_file(os.path.join(ext_dir,'ghb_spd.txt'))
-
-
 # ---- Recharge package
 print('ModflowGwfrcha...')
 
@@ -233,9 +233,6 @@ rch_data = par_df.loc['RECH','val']/(1000*365*86400) # mm/y to m/s
 
 rcha = flopy.mf6.ModflowGwfrcha(ml, recharge = rch_data,
                                         save_flows = True)
-
-#rcha.recharge.store_as_external_file(os.path.join(com_ext_dir,'rech_spd.txt'))
-
 
 # ---- Observation package
 print('ModflowUtlobs...')
@@ -251,7 +248,7 @@ hobs_points_list = [
             )
     ]
 
-obs_points_dic = {os.path.join(sim_dir,'hds.csv'): hobs_points_list}     
+obs_points_dic = {os.path.join('sim','hds.csv'): hobs_points_list}     
 obs = flopy.mf6.ModflowUtlobs(ml, digits = 10, print_input = True, continuous=obs_points_dic)
 
 # -- OC Package
@@ -340,9 +337,9 @@ for case_id in case_ids:
     ml = csim.get_model('ml')
 
     # reset external files to common dir 
-    ml.npf.k.store_as_external_file(os.path.join(com_ext_dir,'k.txt'))
-    ml.ghb.stress_period_data.store_as_external_file(os.path.join(com_ext_dir,'ghb_spd.txt'))
-    ml.rcha.recharge.store_as_external_file(os.path.join(com_ext_dir,'rech_spd.txt'))
+    ml.npf.k.store_as_external_file(os.path.join('..','com_ext','k.txt'))
+    ml.ghb.stress_period_data.store_as_external_file(os.path.join('..','com_ext','ghb_spd.txt'))
+    ml.rcha.recharge.store_as_external_file(os.path.join('..','com_ext','rech_spd.txt'))
  
     # ---- Well package
     print('ModflowGwfwel...')
@@ -359,7 +356,7 @@ for case_id in case_ids:
                                      maxbound=len(wells_data),
                                      boundnames = True)
 
-    wel.stress_period_data.store_as_external_file(os.path.join(ext_dir,'well_spd.txt'))
+    wel.stress_period_data.store_as_external_file(os.path.join('ext','well_spd.txt'))
 
     # ---- Drain package
     print('ModflowGwfdrn...')
@@ -374,7 +371,7 @@ for case_id in case_ids:
         drn_data.append([(0,node), drn_h, drn_cond, drn_id])
 
     drn_ids = [ drn_id.decode('utf8') for drn_id in np.unique(icpl_dic['prod_drains']['fid'])]
-    drn_obs = {os.path.join(sim_dir,'drn.csv'): [(drn_id, 'DRN',drn_id) for drn_id in drn_ids]}
+    drn_obs = {os.path.join('sim','drn.csv'): [(drn_id, 'DRN',drn_id) for drn_id in drn_ids]}
 
     drn = flopy.mf6.ModflowGwfdrn(ml, save_flows = True,
                                              stress_period_data = drn_data,        
@@ -382,7 +379,7 @@ for case_id in case_ids:
                                              boundnames = True,
                                              observations=drn_obs)
 
-    drn.stress_period_data.store_as_external_file(os.path.join(ext_dir,'drn_spd.txt'))
+    drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
 
     # ---- Riv package
     print('ModflowGwfriv...')
@@ -420,7 +417,7 @@ for case_id in case_ids:
                                              maxbound = len(riv_data),
                                              boundnames = True)
 
-    riv.stress_period_data.store_as_external_file(os.path.join(ext_dir,'riv_spd.txt'))
+    riv.stress_period_data.store_as_external_file(os.path.join('ext','riv_spd.txt'))
     
 
     print('Writing model...')
