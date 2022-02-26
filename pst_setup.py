@@ -134,7 +134,7 @@ par = pst.parameter_data
 par.loc[ppo_idx[1:],'partrans'] = 'tied'
 par.loc[ppo_idx[1:],'partied'] = ppo_idx[0]
 
-# tie riv and drn conds to 1st inst
+# tie riv and drn conds to 1st case (inst)
 par['inst']=par.inst.astype(int)
 ninst = len(par.loc[par.pargp=='criv','inst'].unique())
 
@@ -154,6 +154,9 @@ for i in range(1,ninst):
     idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
     par.loc[idx,'partied'] = drn_inst0_idx.values
 
+# extending lower & upper bounds for parameters (multipliers)
+par['parlbnd'] = 1e-3
+par['parubnd'] = 1e3
 
 # ---- observation processing  
 obs = pst.observation_data
@@ -190,9 +193,9 @@ obs.loc[obs.obgnme=='mr','weight']=100
 
 #=================
 
-pyemu.helpers.zero_order_tikhonov(pst)
-cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
-pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
+#pyemu.helpers.zero_order_tikhonov(pst)
+#cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
+#pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
 
 # regularization settings
 pst.reg_data.phimlim = 800.
