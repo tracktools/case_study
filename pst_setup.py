@@ -68,7 +68,7 @@ pf.add_parameters(filenames=prop_filename,
 prop_filename = os.path.join('com_ext','ghb_spd_1.txt')
 pf.add_parameters(filenames=prop_filename, 
                   par_name_base='d',
-                  pargp='ghb', index_cols=[4], 
+                  pargp='cghb', index_cols=[4], 
                   use_cols=[3], upper_bound=10.,
                   lower_bound=0.1,
                   par_type='grid')
@@ -84,7 +84,7 @@ for case_dir in case_dirs:
     prop_filename = os.path.join(case_dir,'ext','drn_spd_1.txt')
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base=['cond'],
-                      pargp='drn', index_cols=[4], 
+                      pargp='cdrn', index_cols=[4], 
                       use_cols=[3], upper_bound=10.,
                       lower_bound=0.1,
                       par_type='grid')
@@ -93,7 +93,7 @@ for case_dir in case_dirs:
     prop_filename = os.path.join(case_dir,'ext','riv_spd_1.txt')
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base='riv',
-                      pargp='riv', index_cols=[6], 
+                      pargp='criv', index_cols=[6], 
                       use_cols=[3], upper_bound=10.,
                       lower_bound=0.1,
                       par_type='grid')
@@ -127,7 +127,6 @@ pst = pf.build_pst()
 # replace python by python3
 pst.model_command = ['python3 forward_run.py'] 
 
-
 # --- parameter processing
 par = pst.parameter_data 
 
@@ -137,15 +136,24 @@ par.loc[ppo_idx[1:],'partied'] = ppo_idx[0]
 
 # tie riv and drn conds to 1st inst
 par['inst']=par.inst.astype(int)
-riv_inst0_idx = par.loc[(par.pargp=='riv') & (par.inst == 0)].index
-riv_tied_idx = par.loc[(par.pargp=='riv') & (par.inst > 0)].index
-ninst = len(par.loc[par.pargp=='riv','inst'].unique())
+ninst = len(par.loc[par.pargp=='criv','inst'].unique())
+
+riv_inst0_idx = par.loc[(par.pargp=='criv') & (par.inst == 0)].index
+riv_tied_idx = par.loc[(par.pargp=='criv') & (par.inst > 0)].index
+
+drn_inst0_idx = par.loc[(par.pargp=='cdrn') & (par.inst == 0)].index
+drn_tied_idx = par.loc[(par.pargp=='cdrn') & (par.inst > 0)].index
 
 par.loc[riv_tied_idx,'partrans'] = 'tied'
 
 for i in range(1,ninst):
-    idx = par.loc[(par.pargp=='riv') & (par.inst == i)].index
+    # tie criv
+    idx = par.loc[(par.pargp=='criv') & (par.inst == i)].index
     par.loc[idx,'partied'] = riv_inst0_idx.values
+    # tie cdrn
+    idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
+    par.loc[idx,'partied'] = drn_inst0_idx.values
+
 
 # ---- observation processing  
 obs = pst.observation_data
@@ -196,6 +204,9 @@ pst.reg_data.wfinit = 1.0
 # pestpp-glm options 
 pst.pestpp_options['svd_pack'] = 'redsvd'
 pst.pestpp_options['uncertainty'] = 'false'
+
+# set derinc values for pp
+pst.parameter_groups.loc['hk',"derinc"] = 0.10
 
 # 8 lambdas, 8 scalings =>  64 upgrade vectors tested
 pst.pestpp_options['lambdas'] = str([0]+list(np.power(10,np.linspace(-3,3,7)))).strip('[]')
