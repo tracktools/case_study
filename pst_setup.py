@@ -48,9 +48,9 @@ prop_filename =os.path.join('com_ext','k.txt')
 pp_filename =os.path.join('..',gis_dir,'pp.shp')
 
 zone_array = np.ones((1,ml.modelgrid.ncpl))
-pp_df = pf.add_parameters(filenames=prop_filename, par_type="pilotpoints",
+pp_df = pf.add_parameters(filenames=prop_filename, par_type="pilotpoint",
                    par_name_base="hk",pargp="hk", geostruct=grid_gs,
-                   upper_bound=10.,lower_bound=0.1,ult_ubound=100,ult_lbound=0.01,
+                   upper_bound=1e5,lower_bound=1e-5,ult_ubound=10.,ult_lbound=1e-9,
                    zone_array=zone_array,pp_space=os.path.join('..',gis_dir,'pp.shp'))
 
 # get names of outer pp (will be tied)
@@ -60,8 +60,8 @@ ppo_idx = pp_df.loc[pp_df.name.str.startswith('ppo')].index
 prop_filename = os.path.join('com_ext','rech_spd_1.txt')
 pf.add_parameters(filenames=prop_filename, 
                   par_name_base='rc',
-                  pargp='rech', upper_bound=10.,
-                  lower_bound=0.1,
+                  pargp='rech',
+                  upper_bound=1e5,lower_bound=1e-5,ult_ubound=1e-10,ult_lbound=1e-8,
                   par_type='constant')
 
 # ghb cond
@@ -69,8 +69,8 @@ prop_filename = os.path.join('com_ext','ghb_spd_1.txt')
 pf.add_parameters(filenames=prop_filename, 
                   par_name_base='d',
                   pargp='cghb', index_cols=[4], 
-                  use_cols=[3], upper_bound=10.,
-                  lower_bound=0.1,
+                  use_cols=[3],
+                  upper_bound=1e5,lower_bound=1e-5,ult_ubound=1e-9,ult_lbound=10.,
                   par_type='grid')
 
 # -- Iterate over cases
@@ -85,8 +85,8 @@ for case_dir in case_dirs:
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base=['cond'],
                       pargp='cdrn', index_cols=[4], 
-                      use_cols=[3], upper_bound=10.,
-                      lower_bound=0.1,
+                      use_cols=[3], 
+                      upper_bound=1e5,lower_bound=1e-5,ult_ubound=1e-10,ult_lbound=1e1,
                       par_type='grid')
 
     # river cond
@@ -94,8 +94,8 @@ for case_dir in case_dirs:
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base='riv',
                       pargp='criv', index_cols=[6], 
-                      use_cols=[3], upper_bound=10.,
-                      lower_bound=0.1,
+                      use_cols=[3],
+                      upper_bound=1e5,lower_bound=1e-5,ult_ubound=1e-10,ult_lbound=1e1,
                       par_type='grid')
 
     # --- Observation processing
@@ -154,9 +154,6 @@ for i in range(1,ninst):
     idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
     par.loc[idx,'partied'] = drn_inst0_idx.values
 
-# extending lower & upper bounds for parameters (multipliers)
-par['parlbnd'] = 1e-3
-par['parubnd'] = 1e3
 
 # ---- observation processing  
 obs = pst.observation_data
