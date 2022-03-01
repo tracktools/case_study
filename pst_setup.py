@@ -183,16 +183,23 @@ obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
 # 0-weight to unavailable obs
 obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
-# 100-weight to mixing ratios
-obs.loc[obs.obgnme=='qdrn','weight']=10
-obs.loc[obs.obgnme=='mr','weight']=100
+# adjusting weights from measurement error 
+
+weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
+
+for obgname in obs.obgnme.unique():
+    obs.loc[obs.obgnme=obgname,'weight'] = 1./weights_df.loc[obgnme,'sigma']
+
+# tuning factor for mr
+obs.loc[obs.obgnme=='mr','weight']=10*obs.loc[obs.obgnme=='mr','weight']
 
 
 #=================
 
-#pyemu.helpers.zero_order_tikhonov(pst)
-#cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
-#pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
+'''
+pyemu.helpers.zero_order_tikhonov(pst)
+cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
+pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
 
 # regularization settings
 pst.reg_data.phimlim = 800.
@@ -200,7 +207,7 @@ pst.reg_data.phimaccept = pst.reg_data.phimlim*1.1
 pst.reg_data.fracphim = 0.05
 pst.reg_data.wfmin = 1.0e-5
 pst.reg_data.wfinit = 1.0
-
+'''
 # pestpp-glm options 
 pst.pestpp_options['svd_pack'] = 'redsvd'
 pst.pestpp_options['uncertainty'] = 'false'
@@ -209,8 +216,8 @@ pst.pestpp_options['uncertainty'] = 'false'
 pst.parameter_groups.loc['hk',"derinc"] = 0.10
 
 # 8 lambdas, 8 scalings =>  64 upgrade vectors tested
-pst.pestpp_options['lambdas'] = str([0]+list(np.power(10,np.linspace(-3,3,7)))).strip('[]')
-pst.pestpp_options['lambda_scale_fac'] = str(list(np.power(10,np.linspace(-2,0,8)))).strip('[]')
+#pst.pestpp_options['lambdas'] = str([0]+list(np.power(10,np.linspace(-3,3,7)))).strip('[]')
+#pst.pestpp_options['lambda_scale_fac'] = str(list(np.power(10,np.linspace(-2,0,8)))).strip('[]')
 
 # set overdue rescheduling factor to twice the average model run
 pst.pestpp_options['overdue_resched_fac'] = 2
@@ -226,5 +233,7 @@ pst.write(os.path.join(pf.new_d, f'cal_{model_name}.pst'))
 
 '''
 pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=64,
-                                  master_dir="pst_master")
+                              worker_root= 'workers',cleanup=False,
+                                master_dir='pst_master')
+
 '''

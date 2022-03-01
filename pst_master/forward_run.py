@@ -74,30 +74,6 @@ def main():
        os.remove(r'ml_02/sim/mr.csv')
     except Exception as e:
        print(r'error removing tmp file:ml_02/sim/mr.csv')
-    try:
-       os.remove(r'ml_03/sim/hds.csv')
-    except Exception as e:
-       print(r'error removing tmp file:ml_03/sim/hds.csv')
-    try:
-       os.remove(r'ml_03/sim/drn.csv')
-    except Exception as e:
-       print(r'error removing tmp file:ml_03/sim/drn.csv')
-    try:
-       os.remove(r'ml_03/sim/mr.csv')
-    except Exception as e:
-       print(r'error removing tmp file:ml_03/sim/mr.csv')
-    try:
-       os.remove(r'ml_04/sim/hds.csv')
-    except Exception as e:
-       print(r'error removing tmp file:ml_04/sim/hds.csv')
-    try:
-       os.remove(r'ml_04/sim/drn.csv')
-    except Exception as e:
-       print(r'error removing tmp file:ml_04/sim/drn.csv')
-    try:
-       os.remove(r'ml_04/sim/mr.csv')
-    except Exception as e:
-       print(r'error removing tmp file:ml_04/sim/mr.csv')
     pyemu.helpers.apply_list_and_array_pars(arr_par_file='mult2model_info.csv',chunk_len=50)
     run_cases()
 
