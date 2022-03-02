@@ -179,7 +179,11 @@ ml = flopy.mf6.ModflowGwf(sim, modelname=modelname)
 ml.modelgrid.set_coord_info(proj4 = proj4, epsg = epsg)
 
 # ---- Iterative Model Solution (IMS) package
-ims = flopy.mf6.ModflowIms(sim)
+ims = flopy.mf6.ModflowIms(sim,
+        inner_maximum=100,
+        inner_hclose=0.0001,
+        rcloserecord=0.001,
+        )
 sim.register_ims_package(ims, [ml.name])
 
 # ---- Spatial discretization
@@ -201,10 +205,10 @@ ic = flopy.mf6.ModflowGwfic(ml, strt=hstart)
 # ---- NPF package (Node Property Flow)
 print('ModflowGwfnpf...')
 
-k = par_df.loc['T','val']/(top-botm)
+hk = par_df.loc['hk','val']
 
 npf = flopy.mf6.ModflowGwfnpf(ml, icelltype=0,           
-                                     k = k,
+                                     k = hk,
                                      save_flows = True,
                                      save_specific_discharge = True )  
 
@@ -229,7 +233,7 @@ ghb = flopy.mf6.ModflowGwfghb(ml, stress_period_data = ghb_data,
 # ---- Recharge package
 print('ModflowGwfrcha...')
 
-rch_data = par_df.loc['RECH','val']/(1000*365*86400) # mm/y to m/s
+rch_data = par_df.loc['rech','val']/(1000*365*86400) # mm/y to m/s
 
 rcha = flopy.mf6.ModflowGwfrcha(ml, recharge = rch_data,
                                         save_flows = True)

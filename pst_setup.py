@@ -20,6 +20,9 @@ com_ext_dir = 'com_ext'
 sim_dir =  'sim' 
 ext_dir = 'ext'
 
+# parameter upper/lower bounds 
+par_df = pd.read_excel(os.path.join(data_dir,'par.xlsx'), index_col = 0)
+
 # ---- load mf model and set spatial reference (grid cell centroids)
 model_name = 'ml' 
 
@@ -48,9 +51,12 @@ prop_filename =os.path.join('com_ext','k.txt')
 pp_filename =os.path.join('..',gis_dir,'pp.shp')
 
 zone_array = np.ones((1,ml.modelgrid.ncpl))
+pargp='hk'
+
 pp_df = pf.add_parameters(filenames=prop_filename, par_type="pilotpoint",
-                   par_name_base="hk",pargp="hk", geostruct=grid_gs,
-                   upper_bound=1e5,lower_bound=1e-5,ult_ubound=10.,ult_lbound=1e-9,
+                   par_name_base='hk',pargp=pargp, geostruct=grid_gs,
+                   lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                   ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
                    zone_array=zone_array,pp_space=os.path.join('..',gis_dir,'pp.shp'))
 
 # get names of outer pp (will be tied)
@@ -58,19 +64,23 @@ ppo_idx = pp_df.loc[pp_df.name.str.startswith('ppo')].index
 
 # recharge
 prop_filename = os.path.join('com_ext','rech_spd_1.txt')
+pargp = 'rech'  
 pf.add_parameters(filenames=prop_filename, 
                   par_name_base='rc',
-                  pargp='rech',
-                  upper_bound=1e5,lower_bound=1e-5,ult_ubound=1e-10,ult_lbound=1e-8,
+                  pargp=pargp,
+                  lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
                   par_type='constant')
 
 # ghb cond
 prop_filename = os.path.join('com_ext','ghb_spd_1.txt')
+pargp='cghb'
 pf.add_parameters(filenames=prop_filename, 
                   par_name_base='d',
-                  pargp='cghb', index_cols=[4], 
+                  pargp=pargp, index_cols=[4], 
                   use_cols=[3],
-                  upper_bound=1e5,lower_bound=1e-5,ult_ubound=1e-9,ult_lbound=10.,
+                  lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
                   par_type='grid')
 
 # -- Iterate over cases
@@ -82,20 +92,24 @@ for case_dir in case_dirs:
 
     # drn cond
     prop_filename = os.path.join(case_dir,'ext','drn_spd_1.txt')
+    pargp='cdrn'
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base=['cond'],
-                      pargp='cdrn', index_cols=[4], 
-                      use_cols=[3], 
-                      upper_bound=1e5,lower_bound=1e-5,ult_ubound=1e-10,ult_lbound=1e1,
+                      pargp=pargp, index_cols=[4], 
+                      use_cols=[3],
+                      lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                      ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
                       par_type='grid')
 
     # river cond
     prop_filename = os.path.join(case_dir,'ext','riv_spd_1.txt')
+    pargp='criv'
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base='riv',
-                      pargp='criv', index_cols=[6], 
+                      pargp=pargp, index_cols=[6], 
                       use_cols=[3],
-                      upper_bound=1e5,lower_bound=1e-5,ult_ubound=1e-10,ult_lbound=1e1,
+                      lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                      ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
                       par_type='grid')
 
     # --- Observation processing
@@ -184,15 +198,17 @@ obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
 obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 # adjusting weights from measurement error 
-
 weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
 
-for obgname in obs.obgnme.unique():
-    obs.loc[obs.obgnme=obgname,'weight'] = 1./weights_df.loc[obgnme,'sigma']
+for obgnme in obs.obgnme.unique():
+    # weighting based on measurement error 
+    obs.loc[obs.obgnme==obgnme,'weight'] = 1./weights_df.loc[obgnme,'sigma']
+    # magnifying tuning factor 
+    obs.loc[obs.obgnme==obgnme,'weight'] = obs.loc[obs.obgnme==obgnme,'weight']*weights_df.loc[obgnme,'factor']
+
 
 # tuning factor for mr
 obs.loc[obs.obgnme=='mr','weight']=10*obs.loc[obs.obgnme=='mr','weight']
-
 
 #=================
 
@@ -214,10 +230,6 @@ pst.pestpp_options['uncertainty'] = 'false'
 
 # set derinc values for pp
 pst.parameter_groups.loc['hk',"derinc"] = 0.10
-
-# 8 lambdas, 8 scalings =>  64 upgrade vectors tested
-#pst.pestpp_options['lambdas'] = str([0]+list(np.power(10,np.linspace(-3,3,7)))).strip('[]')
-#pst.pestpp_options['lambda_scale_fac'] = str(list(np.power(10,np.linspace(-2,0,8)))).strip('[]')
 
 # set overdue rescheduling factor to twice the average model run
 pst.pestpp_options['overdue_resched_fac'] = 2

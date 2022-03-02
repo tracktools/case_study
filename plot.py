@@ -5,12 +5,10 @@ from matplotlib import pyplot as plt
 import matplotlib as mpl
 import flopy
 import pyemu
-'''
 # --- pst post-proc
 pst = pyemu.Pst(os.path.join('pst_master', 'cal_ml.pst'))
 
 phiprog = pst.plot(kind='phi_progress')
-phiprog.get_figure().savefig('hello')
 phiprog.get_figure().savefig(os.path.join('fig','phiprog.png'))
 
 one2one = pst.plot(kind="1to1")
@@ -20,7 +18,6 @@ one2one[1].savefig(os.path.join('fig','one2one.png'))
 pst.parrep(os.path.join('pst_master','cal_ml.par'))
 pst.control_data.noptmax=0
 pst.write(os.path.join('pst_master','caleval_ml.pst'))
-'''
 
 pyemu.helpers.run('pestpp-glm caleval_ml.pst', cwd='pst_master')
 
