@@ -1,0 +1,35 @@
+ MODEL OUTPUTS AT END OF OPTIMISATION ITERATION NO. 1:-
+
+
+ Name                                    Group        Measured             Modelled             Residual             Weight              
+ oname:h_otype:lst_usecol:ap1_time:2.0   heads        0.00000000000        12.7189762400        -12.7189762400       100.000000000       
+ oname:h_otype:lst_usecol:p23_time:2.0   heads        0.00000000000        15.5357509500        -15.5357509500       100.000000000       
+ oname:h_otype:lst_usecol:p24_time:2.0   heads        9.63606785710        14.1691633700        -4.53309551290       100.000000000       
+ oname:h_otype:lst_usecol:p25_time:2.0   heads        9.80186607140        12.6028504100        -2.80098433860       100.000000000       
+ oname:h_otype:lst_usecol:p26_time:2.0   heads        10.5855869050        13.6352299700        -3.04964306500       100.000000000       
+ oname:h_otype:lst_usecol:p27_time:2.0   heads        10.3301821430        16.6798798700        -6.34969772700       100.000000000       
+ oname:h_otype:lst_usecol:p28_time:2.0   heads        9.64859821430        16.1406784800        -6.49208026570       100.000000000       
+ oname:h_otype:lst_usecol:p29_time:2.0   heads        9.97159821430        18.2997274800        -8.32812926570       100.000000000       
+ oname:h_otype:lst_usecol:p30_time:2.0   heads        10.9270470240        18.1656337600        -7.23858673600       100.000000000       
+ oname:h_otype:lst_usecol:p32_time:2.0   heads        9.09310238100        10.2397670000        -1.14666461900       100.000000000       
+ oname:h_otype:lst_usecol:p33_time:2.0   heads        8.68552976190        10.0684033600        -1.38287359810       100.000000000       
+ oname:h_otype:lst_usecol:p34_time:2.0   heads        8.94164583330        11.1835539500        -2.24190811670       100.000000000       
+ oname:h_otype:lst_usecol:p37_time:2.0   heads        9.23859107140        10.2456734300        -1.00708235860       100.000000000       
+ oname:h_otype:lst_usecol:p38_time:2.0   heads        9.12670178570        10.7923183600        -1.66561657430       100.000000000       
+ oname:h_otype:lst_usecol:p39_time:2.0   heads        9.56996904760        13.1440584200        -3.57408937240       100.000000000       
+ oname:h_otype:lst_usecol:p40_time:2.0   heads        9.63791071430        14.9175454000        -5.27963468570       100.000000000       
+ oname:h_otype:lst_usecol:p8_time:2.0    heads        9.20197857140        13.3969128300        -4.19493425860       100.000000000       
+ oname:h_otype:lst_usecol:pf_time:2.0    heads        10.1412023810        13.5658221200        -3.42461973900       100.000000000       
+ oname:h_otype:lst_usecol:ph_time:2.0    heads        0.00000000000        13.6460569400        -13.6460569400       100.000000000       
+ oname:h_otype:lst_usecol:prg_time:2.0   heads        4.48379464290        11.2237410800        -6.73994643710       100.000000000       
+ oname:h_otype:lst_usecol:pzhm1_time:2.0 heads        9.97923988100        12.7980317800        -2.81879189900       100.000000000       
+ oname:h_otype:lst_usecol:r20_time:2.0   heads        8.62757857140        11.0406328700        -2.41305429860       100.000000000       
+ oname:h_otype:lst_usecol:r21_time:2.0   heads        0.00000000000        12.1017014500        -12.1017014500       100.000000000       
+ oname:h_otype:lst_usecol:rck1_time:2.0  heads        0.00000000000        10.3222848700        -10.3222848700       100.000000000       
+ oname:h_otype:lst_usecol:rck2_time:2.0  heads        0.00000000000        10.4813305800        -10.4813305800       100.000000000       
+ oname:q_otype:lst_usecol:bar_time:2.0   qdrn         -0.159166666670      -0.892750000000      0.733583333330       360.000000000       
+ oname:q_otype:lst_usecol:gal_time:2.0   qdrn         -0.0577777777780     -1.51500000000       1.45722222222        360.000000000       
+ oname:mr_otype:lst_usecol:bar_time:2    mr           0.00000000000        0.00000000000        0.00000000000        100.000000000       
+ oname:mr_otype:lst_usecol:gal_time:2    mr           0.640000000000       -0.00602116448025    0.646021164480       100.000000000       
+ oname:mr_otype:lst_usecol:r20_time:2    mr           0.0700000000000      0.00000000000        0.0700000000000      100.000000000       
+ oname:mr_otype:lst_usecol:r21_time:2    mr           0.240000000000       0.00000000000        0.240000000000       100.000000000       
