@@ -45,7 +45,7 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
     mr = ta.compute_mixing_ratio()
 
     # write sim file
-    mr.to_csv(mr_file)
+    if 'river' not in mr.columns : mr['river']=0.
     sim_df = pd.DataFrame(
             [[case_id]+mr['river'].to_list()],
             columns=['time']+mr.index.to_list()

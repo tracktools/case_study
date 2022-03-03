@@ -5,26 +5,32 @@ from matplotlib import pyplot as plt
 import matplotlib as mpl
 import flopy
 import pyemu
-# --- pst post-proc
-pst = pyemu.Pst(os.path.join('pst_master', 'cal_ml.pst'))
 
+# --- pst files 
+cwd = 'pst'
+org_pst_name ='cal_ml.pst'
+eval_pst_name = 'caleval_ml.pst'
+
+# read pest control file 
+pst = pyemu.Pst(os.path.join(cwd, org_pst_name))
+
+# plot calibration results
 phiprog = pst.plot(kind='phi_progress')
 phiprog.get_figure().savefig(os.path.join('fig','phiprog.png'))
-
 one2one = pst.plot(kind="1to1")
 one2one[1].savefig(os.path.join('fig','one2one.png'))
 
-# --- run model with adjusted parameters 
-pst.parrep(os.path.join('pst_master','cal_ml.par'))
+# run model with final parameters 
+par_file = org_pst_name.replace('pst','par')
+pst.parrep(os.path.join(cwd,par_file))
 pst.control_data.noptmax=0
-pst.write(os.path.join('pst_master','caleval_ml.pst'))
-
-pyemu.helpers.run('pestpp-glm caleval_ml.pst', cwd='pst_master')
-
-case_dirs = sorted([os.path.join('pst_master',d) for d in os.listdir('pst_master') if d.startswith('ml_')])
+pst.write(os.path.join(cwd,eval_pst_name))
+pyemu.helpers.run(f'pestpp-glm {eval_pst_name}', cwd=cwd)
 
 
 # --- plot heads and particle tracks for all cases 
+case_dirs = sorted([os.path.join(cwd,d) for d in os.listdir(cwd) if d.startswith('ml_')])
+
 for case_dir in case_dirs: 
 
     # load case 
