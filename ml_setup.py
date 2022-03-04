@@ -180,9 +180,10 @@ ml.modelgrid.set_coord_info(proj4 = proj4, epsg = epsg)
 
 # ---- Iterative Model Solution (IMS) package
 ims = flopy.mf6.ModflowIms(sim,
-        inner_maximum=100,
-        inner_hclose=0.0001,
+        inner_maximum=500,
+        inner_dvclose=0.0001,
         rcloserecord=0.001,
+        print_option = 'SUMMARY'
         )
 sim.register_ims_package(ims, [ml.name])
 
@@ -259,8 +260,8 @@ obs = flopy.mf6.ModflowUtlobs(ml, digits = 10, print_input = True, continuous=ob
 print('ModflowGwfoc...')
 
 oc_rec_list =[('HEAD', 'LAST'), ('BUDGET', 'LAST')]
-printrecord = [('HEAD', 'LAST')]
-
+#printrecord = [('HEAD', 'LAST')]
+printrecord = None
 oc = flopy.mf6.modflow.mfgwfoc.ModflowGwfoc(ml, 
     pname='oc', 
     saverecord = oc_rec_list, 
