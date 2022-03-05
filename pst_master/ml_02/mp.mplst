@@ -1,6 +1,6 @@
 
 MODPATH Version 7.2.001   
-Program compiled Apr  2 2020 22:09:01 with GFORTRAN compiler (ver. 6.3.0)       
+Program compiled Mar  3 2022 11:22:49 with GFORTRAN compiler (ver. 9.3.0)       
 
 This software has been approved for release by the U.S. Geological
 Survey (USGS). Although the software has been subjected to rigorous
@@ -89,70 +89,70 @@ The simulation will be run with stoptime =   0.1000000E+31
 
  Volumetric water balance summary:
 
-      19634 cells had errors less than or equal to    0.01 percent
-         53 cells had errors between     0.01 and     0.10 percent
+      19685 cells had errors less than or equal to    0.01 percent
+          2 cells had errors between     0.01 and     0.10 percent
           0 cells had errors between     0.10 and     1.00 percent
           0 cells had errors between     1.00 and    10.00 percent
           0 cells had errors between    10.00 and    50.00 percent
           0 cells had errors between    50.00 and   100.00 percent
           0 cells had errors greater than   100.00 percent
 
- A maximum error of  0.27516E-01 percent occurred in cell      12593
+ A maximum error of  0.10585E-01 percent occurred in cell      16449
 
  -------------------------------------
-       Cell     12593
+       Cell     16449
  -------------------------------------
  Layer, Ibound, IboundTS, Zone, LayerType:          1         1         1         1         0
- DX, DY, MinX, MinY:      0.1250000E+02  0.1250000E+02  0.4080007E+06  0.6428319E+07
- Bottom, Top, Head:      -0.2000000E+02  0.3000000E+02  0.1201663E+02
+ DX, DY, MinX, MinY:      0.2500000E+02  0.2500000E+02  0.4096507E+06  0.6428432E+07
+ Bottom, Top, Head:      -0.2000000E+02  0.3000000E+02  0.9270430E+01
  Porosity, Retardation:   0.1000000E+00  0.1000000E+01
 
  Volumetric Face Flows (L**3/T):
                                 sub-face 1               sub-face 2               sub-face 3               sub-face 4
- Left   (face 1):   -0.203448909146590E-02
- Right  (face 2):   -0.245582075474349E-02
- Front  (face 3):   -0.114154402316711E-03
- Back   (face 4):    0.554166267865712E-03
+ Left   (face 1):   -0.338013160880068E-02
+ Right  (face 2):    0.579278879274892E-03
+ Front  (face 3):    0.251860575709628E-02
+ Back   (face 4):   -0.450291824909410E-03
  Bottom (face 5):    0.000000000000000E+00
- Top    (face 6):   -0.247732812500000E-03
+ Top    (face 6):   -0.990932024165039E-03
 
  Water balance components:
  Inflow (L**3/T)
-      Total face inflow =    0.270355356724349E-02
+      Total face inflow =    0.395982960617073E-02
           Source inflow =    0.000000000000000E+00
          Storage inflow =    0.000000000000000E+00
                            -----------------------
-                Inflow  =    0.270355356724349E-02
+                Inflow  =    0.395982960617073E-02
 
  Outflow (L**3/T)
-     Total face outflow =    0.270280976164833E-02
+     Total face outflow =    0.395941048807558E-02
            Sink outflow =   -0.000000000000000E+00
         Storage outflow =    0.000000000000000E+00
                            -----------------------
-                 Ouflow =    0.270280976164833E-02
+                 Ouflow =    0.395941048807558E-02
 
-       Inflow - Outflow =    0.743805595165761E-06
+       Inflow - Outflow =    0.419118095154082E-06
 
-    Percent discrepancy =    0.275159307622125E-01
+    Percent discrepancy =    0.105848058694064E-01
 
  Face velocities (Backward tracking. Velocity components has been reversed to represent backward tracking.)
  SubCell ( 1,  1)
- DX, DY, DZ:   0.1250000E+02  0.1250000E+02  0.5000000E+02
+ DX, DY, DZ:   0.2500000E+02  0.2500000E+02  0.5000000E+02
                        Face Velocity (L/T)     Connection
- Left   (face 1):    0.325518254634544E-04          12590
- Right  (face 2):    0.392931320758958E-04          12594
- Front  (face 3):    0.182647043706737E-05          12595
- Back   (face 4):   -0.886666028585139E-05          12587
+ Left   (face 1):    0.270410528704055E-04          16448
+ Right  (face 2):   -0.463423103419913E-05          16460
+ Front  (face 3):   -0.201488460567703E-04          16451
+ Back   (face 4):    0.360233459927528E-05          16443
  Bottom (face 5):   -0.000000000000000E+00              0
- Top    (face 6):    0.158549000000000E-04              0
+ Top    (face 6):    0.158549123866406E-04              0
 
 
 Particle Summary:
          0 particles are pending release.
          0 particles remain active.
-       789 particles terminated at boundary faces.
+       800 particles terminated at boundary faces.
          0 particles terminated at weak sink cells.
-        11 particles terminated at weak source cells.
+         0 particles terminated at weak source cells.
          0 particles terminated at strong source/sink cells or other cells with no potential exit face.
          0 particles terminated in cells with a specified zone number.
          0 particles were stranded in inactive or dry cells.
@@ -161,4 +161,4 @@ Particle Summary:
  
 
 Normal termination.                                                        
- Elapsed time =     0.75900E+00 seconds
+ Elapsed time =     0.77100E+00 seconds
