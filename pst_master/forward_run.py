@@ -74,6 +74,102 @@ def main():
        os.remove(r'ml_02/sim/mr.csv')
     except Exception as e:
        print(r'error removing tmp file:ml_02/sim/mr.csv')
+    try:
+       os.remove(r'ml_03/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_03/sim/hds.csv')
+    try:
+       os.remove(r'ml_03/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_03/sim/drn.csv')
+    try:
+       os.remove(r'ml_03/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_03/sim/mr.csv')
+    try:
+       os.remove(r'ml_04/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_04/sim/hds.csv')
+    try:
+       os.remove(r'ml_04/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_04/sim/drn.csv')
+    try:
+       os.remove(r'ml_04/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_04/sim/mr.csv')
+    try:
+       os.remove(r'ml_05/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_05/sim/hds.csv')
+    try:
+       os.remove(r'ml_05/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_05/sim/drn.csv')
+    try:
+       os.remove(r'ml_05/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_05/sim/mr.csv')
+    try:
+       os.remove(r'ml_06/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_06/sim/hds.csv')
+    try:
+       os.remove(r'ml_06/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_06/sim/drn.csv')
+    try:
+       os.remove(r'ml_06/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_06/sim/mr.csv')
+    try:
+       os.remove(r'ml_07/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_07/sim/hds.csv')
+    try:
+       os.remove(r'ml_07/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_07/sim/drn.csv')
+    try:
+       os.remove(r'ml_07/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_07/sim/mr.csv')
+    try:
+       os.remove(r'ml_08/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_08/sim/hds.csv')
+    try:
+       os.remove(r'ml_08/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_08/sim/drn.csv')
+    try:
+       os.remove(r'ml_08/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_08/sim/mr.csv')
+    try:
+       os.remove(r'ml_09/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_09/sim/hds.csv')
+    try:
+       os.remove(r'ml_09/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_09/sim/drn.csv')
+    try:
+       os.remove(r'ml_09/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_09/sim/mr.csv')
+    try:
+       os.remove(r'ml_10/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_10/sim/hds.csv')
+    try:
+       os.remove(r'ml_10/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_10/sim/drn.csv')
+    try:
+       os.remove(r'ml_10/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_10/sim/mr.csv')
     pyemu.helpers.apply_list_and_array_pars(arr_par_file='mult2model_info.csv',chunk_len=50)
     run_cases()
 

@@ -1,2 +1,1 @@
-iteration,model_runs_completed,total_phi,measurement_phi,regularization_phi,heads,qdrn,mr
-0,1,1.44097e+07,1.44097e+07,0,1.39949e+07,409280,5568.27
+iteration,model_runs_completed,total_phi,measurement_phi,regularization_phi,heads,qdrn,mr,regulhk,regulrech,regulcghb,regulcdrn,regulcriv

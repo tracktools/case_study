@@ -194,8 +194,6 @@ obs.loc[obs.obgnme == 'qdrn','obsval'] = obs.loc[obs.obgnme == 'qdrn','obsval']*
 # convert mixing ratios from % to [-]
 obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
 
-# 0-weight to unavailable obs
-obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 # adjusting weights from measurement error 
 weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
@@ -210,26 +208,27 @@ for obgnme in obs.obgnme.unique():
 # tuning factor for mr
 obs.loc[obs.obgnme=='mr','weight']=10*obs.loc[obs.obgnme=='mr','weight']
 
+# 0-weight to unavailable obs
+obs.loc[obs.obsval.isna(),['weight','obsval']]=0
+
 #=================
 
-'''
 pyemu.helpers.zero_order_tikhonov(pst)
 cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
 pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
-
 # regularization settings
-pst.reg_data.phimlim = 800.
+pst.reg_data.phimlim = 1e4
 pst.reg_data.phimaccept = pst.reg_data.phimlim*1.1
 pst.reg_data.fracphim = 0.05
 pst.reg_data.wfmin = 1.0e-5
 pst.reg_data.wfinit = 1.0
-'''
+
 # pestpp-glm options 
 pst.pestpp_options['svd_pack'] = 'redsvd'
 pst.pestpp_options['uncertainty'] = 'false'
 
 # set derinc values for pp
-pst.parameter_groups.loc['hk',"derinc"] = 0.10
+#pst.parameter_groups.loc['hk',"derinc"] = 0.10
 
 # set overdue rescheduling factor to twice the average model run
 pst.pestpp_options['overdue_resched_fac'] = 2

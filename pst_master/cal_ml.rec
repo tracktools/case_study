@@ -9,18 +9,14 @@ binary compiled on Feb 17 2022 at 10:09:56
 
 using control file: "cal_ml.pst"
 
-in directory: "/srv/common/ptrack/case_study/pst"
+in directory: "/srv/common/ptrack/case_study/pst_master"
 on host: "numerix"
-started at 03/04/22 18:25:43
-
-
-Note 'NOPTMAX' == 0, switching to forgiveness mode when checking inputs
+started at 03/13/22 22:24:33
 
 Note: 3 unused lines in pest control file:
   -->  line number 6: '2.000000E+01  -3.000000E+00   3.000000E-01   1.000000E-02        -7' 
   -->  line number 10: '0         0         0' 
   -->  line number 12: '1' 
-noptmax = 0, resetting max_run_fail = 1
 
     This software has been approved for release by the
     U.S.Geological Survey(USGS).Although the software has 
@@ -37,21 +33,21 @@ noptmax = 0, resetting max_run_fail = 1
 
 
 pestmode:- 
-   estimation
+   regularization
 
 
 Case dimensions:- 
-    Number of parameters = 436
-    Number of adjustable parameters = 254
-    Number of observations = 31
-    Number of prior estimates = 0
+    Number of parameters = 604
+    Number of adjustable parameters = 270
+    Number of observations = 279
+    Number of prior estimates = 270
 
 PEST Control Information
     relparmax = 10
     facparmax = 10
     facorig = 0.001
     phiredswh = 0.1
-    noptmax = 0
+    noptmax = 30
     phiredstp = 0.01
     nphistp = 3
     nphinored = 3
@@ -65,7 +61,7 @@ PEST Control Information
 svd_pack: redsvd
 lambda_scale_fac: 0.75,1,1.1,
 forgive_unknown_args: 0
-max_run_fail: 1
+max_run_fail: 3
 panther_poll_interval: 1
 parameter_covariance: 
 observation_covariance: 
@@ -265,29 +261,109 @@ Model interface files:-
       d_inst0_grid.csv.tpl
       cond_inst0_grid.csv.tpl
       riv_inst0_grid.csv.tpl
+      cond_inst1_grid.csv.tpl
+      riv_inst1_grid.csv.tpl
+      cond_inst2_grid.csv.tpl
+      riv_inst2_grid.csv.tpl
+      cond_inst3_grid.csv.tpl
+      riv_inst3_grid.csv.tpl
+      cond_inst4_grid.csv.tpl
+      riv_inst4_grid.csv.tpl
+      cond_inst5_grid.csv.tpl
+      riv_inst5_grid.csv.tpl
+      cond_inst6_grid.csv.tpl
+      riv_inst6_grid.csv.tpl
+      cond_inst7_grid.csv.tpl
+      riv_inst7_grid.csv.tpl
+      cond_inst8_grid.csv.tpl
+      riv_inst8_grid.csv.tpl
     model input files:
       hk_inst0pp.dat
       mult/rc_inst0_constant.csv
       mult/d_inst0_grid.csv
       mult/cond_inst0_grid.csv
       mult/riv_inst0_grid.csv
+      mult/cond_inst1_grid.csv
+      mult/riv_inst1_grid.csv
+      mult/cond_inst2_grid.csv
+      mult/riv_inst2_grid.csv
+      mult/cond_inst3_grid.csv
+      mult/riv_inst3_grid.csv
+      mult/cond_inst4_grid.csv
+      mult/riv_inst4_grid.csv
+      mult/cond_inst5_grid.csv
+      mult/riv_inst5_grid.csv
+      mult/cond_inst6_grid.csv
+      mult/riv_inst6_grid.csv
+      mult/cond_inst7_grid.csv
+      mult/riv_inst7_grid.csv
+      mult/cond_inst8_grid.csv
+      mult/riv_inst8_grid.csv
 
     instruction files:
       ml_02/sim/hds.csv.ins
       ml_02/sim/drn.csv.ins
       ml_02/sim/mr.csv.ins
+      ml_03/sim/hds.csv.ins
+      ml_03/sim/drn.csv.ins
+      ml_03/sim/mr.csv.ins
+      ml_04/sim/hds.csv.ins
+      ml_04/sim/drn.csv.ins
+      ml_04/sim/mr.csv.ins
+      ml_05/sim/hds.csv.ins
+      ml_05/sim/drn.csv.ins
+      ml_05/sim/mr.csv.ins
+      ml_06/sim/hds.csv.ins
+      ml_06/sim/drn.csv.ins
+      ml_06/sim/mr.csv.ins
+      ml_07/sim/hds.csv.ins
+      ml_07/sim/drn.csv.ins
+      ml_07/sim/mr.csv.ins
+      ml_08/sim/hds.csv.ins
+      ml_08/sim/drn.csv.ins
+      ml_08/sim/mr.csv.ins
+      ml_09/sim/hds.csv.ins
+      ml_09/sim/drn.csv.ins
+      ml_09/sim/mr.csv.ins
+      ml_10/sim/hds.csv.ins
+      ml_10/sim/drn.csv.ins
+      ml_10/sim/mr.csv.ins
     model output files:
       ml_02/sim/hds.csv
       ml_02/sim/drn.csv
       ml_02/sim/mr.csv
+      ml_03/sim/hds.csv
+      ml_03/sim/drn.csv
+      ml_03/sim/mr.csv
+      ml_04/sim/hds.csv
+      ml_04/sim/drn.csv
+      ml_04/sim/mr.csv
+      ml_05/sim/hds.csv
+      ml_05/sim/drn.csv
+      ml_05/sim/mr.csv
+      ml_06/sim/hds.csv
+      ml_06/sim/drn.csv
+      ml_06/sim/mr.csv
+      ml_07/sim/hds.csv
+      ml_07/sim/drn.csv
+      ml_07/sim/mr.csv
+      ml_08/sim/hds.csv
+      ml_08/sim/drn.csv
+      ml_08/sim/mr.csv
+      ml_09/sim/hds.csv
+      ml_09/sim/drn.csv
+      ml_09/sim/mr.csv
+      ml_10/sim/hds.csv
+      ml_10/sim/drn.csv
+      ml_10/sim/mr.csv
 
 
 Parameter group information
 NAME          INCREMENT TYPE     DERIVATIVE INCREMENT    INCREMENT LOWER BOUND  FORCE CENTRAL     INCREMENT MULTIPLIER
-hk                  RELATIVE                      0.1                        0         SWITCH                        2
+hk                  RELATIVE                     0.01                        0         SWITCH                        2
 criv                RELATIVE                     0.01                        0         SWITCH                        2
-cghb                RELATIVE                     0.01                        0         SWITCH                        2
 cdrn                RELATIVE                     0.01                        0         SWITCH                        2
+cghb                RELATIVE                     0.01                        0         SWITCH                        2
 rech                RELATIVE                     0.01                        0         SWITCH                        2
 
 
@@ -706,72 +782,756 @@ pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6423995.37_zone:1 tied          
 pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6423995.37_zone:1 tied                    FACTOR              1          1e-05         100000           hk              1              0                   1
 pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6423495.37_zone:1 tied                    FACTOR              1          1e-05         100000           hk              1              0                   1
 pname:rc_inst:0_ptype:cn_pstyle:m                                 log                     FACTOR              1          1e-05         100000         rech              1              0                   1
+pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_s              log                     FACTOR              1          1e-05         100000         cghb              1              0                   1
 pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_w              log                     FACTOR              1          1e-05         100000         cghb              1              0                   1
 pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n              log                     FACTOR              1          1e-05         100000         cghb              1              0                   1
-pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_s              log                     FACTOR              1          1e-05         100000         cghb              1              0                   1
-pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
 pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac            log                     FACTOR              1          1e-05         100000         criv              1              0                   1
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      log                     FACTOR              1          1e-05         100000         criv              1              0                   1
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac            log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan          log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  log                     FACTOR              1          1e-05         100000         criv              1              0                   1
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         log                     FACTOR              1          1e-05         100000         criv              1              0                   1
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        log                     FACTOR              1          1e-05         100000         criv              1              0                   1
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        log                     FACTOR              1          1e-05         100000         criv              1              0                   1
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan          log                     FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gajac            tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:majolan          tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gajac            tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:majolan          tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:cond_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:gajac            tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:majolan          tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:cond_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:gajac            tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:majolan          tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:cond_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:gajac            tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:majolan          tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:cond_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:gajac            tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:majolan          tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:cond_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:gajac            tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:majolan          tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gal             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bar             log                     FACTOR              1          1e-05         100000         cdrn              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan5         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gajac            tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont      tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan4         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval    tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval        tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan1         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan3         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont       tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval     tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan2         tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
+pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:majolan          tied                    FACTOR              1          1e-05         100000         criv              1              0                   1
 
 
 
 Observation information
-NAME                                                   VALUE                GROUP              WEIGHT
-oname:h_otype:lst_usecol:ap1_time:2.0                      0                heads                 100
-oname:h_otype:lst_usecol:p23_time:2.0                      0                heads                 100
-oname:h_otype:lst_usecol:p24_time:2.0                9.63607                heads                 100
-oname:h_otype:lst_usecol:p25_time:2.0                9.80187                heads                 100
-oname:h_otype:lst_usecol:p26_time:2.0                10.5856                heads                 100
-oname:h_otype:lst_usecol:p27_time:2.0                10.3302                heads                 100
-oname:h_otype:lst_usecol:p28_time:2.0                 9.6486                heads                 100
-oname:h_otype:lst_usecol:p29_time:2.0                 9.9716                heads                 100
-oname:h_otype:lst_usecol:p30_time:2.0                 10.927                heads                 100
-oname:h_otype:lst_usecol:p32_time:2.0                 9.0931                heads                 100
-oname:h_otype:lst_usecol:p33_time:2.0                8.68553                heads                 100
-oname:h_otype:lst_usecol:p34_time:2.0                8.94165                heads                 100
-oname:h_otype:lst_usecol:p37_time:2.0                9.23859                heads                 100
-oname:h_otype:lst_usecol:p38_time:2.0                 9.1267                heads                 100
-oname:h_otype:lst_usecol:p39_time:2.0                9.56997                heads                 100
-oname:h_otype:lst_usecol:p40_time:2.0                9.63791                heads                 100
-oname:h_otype:lst_usecol:p8_time:2.0                 9.20198                heads                 100
-oname:h_otype:lst_usecol:pf_time:2.0                 10.1412                heads                 100
-oname:h_otype:lst_usecol:ph_time:2.0                       0                heads                 100
-oname:h_otype:lst_usecol:prg_time:2.0                4.48379                heads                 100
-oname:h_otype:lst_usecol:pzhm1_time:2.0              9.97924                heads                 100
-oname:h_otype:lst_usecol:r20_time:2.0                8.62758                heads                 100
-oname:h_otype:lst_usecol:r21_time:2.0                      0                heads                 100
-oname:h_otype:lst_usecol:rck1_time:2.0                     0                heads                 100
-oname:h_otype:lst_usecol:rck2_time:2.0                     0                heads                 100
-oname:q_otype:lst_usecol:bar_time:2.0              -0.159167                 qdrn                 360
-oname:q_otype:lst_usecol:gal_time:2.0             -0.0577778                 qdrn                 360
-oname:mr_otype:lst_usecol:bar_time:2                       0                   mr                 100
-oname:mr_otype:lst_usecol:gal_time:2                    0.64                   mr                 100
-oname:mr_otype:lst_usecol:r20_time:2                    0.07                   mr                 100
-oname:mr_otype:lst_usecol:r21_time:2                    0.24                   mr                 100
+NAME                                                    VALUE                GROUP              WEIGHT
+oname:h_otype:lst_usecol:ap1_time:2.0                       0                heads                   0
+oname:h_otype:lst_usecol:p23_time:2.0                       0                heads                   0
+oname:h_otype:lst_usecol:p24_time:2.0                 9.63607                heads                 100
+oname:h_otype:lst_usecol:p25_time:2.0                 9.80187                heads                 100
+oname:h_otype:lst_usecol:p26_time:2.0                 10.5856                heads                 100
+oname:h_otype:lst_usecol:p27_time:2.0                 10.3302                heads                 100
+oname:h_otype:lst_usecol:p28_time:2.0                  9.6486                heads                 100
+oname:h_otype:lst_usecol:p29_time:2.0                  9.9716                heads                 100
+oname:h_otype:lst_usecol:p30_time:2.0                  10.927                heads                 100
+oname:h_otype:lst_usecol:p32_time:2.0                  9.0931                heads                 100
+oname:h_otype:lst_usecol:p33_time:2.0                 8.68553                heads                 100
+oname:h_otype:lst_usecol:p34_time:2.0                 8.94165                heads                 100
+oname:h_otype:lst_usecol:p37_time:2.0                 9.23859                heads                 100
+oname:h_otype:lst_usecol:p38_time:2.0                  9.1267                heads                 100
+oname:h_otype:lst_usecol:p39_time:2.0                 9.56997                heads                 100
+oname:h_otype:lst_usecol:p40_time:2.0                 9.63791                heads                 100
+oname:h_otype:lst_usecol:p8_time:2.0                  9.20198                heads                 100
+oname:h_otype:lst_usecol:pf_time:2.0                  10.1412                heads                 100
+oname:h_otype:lst_usecol:ph_time:2.0                        0                heads                   0
+oname:h_otype:lst_usecol:prg_time:2.0                 4.48379                heads                 100
+oname:h_otype:lst_usecol:pzhm1_time:2.0               9.97924                heads                 100
+oname:h_otype:lst_usecol:r20_time:2.0                 8.62758                heads                 100
+oname:h_otype:lst_usecol:r21_time:2.0                       0                heads                   0
+oname:h_otype:lst_usecol:rck1_time:2.0                      0                heads                   0
+oname:h_otype:lst_usecol:rck2_time:2.0                      0                heads                   0
+oname:q_otype:lst_usecol:bar_time:2.0               -0.159167                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:2.0              -0.0577778                 qdrn                 360
+oname:mr_otype:lst_usecol:bar_time:2                        0                   mr                   0
+oname:mr_otype:lst_usecol:gal_time:2                     0.64                   mr                 100
+oname:mr_otype:lst_usecol:r20_time:2                     0.07                   mr                 100
+oname:mr_otype:lst_usecol:r21_time:2                     0.24                   mr                 100
+oname:h_otype:lst_usecol:ap1_time:3.0                 9.35989                heads                 100
+oname:h_otype:lst_usecol:p23_time:3.0                 9.90183                heads                 100
+oname:h_otype:lst_usecol:p24_time:3.0                 9.60852                heads                 100
+oname:h_otype:lst_usecol:p25_time:3.0                 9.68336                heads                 100
+oname:h_otype:lst_usecol:p26_time:3.0                 10.0587                heads                 100
+oname:h_otype:lst_usecol:p27_time:3.0                 9.73405                heads                 100
+oname:h_otype:lst_usecol:p28_time:3.0                 9.59865                heads                 100
+oname:h_otype:lst_usecol:p29_time:3.0                 9.80114                heads                 100
+oname:h_otype:lst_usecol:p30_time:3.0                 9.88623                heads                 100
+oname:h_otype:lst_usecol:p32_time:3.0                 8.87493                heads                 100
+oname:h_otype:lst_usecol:p33_time:3.0                 8.66296                heads                 100
+oname:h_otype:lst_usecol:p34_time:3.0                 8.87688                heads                 100
+oname:h_otype:lst_usecol:p37_time:3.0                 8.97604                heads                 100
+oname:h_otype:lst_usecol:p38_time:3.0                 8.93778                heads                 100
+oname:h_otype:lst_usecol:p39_time:3.0                 9.49611                heads                 100
+oname:h_otype:lst_usecol:p40_time:3.0                 9.55245                heads                 100
+oname:h_otype:lst_usecol:p8_time:3.0                  9.09387                heads                 100
+oname:h_otype:lst_usecol:pf_time:3.0                  10.0037                heads                 100
+oname:h_otype:lst_usecol:ph_time:3.0                  8.36752                heads                 100
+oname:h_otype:lst_usecol:prg_time:3.0                    4.53                heads                 100
+oname:h_otype:lst_usecol:pzhm1_time:3.0               9.56942                heads                 100
+oname:h_otype:lst_usecol:r20_time:3.0                 8.39235                heads                 100
+oname:h_otype:lst_usecol:r21_time:3.0                 9.29142                heads                 100
+oname:h_otype:lst_usecol:rck1_time:3.0                8.38796                heads                 100
+oname:h_otype:lst_usecol:rck2_time:3.0                8.41242                heads                 100
+oname:q_otype:lst_usecol:bar_time:3.0              -0.0950347                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:3.0               -0.106111                 qdrn                 360
+oname:mr_otype:lst_usecol:bar_time:3                        0                   mr                   0
+oname:mr_otype:lst_usecol:gal_time:3                        0                   mr                   0
+oname:mr_otype:lst_usecol:r20_time:3                     0.11                   mr                 100
+oname:mr_otype:lst_usecol:r21_time:3                     0.31                   mr                 100
+oname:h_otype:lst_usecol:ap1_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p23_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p24_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p25_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p26_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p27_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p28_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p29_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p30_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p32_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p33_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p34_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p37_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p38_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p39_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p40_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:p8_time:4.0                        0                heads                   0
+oname:h_otype:lst_usecol:pf_time:4.0                        0                heads                   0
+oname:h_otype:lst_usecol:ph_time:4.0                        0                heads                   0
+oname:h_otype:lst_usecol:prg_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:pzhm1_time:4.0                     0                heads                   0
+oname:h_otype:lst_usecol:r20_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:r21_time:4.0                       0                heads                   0
+oname:h_otype:lst_usecol:rck1_time:4.0                      0                heads                   0
+oname:h_otype:lst_usecol:rck2_time:4.0                      0                heads                   0
+oname:q_otype:lst_usecol:bar_time:4.0              -0.0781019                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:4.0              -0.0744444                 qdrn                 360
+oname:mr_otype:lst_usecol:bar_time:4                        0                   mr                   0
+oname:mr_otype:lst_usecol:gal_time:4                     0.41                   mr                 100
+oname:mr_otype:lst_usecol:r20_time:4                        0                   mr                   0
+oname:mr_otype:lst_usecol:r21_time:4                        0                   mr                   0
+oname:h_otype:lst_usecol:ap1_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p23_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p24_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p25_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p26_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p27_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p28_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p29_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p30_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p32_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p33_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p34_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p37_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p38_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p39_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p40_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:p8_time:5.0                        0                heads                   0
+oname:h_otype:lst_usecol:pf_time:5.0                        0                heads                   0
+oname:h_otype:lst_usecol:ph_time:5.0                        0                heads                   0
+oname:h_otype:lst_usecol:prg_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:pzhm1_time:5.0                     0                heads                   0
+oname:h_otype:lst_usecol:r20_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:r21_time:5.0                       0                heads                   0
+oname:h_otype:lst_usecol:rck1_time:5.0                      0                heads                   0
+oname:h_otype:lst_usecol:rck2_time:5.0                      0                heads                   0
+oname:q_otype:lst_usecol:bar_time:5.0              -0.0813542                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:5.0              -0.0747222                 qdrn                 360
+oname:mr_otype:lst_usecol:bar_time:5                        0                   mr                   0
+oname:mr_otype:lst_usecol:gal_time:5                     0.41                   mr                 100
+oname:mr_otype:lst_usecol:r20_time:5                        0                   mr                   0
+oname:mr_otype:lst_usecol:r21_time:5                        0                   mr                   0
+oname:h_otype:lst_usecol:ap1_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p23_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p24_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p25_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p26_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p27_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p28_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p29_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p30_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p32_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p33_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p34_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p37_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p38_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p39_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p40_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:p8_time:6.0                        0                heads                   0
+oname:h_otype:lst_usecol:pf_time:6.0                        0                heads                   0
+oname:h_otype:lst_usecol:ph_time:6.0                        0                heads                   0
+oname:h_otype:lst_usecol:prg_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:pzhm1_time:6.0                     0                heads                   0
+oname:h_otype:lst_usecol:r20_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:r21_time:6.0                       0                heads                   0
+oname:h_otype:lst_usecol:rck1_time:6.0                      0                heads                   0
+oname:h_otype:lst_usecol:rck2_time:6.0                      0                heads                   0
+oname:q_otype:lst_usecol:bar_time:6.0              -0.0775694                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:6.0                       0                 qdrn                   0
+oname:mr_otype:lst_usecol:bar_time:6                        0                   mr                 100
+oname:mr_otype:lst_usecol:gal_time:6                        0                   mr                   0
+oname:mr_otype:lst_usecol:r20_time:6                     0.08                   mr                 100
+oname:mr_otype:lst_usecol:r21_time:6                     0.38                   mr                 100
+oname:h_otype:lst_usecol:ap1_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p23_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p24_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p25_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p26_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p27_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p28_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p29_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p30_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p32_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p33_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p34_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p37_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p38_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p39_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p40_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:p8_time:7.0                        0                heads                   0
+oname:h_otype:lst_usecol:pf_time:7.0                        0                heads                   0
+oname:h_otype:lst_usecol:ph_time:7.0                        0                heads                   0
+oname:h_otype:lst_usecol:prg_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:pzhm1_time:7.0                     0                heads                   0
+oname:h_otype:lst_usecol:r20_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:r21_time:7.0                       0                heads                   0
+oname:h_otype:lst_usecol:rck1_time:7.0                      0                heads                   0
+oname:h_otype:lst_usecol:rck2_time:7.0                      0                heads                   0
+oname:q_otype:lst_usecol:bar_time:7.0               -0.130775                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:7.0              -0.0680556                 qdrn                 360
+oname:mr_otype:lst_usecol:bar_time:7                        0                   mr                 100
+oname:mr_otype:lst_usecol:gal_time:7                      0.3                   mr                 100
+oname:mr_otype:lst_usecol:r20_time:7                      0.3                   mr                 100
+oname:mr_otype:lst_usecol:r21_time:7                     0.77                   mr                 100
+oname:h_otype:lst_usecol:ap1_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p23_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p24_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p25_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p26_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p27_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p28_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p29_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p30_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p32_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p33_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p34_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p37_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p38_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p39_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p40_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:p8_time:8.0                        0                heads                   0
+oname:h_otype:lst_usecol:pf_time:8.0                        0                heads                   0
+oname:h_otype:lst_usecol:ph_time:8.0                        0                heads                   0
+oname:h_otype:lst_usecol:prg_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:pzhm1_time:8.0                     0                heads                   0
+oname:h_otype:lst_usecol:r20_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:r21_time:8.0                       0                heads                   0
+oname:h_otype:lst_usecol:rck1_time:8.0                      0                heads                   0
+oname:h_otype:lst_usecol:rck2_time:8.0                      0                heads                   0
+oname:q_otype:lst_usecol:bar_time:8.0                -0.13081                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:8.0              -0.0361111                 qdrn                 360
+oname:mr_otype:lst_usecol:bar_time:8                        0                   mr                 100
+oname:mr_otype:lst_usecol:gal_time:8                     0.28                   mr                 100
+oname:mr_otype:lst_usecol:r20_time:8                     0.06                   mr                 100
+oname:mr_otype:lst_usecol:r21_time:8                     0.13                   mr                 100
+oname:h_otype:lst_usecol:ap1_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p23_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p24_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p25_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p26_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p27_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p28_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p29_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p30_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p32_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p33_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p34_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p37_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p38_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p39_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p40_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:p8_time:9.0                        0                heads                   0
+oname:h_otype:lst_usecol:pf_time:9.0                        0                heads                   0
+oname:h_otype:lst_usecol:ph_time:9.0                        0                heads                   0
+oname:h_otype:lst_usecol:prg_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:pzhm1_time:9.0                     0                heads                   0
+oname:h_otype:lst_usecol:r20_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:r21_time:9.0                       0                heads                   0
+oname:h_otype:lst_usecol:rck1_time:9.0                      0                heads                   0
+oname:h_otype:lst_usecol:rck2_time:9.0                      0                heads                   0
+oname:q_otype:lst_usecol:bar_time:9.0               -0.143866                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:9.0              -0.0583333                 qdrn                 360
+oname:mr_otype:lst_usecol:bar_time:9                        0                   mr                 100
+oname:mr_otype:lst_usecol:gal_time:9                     0.24                   mr                 100
+oname:mr_otype:lst_usecol:r20_time:9                        0                   mr                 100
+oname:mr_otype:lst_usecol:r21_time:9                        0                   mr                   0
+oname:h_otype:lst_usecol:ap1_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p23_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p24_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p25_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p26_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p27_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p28_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p29_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p30_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p32_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p33_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p34_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p37_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p38_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p39_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p40_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:p8_time:10.0                       0                heads                   0
+oname:h_otype:lst_usecol:pf_time:10.0                       0                heads                   0
+oname:h_otype:lst_usecol:ph_time:10.0                       0                heads                   0
+oname:h_otype:lst_usecol:prg_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:pzhm1_time:10.0                    0                heads                   0
+oname:h_otype:lst_usecol:r20_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:r21_time:10.0                      0                heads                   0
+oname:h_otype:lst_usecol:rck1_time:10.0                     0                heads                   0
+oname:h_otype:lst_usecol:rck2_time:10.0                     0                heads                   0
+oname:q_otype:lst_usecol:bar_time:10.0              -0.169722                 qdrn                 360
+oname:q_otype:lst_usecol:gal_time:10.0             -0.0863889                 qdrn                 360
+oname:mr_otype:lst_usecol:bar_time:10                       0                   mr                 100
+oname:mr_otype:lst_usecol:gal_time:10                    0.31                   mr                 100
+oname:mr_otype:lst_usecol:r20_time:10                    0.04                   mr                 100
+oname:mr_otype:lst_usecol:r21_time:10                       0                   mr                   0
 
 
 
 Prior information
-
-   no prior information provided
+pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:1_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:1_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:2_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:2_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:cond_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:3_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:3_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:cond_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:4_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:4_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:cond_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:5_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:5_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:cond_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:6_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:6_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:cond_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:7_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:7_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bar   + 1 * LOG(PNAME:COND_INST:8_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BAR) = 0   0.1   REGULCDRN
+pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gal   + 1 * LOG(PNAME:COND_INST:8_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAL) = 0   0.1   REGULCDRN
+pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n   + 1 * LOG(PNAME:D_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GHB_N) = 0   0.1   REGULCGHB
+pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_s   + 1 * LOG(PNAME:D_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GHB_S) = 0   0.1   REGULCGHB
+pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_w   + 1 * LOG(PNAME:D_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GHB_W) = 0   0.1   REGULCGHB
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407751.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407751.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407751.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407751.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407751.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407751.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407851.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407851.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407851.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407851.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407851.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407851.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407851.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407851.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:407951.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408051.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408151.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408251.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408351.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408451.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408551.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408651.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408751.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6427781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6427781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408851.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6427781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6427781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6429181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:408951.03_Y:6429181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6427781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6427781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409051.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409075.68_Y:6432495.37_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409151.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6429081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409251.03_Y:6429081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6427881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6427881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409351.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6427981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6427981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428981.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409451.03_Y:6428981.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428081.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428081.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428281.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428281.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428381.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428381.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428481.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428481.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428581.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428581.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428681.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428681.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428781.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428781.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428881.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409551.03_Y:6428881.70_ZONE:1) = 0   0.1   REGULHK
+pname:hk_inst:0_ptype:pp_pstyle:m_x:409651.03_y:6428181.70_zone:1   + 1 * LOG(PNAME:HK_INST:0_PTYPE:PP_PSTYLE:M_X:409651.03_Y:6428181.70_ZONE:1) = 0   0.1   REGULHK
+pname:rc_inst:0_ptype:cn_pstyle:m   + 1 * LOG(PNAME:RC_INST:0_PTYPE:CN_PSTYLE:M) = 0   0.1   REGULRECH
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BLANC_AMONT) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BUSSAGUET_AMONT) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:BUSSAGUET_AVAL) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:GAJAC) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:HAILLAN1) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:HAILLAN2) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:HAILLAN3) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:HAILLAN4) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:HAILLAN5) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:JPT_ECL_AMONT) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:JPT_ECL_AVAL) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:JPT_SEUIL_AVAL) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:MAJOLAN) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:MOULINAT_AMONT) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:MOULINAT_AVAL) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:NOIR_AMONT) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:NOIR_AVAL) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:THIL_AMONT) = 0   0.1   REGULCRIV
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   + 1 * LOG(PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:THIL_AVAL) = 0   0.1   REGULCRIV
 
 
 
@@ -780,6 +1540,11 @@ PEST SVD Information
     eigthresh = 1e-06
 
 
+Regularization information:
+    phimlim = 10000
+    fracphim = 0.05
+    phimaccept = 11000
+    wfinit = 1
 
 
 
@@ -787,506 +1552,44 @@ PEST SVD Information
 
    -----    Starting pestpp-glm Iterations    ----    
 
------------------------------------------
-     ---   OPTIMIZATION COMPLETE   ---   
-  Reason for terminating PEST++ simulation: NOPTMAX criterion met
-  Summary of termination criteria:
-  NOPTMAX = 0 ;  NOPT at termination = 0
-  NPHINORED = 3 ;  NPHINORED at termination = 0
-  NRELPAR = 3; RELPARSTP = 0.01 ;  NRELPAR at termination = 0
-  PHIREDSTP = 0.01; NPHISTP = 3
-  NPHISTP lowest PHI's:
 
-FINAL OPTIMISATION RESULTS
+OPTIMISATION ITERATION NUMBER: 1
 
-  Optimal parameter values  
-
-     Parameter            
-        Name         Value
-    ------------  ------------
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6429181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6429081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428681.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428581.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407751.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428481.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428381.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407851.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407951.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428281.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408051.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408151.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409651.03_y:6428181.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408251.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409551.03_y:6428081.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408351.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408451.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409451.03_y:6427981.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408551.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408651.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408751.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409151.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409251.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409351.03_y:6427881.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408851.03_y:6427781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408951.03_y:6427781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6427781.70_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6431995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6431995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6431995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6431995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6431995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6431995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6431495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6431495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6431495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6431495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6431495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6431495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6431495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6431495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6430995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6430495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412575.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413075.68_y:6429995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412575.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413075.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413575.68_y:6429495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406075.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412575.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413075.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413575.68_y:6428995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406075.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412575.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413075.68_y:6428495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406075.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412575.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413075.68_y:6427995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406075.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412575.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413075.68_y:6427495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406075.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412575.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:413075.68_y:6426995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406075.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412575.68_y:6426495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:412075.68_y:6425995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:406575.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407075.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411075.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:411575.68_y:6425495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6424995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6424995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6424995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6424995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6424995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6424995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410575.68_y:6424995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6424495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6424495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6424495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6424495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:410075.68_y:6424495.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6423995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6423995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6423995.37_zone:1             1
-    pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6423495.37_zone:1             1
-    pname:rc_inst:0_ptype:cn_pstyle:m             1
-    pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_w             1
-    pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n             1
-    pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_s             1
-    pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bar             1
-    pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gal             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont             1
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1             1
+  Iteration type: base parameter solution
+  SVD Package: RedSVD
+  Model calls so far : 0
 
 
-  Observations with optimal model-simulated equivalents and residuals
-                                    Name        Group             Measured             Modelled             Residual               Weight
-   oname:h_otype:lst_usecol:ap1_time:2.0        heads              0.00000              12.9128             -12.9128              100.000
-   oname:h_otype:lst_usecol:p23_time:2.0        heads              0.00000              15.6074             -15.6074              100.000
-   oname:h_otype:lst_usecol:p24_time:2.0        heads              9.63607              14.3203             -4.68421              100.000
-   oname:h_otype:lst_usecol:p25_time:2.0        heads              9.80187              12.7404             -2.93858              100.000
-   oname:h_otype:lst_usecol:p26_time:2.0        heads              10.5856              13.7424             -3.15686              100.000
-   oname:h_otype:lst_usecol:p27_time:2.0        heads              10.3302              16.7949             -6.46467              100.000
-   oname:h_otype:lst_usecol:p28_time:2.0        heads              9.64860              16.2705             -6.62190              100.000
-   oname:h_otype:lst_usecol:p29_time:2.0        heads              9.97160              18.3982             -8.42659              100.000
-   oname:h_otype:lst_usecol:p30_time:2.0        heads              10.9270              18.2524             -7.32534              100.000
-   oname:h_otype:lst_usecol:p32_time:2.0        heads              9.09310              10.3683             -1.27521              100.000
-   oname:h_otype:lst_usecol:p33_time:2.0        heads              8.68553              10.1819             -1.49639              100.000
-   oname:h_otype:lst_usecol:p34_time:2.0        heads              8.94165              11.3865             -2.44484              100.000
-   oname:h_otype:lst_usecol:p37_time:2.0        heads              9.23859              10.3419             -1.10333              100.000
-   oname:h_otype:lst_usecol:p38_time:2.0        heads              9.12670              10.9001             -1.77338              100.000
-   oname:h_otype:lst_usecol:p39_time:2.0        heads              9.56997              13.2847             -3.71476              100.000
-   oname:h_otype:lst_usecol:p40_time:2.0        heads              9.63791              15.0633             -5.42540              100.000
-    oname:h_otype:lst_usecol:p8_time:2.0        heads              9.20198              13.5041             -4.30211              100.000
-    oname:h_otype:lst_usecol:pf_time:2.0        heads              10.1412              14.2867             -4.14545              100.000
-    oname:h_otype:lst_usecol:ph_time:2.0        heads              0.00000              14.3661             -14.3661              100.000
-   oname:h_otype:lst_usecol:prg_time:2.0        heads              4.48379              11.5461             -7.06234              100.000
- oname:h_otype:lst_usecol:pzhm1_time:2.0        heads              9.97924              13.1143             -3.13501              100.000
-   oname:h_otype:lst_usecol:r20_time:2.0        heads              8.62758              11.1454             -2.51779              100.000
-   oname:h_otype:lst_usecol:r21_time:2.0        heads              0.00000              12.2129             -12.2129              100.000
-  oname:h_otype:lst_usecol:rck1_time:2.0        heads              0.00000              10.4931             -10.4931              100.000
-  oname:h_otype:lst_usecol:rck2_time:2.0        heads              0.00000              10.6528             -10.6528              100.000
-   oname:q_otype:lst_usecol:bar_time:2.0         qdrn            -0.159167            -0.938620             0.779453              360.000
-   oname:q_otype:lst_usecol:gal_time:2.0         qdrn           -0.0577778             -1.65480              1.59702              360.000
-    oname:mr_otype:lst_usecol:bar_time:2           mr              0.00000              0.00000              0.00000              100.000
-    oname:mr_otype:lst_usecol:gal_time:2           mr             0.640000           -0.0630837             0.703084              100.000
-    oname:mr_otype:lst_usecol:r20_time:2           mr            0.0700000              0.00000            0.0700000              100.000
-    oname:mr_otype:lst_usecol:r21_time:2           mr             0.240000              0.00000             0.240000              100.000
 
-Final composite objective function 
-  Final phi                                           Total : 1.44097e+07
-  Contribution to phi from observation group        "heads" : 1.39949e+07
-  Contribution to phi from observation group         "qdrn" : 409280.
-  Contribution to phi from observation group           "mr" : 5568.27
+  Starting phi for this iteration                     Total : 1.35875e+07
 
 
-Number of forward model runs performed during optimization: 1
+  Contribution to phi from observation group        "heads" : 1.05448e+07
+  Contribution to phi from observation group         "qdrn" : 3.01952e+06
+  Contribution to phi from observation group           "mr" : 23196.8
+  Contribution to phi from observation group      "regulhk" : 0
+  Contribution to phi from observation group    "regulrech" : 0
+  Contribution to phi from observation group    "regulcghb" : 0
+  Contribution to phi from observation group    "regulcdrn" : 0
+  Contribution to phi from observation group    "regulcriv" : 0
+  Number of terms in the jacobian equal to zero: 87069 / 147681 (59%)
 
 
-pestpp-glm analysis complete...
-started at 03/04/22 18:25:43
-finished at 03/04/22 18:25:49
-took 0.100000 minutes
+    Parameters whose perturbation runs failed while computing jacobian
+      Parameter     Failed
+        Name        Value
+      ----------  ------------
+  PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:HAILLAN5          1.01
+
+
+    ---  Solving for regularization weight factor   ---   
+    Starting regularization weight factor      : 0
+    Starting measurement objective function    : 1.35875e+07
+    Starting regularization objective function : 0
+
+    Target measurement objective function      : 679374
+
+
+
+Jco::get_matrix(): the following par names are not in the matrix: PNAME:RIV_INST:0_PTYPE:GR_USECOL:3_PSTYLE:M_IDX0:HAILLAN5
+Error encountered, cannot continue
