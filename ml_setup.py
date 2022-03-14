@@ -180,9 +180,10 @@ ml.modelgrid.set_coord_info(proj4 = proj4, epsg = epsg)
 
 # ---- Iterative Model Solution (IMS) package
 ims = flopy.mf6.ModflowIms(sim,
-        inner_maximum=1000,
-        inner_dvclose=0.0001,
-        rcloserecord=0.001,
+        outer_maximum=100,
+        inner_maximum=20,
+        inner_dvclose=0.001,
+        rcloserecord=0.1,
         print_option = 'SUMMARY'
         )
 sim.register_ims_package(ims, [ml.name])

@@ -217,26 +217,32 @@ phimlim = np.array(
 
 #=================
 
+# Tikhonov reg 
 pyemu.helpers.zero_order_tikhonov(pst)
 cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
 pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
+
 # regularization settings
 pst.reg_data.phimlim = phimlim
 pst.reg_data.phimaccept = pst.reg_data.phimlim*1.1
 pst.reg_data.fracphim = 0.05
-pst.reg_data.wfmin = 1.0e-5
+pst.reg_data.wfmin = 1.0e-10
 pst.reg_data.wfinit = 1.0
+pst.reg_data.wfac = 1.3
+pst.reg_data.wtol = 1.0e-2
 
 # pestpp-glm options 
 pst.pestpp_options['svd_pack'] = 'redsvd'
 pst.pestpp_options['uncertainty'] = 'false'
+pst.pestpp_options['der_forgive'] = True
+
+# run manager options 
+pst.pestpp_options['overdue_resched_fac'] = 2
+pst.pestpp_options['panther_agent_no_ping_timeout_secs'] = 3600
+pst.pestpp_options['max_run_fail'] = 5
 
 # set derinc values for pp
 #pst.parameter_groups.loc['hk',"derinc"] = 0.10
-
-# set overdue rescheduling factor to twice the average model run
-pst.pestpp_options['overdue_resched_fac'] = 2
-pst.pestpp_options['panther_agent_no_ping_timeout_secs'] = 36000
 
 # ---- write pst   
 pst.write(os.path.join(pf.new_d, f'cal_{model_name}.pst'))
@@ -247,8 +253,12 @@ pst.control_data.noptmax=30
 pst.write(os.path.join(pf.new_d, f'cal_{model_name}.pst'))
 
 '''
+import pyemu
 pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
-
+import pyemu
+pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=40,
+                              worker_root= 'workers',cleanup=False,
+                                master_dir='pst_master')
 '''
