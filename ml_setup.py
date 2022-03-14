@@ -15,6 +15,7 @@ from tracktools import ParticleGenerator
 #-----------------------------------#
 
 case_ids = [i for i in range(2,11)] # see surveys.xlsx
+case_ids = [2]
 
 mf6_exe = 'mf6'
 mp7_exe = 'mp7'
@@ -181,7 +182,7 @@ ml.modelgrid.set_coord_info(proj4 = proj4, epsg = epsg)
 # ---- Iterative Model Solution (IMS) package
 ims = flopy.mf6.ModflowIms(sim,
         outer_maximum=100,
-        inner_maximum=20,
+        inner_maximum=10,
         inner_dvclose=0.001,
         rcloserecord=0.1,
         print_option = 'SUMMARY'

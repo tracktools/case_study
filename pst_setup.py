@@ -44,7 +44,8 @@ pf = pyemu.utils.PstFrom(original_d=org_ml_dir, new_d=pst_dir,
 case_dirs = sorted([d for d in os.listdir('ml') if d.startswith('ml_')])
 
 # --- Process case independent parameters
-v = pyemu.geostats.ExpVario(contribution=1.0,a=300)
+# a = twice largest spacing between pp
+v = pyemu.geostats.ExpVario(contribution=1.0,a=1000.)
 grid_gs = pyemu.geostats.GeoStruct(variograms=v, transform='log')
 
 prop_filename =os.path.join('com_ext','k.txt')
