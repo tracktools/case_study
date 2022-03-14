@@ -167,7 +167,7 @@ sim = flopy.mf6.MFSimulation(sim_name='mfsim', sim_ws = tpl_ml_dir,
 sim.simulation_data.wrap_multidim_arrays = False
 
 # ---- Time discretization package
-perioddata = [ ( 1, 1, 1) ]
+perioddata = [ (1., 1, 1) ]
 tdis = flopy.mf6.ModflowTdis(sim, time_units = 'seconds',
                                   nper=1, 
                                   perioddata = perioddata)
