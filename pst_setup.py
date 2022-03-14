@@ -205,11 +205,15 @@ for obgnme in obs.obgnme.unique():
     obs.loc[obs.obgnme==obgnme,'weight'] = obs.loc[obs.obgnme==obgnme,'weight']*weights_df.loc[obgnme,'factor']
 
 
-# tuning factor for mr
-obs.loc[obs.obgnme=='mr','weight']=10*obs.loc[obs.obgnme=='mr','weight']
-
 # 0-weight to unavailable obs
 obs.loc[obs.obsval.isna(),['weight','obsval']]=0
+
+# phimlim =  nobs*tuning_factor
+phimlim = np.array(
+        [ weights_df.loc[obgnme,'factor']*(obs.obgnme==obgnme).sum() 
+    for obgnme in obs.obgnme.unique()]
+    ).sum()
+
 
 #=================
 
@@ -217,7 +221,7 @@ pyemu.helpers.zero_order_tikhonov(pst)
 cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
 pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
 # regularization settings
-pst.reg_data.phimlim = 1e4
+pst.reg_data.phimlim = phimlim
 pst.reg_data.phimaccept = pst.reg_data.phimlim*1.1
 pst.reg_data.fracphim = 0.05
 pst.reg_data.wfmin = 1.0e-5
