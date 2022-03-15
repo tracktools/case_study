@@ -86,6 +86,17 @@ dx = np.array([ pdata['x'][i+1] - pdata['x'][i]  for i, pdata in zip(idx,spdata)
 dy = np.array([ pdata['y'][i+1] - pdata['y'][i]  for i, pdata in zip(idx,spdata)])
 v = np.sqrt(dx**2+dy**2)/dt
 
+# get particle ids, dt, dx, dy, v
+pid = np.array([pdata['particleid'][0]  for pdata in spdata])
+dt = np.array([pdata['time'][1] for pdata in spdata])
+dx = np.array([ pdata['x'][1] - pdata['x'][0]  for pdata in spdata])
+dy = np.array([ pdata['y'][1] - pdata['y'][0]  for pdata in spdata])
+v = np.sqrt(dx**2+dy**2)/dt
+
+
+
+
+
 # return df 
 v_df = pd.DataFrame({'pid':pid,'v':v})
 v_df.set_index('pid', inplace=True)

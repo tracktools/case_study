@@ -303,11 +303,11 @@ defaultiface6 = {'RCH': 6, 'EVT': 6}
 mpbas = flopy.modpath.Modpath7Bas(mp, porosity=0.1, defaultiface=defaultiface6)
 
 # ---- Build MODPATH7 SIM package
-mpsim = flopy.modpath.Modpath7Sim(mp, simulationtype='combined',
+mpsim = flopy.modpath.Modpath7Sim(mp, simulationtype='pathline',
                                       trackingdirection='backward',
                                       weaksinkoption='stop_at',
                                       weaksourceoption='stop_at',
-                                      budgetoutputoption='summary',
+                                      budgetoutputoption='no',
                                       stoptimeoption='extend',
                                       particlegroups= particlegroups)
 
