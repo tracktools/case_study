@@ -45,7 +45,7 @@ case_dirs = sorted([d for d in os.listdir('ml') if d.startswith('ml_')])
 
 # --- Process case independent parameters
 # a = twice largest spacing between pp
-v = pyemu.geostats.ExpVario(contribution=1.0,a=1000.)
+v = pyemu.geostats.ExpVario(contribution=1.0,a=2000.)
 grid_gs = pyemu.geostats.GeoStruct(variograms=v, transform='log')
 
 prop_filename =os.path.join('com_ext','k.txt')
@@ -253,11 +253,12 @@ pyemu.helpers.run(f'pestpp-glm cal_{model_name}.pst', cwd=pf.new_d)
 pst.control_data.noptmax=30
 pst.write(os.path.join(pf.new_d, f'cal_{model_name}.pst'))
 
-'''
-import pyemu
+# start workers
 pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
+
+'''
 import pyemu
 pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=40,
                               worker_root= 'workers',cleanup=False,

@@ -432,479 +432,479 @@ pcf
  pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6423495.37_zone:1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       hk                    1.0000000000E+00      0.0000000000E+00      1          
                                  pname:rc_inst:0_ptype:cn_pstyle:m   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       rech                  1.0000000000E+00      0.0000000000E+00      1          
               pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_s   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cghb                  1.0000000000E+00      0.0000000000E+00      1          
-              pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_w   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cghb                  1.0000000000E+00      0.0000000000E+00      1          
               pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cghb                  1.0000000000E+00      0.0000000000E+00      1          
+              pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_w   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cghb                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
 * observation groups
 heads                
 qdrn                 
 mr                   
 * observation data
-    oname:h_otype:lst_usecol:ap1_time:2.0  1.0441379630E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p23_time:2.0  1.1047271100E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p24_time:2.0  1.1154625430E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p25_time:2.0  1.0520806490E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p26_time:2.0  1.1273221330E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p27_time:2.0  1.2637223180E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p28_time:2.0  1.2095811600E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p29_time:2.0  1.2796301010E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p30_time:2.0  1.2482284460E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p32_time:2.0  9.0007880340E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p33_time:2.0  8.8736325520E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p34_time:2.0  9.4724661380E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p37_time:2.0  9.0210035360E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p38_time:2.0  9.2773497760E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p39_time:2.0  1.0729800710E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p40_time:2.0  1.1557099310E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:p8_time:2.0  1.0434627790E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:pf_time:2.0  1.0103110870E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:ph_time:2.0  1.0340017890E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:prg_time:2.0  9.2265013860E+00      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:pzhm1_time:2.0  1.0507448170E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r20_time:2.0  9.3544676700E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r21_time:2.0  9.9737924790E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck1_time:2.0  8.9961756440E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck2_time:2.0  9.1065014750E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:ap1_time:2.0  1.0441421220E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p23_time:2.0  1.1047045040E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p24_time:2.0  1.1154733540E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p25_time:2.0  1.0520875110E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p26_time:2.0  1.1273334180E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p27_time:2.0  1.2637412210E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p28_time:2.0  1.2095976530E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p29_time:2.0  1.2796309450E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p30_time:2.0  1.2482172560E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p32_time:2.0  9.0007332280E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p33_time:2.0  8.8735519910E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p34_time:2.0  9.4724252300E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p37_time:2.0  9.0209415930E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p38_time:2.0  9.2772922470E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p39_time:2.0  1.0729883540E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p40_time:2.0  1.1557245780E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:p8_time:2.0  1.0434554730E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:pf_time:2.0  1.0102976670E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:ph_time:2.0  1.0339924310E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:prg_time:2.0  9.2263949190E+00      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:pzhm1_time:2.0  1.0507454980E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r20_time:2.0  9.3544116430E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r21_time:2.0  9.9738009980E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck1_time:2.0  8.9961139650E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck2_time:2.0  9.1064518900E+00      1.0000000000E+00       heads                
     oname:q_otype:lst_usecol:bar_time:2.0  0.0000000000E+00      1.0000000000E+00       qdrn                 
-    oname:q_otype:lst_usecol:gal_time:2.0  -4.8656000000E-01     1.0000000000E+00       qdrn                 
+    oname:q_otype:lst_usecol:gal_time:2.0  -4.8650663026E-01     1.0000000000E+00       qdrn                 
      oname:mr_otype:lst_usecol:bar_time:2  0.0000000000E+00      1.0000000000E+00       mr                   
-     oname:mr_otype:lst_usecol:gal_time:2  4.1832988862E-02      1.0000000000E+00       mr                   
+     oname:mr_otype:lst_usecol:gal_time:2  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r20_time:2  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r21_time:2  0.0000000000E+00      1.0000000000E+00       mr                   
-    oname:h_otype:lst_usecol:ap1_time:3.0  1.0279619660E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p23_time:3.0  1.0907998940E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p24_time:3.0  1.0997293970E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p25_time:3.0  1.0351239780E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p26_time:3.0  1.1103736830E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p27_time:3.0  1.2491810350E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p28_time:3.0  1.1950183420E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p29_time:3.0  1.2668069990E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p30_time:3.0  1.2354619140E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p32_time:3.0  8.8842469470E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p33_time:3.0  8.7570943160E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p34_time:3.0  9.3432285160E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p37_time:3.0  8.8865553620E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p38_time:3.0  9.1358202780E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p39_time:3.0  1.0564838750E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p40_time:3.0  1.1402937510E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:p8_time:3.0  1.0287319910E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:pf_time:3.0  9.9629502880E+00      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:ph_time:3.0  1.0208932070E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:prg_time:3.0  9.1385214780E+00      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:pzhm1_time:3.0  1.0342338930E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r20_time:3.0  9.2163945670E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r21_time:3.0  9.8202642980E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck1_time:3.0  8.9153284130E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck2_time:3.0  9.0128936980E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:ap1_time:3.0  1.0279604420E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p23_time:3.0  1.0907765760E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p24_time:3.0  1.0997332160E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p25_time:3.0  1.0351234630E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p26_time:3.0  1.1103827890E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p27_time:3.0  1.2492026010E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p28_time:3.0  1.1950310070E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p29_time:3.0  1.2668112840E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p30_time:3.0  1.2354553240E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p32_time:3.0  8.8841470930E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p33_time:3.0  8.7569819530E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p34_time:3.0  9.3431414230E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p37_time:3.0  8.8864418060E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p38_time:3.0  9.1357113660E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p39_time:3.0  1.0564848520E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p40_time:3.0  1.1403025540E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:p8_time:3.0  1.0287217090E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:pf_time:3.0  9.9629960920E+00      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:ph_time:3.0  1.0208954770E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:prg_time:3.0  9.1384657000E+00      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:pzhm1_time:3.0  1.0342295810E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r20_time:3.0  9.2162935640E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r21_time:3.0  9.8202183460E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck1_time:3.0  8.9152503800E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck2_time:3.0  9.0128087330E+00      1.0000000000E+00       heads                
     oname:q_otype:lst_usecol:bar_time:3.0  0.0000000000E+00      1.0000000000E+00       qdrn                 
-    oname:q_otype:lst_usecol:gal_time:3.0  -3.6406000000E-01     1.0000000000E+00       qdrn                 
+    oname:q_otype:lst_usecol:gal_time:3.0  -3.6399322902E-01     1.0000000000E+00       qdrn                 
      oname:mr_otype:lst_usecol:bar_time:3  0.0000000000E+00      1.0000000000E+00       mr                   
-     oname:mr_otype:lst_usecol:gal_time:3  4.1659169263E-02      1.0000000000E+00       mr                   
+     oname:mr_otype:lst_usecol:gal_time:3  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r20_time:3  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r21_time:3  0.0000000000E+00      1.0000000000E+00       mr                   
-    oname:h_otype:lst_usecol:ap1_time:4.0  1.0621600990E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p23_time:4.0  1.1193938990E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p24_time:4.0  1.1323014700E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p25_time:4.0  1.0698744070E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p26_time:4.0  1.1445834460E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p27_time:4.0  1.2787758230E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p28_time:4.0  1.2250039310E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p29_time:4.0  1.2933171910E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p30_time:4.0  1.2618363350E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p32_time:4.0  9.1315368120E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p33_time:4.0  9.0024796880E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p34_time:4.0  9.6154058060E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p37_time:4.0  9.1682854660E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p38_time:4.0  9.4372253030E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p39_time:4.0  1.0904882100E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p40_time:4.0  1.1720158830E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:p8_time:4.0  1.0598562180E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:pf_time:4.0  1.0227353330E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:ph_time:4.0  1.0462495500E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:prg_time:4.0  9.3235517420E+00      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:pzhm1_time:4.0  1.0675216350E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r20_time:4.0  9.5316304060E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r21_time:4.0  1.0184880480E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck1_time:4.0  9.0941058910E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck2_time:4.0  9.2169216360E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:ap1_time:4.0  1.0621313990E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p23_time:4.0  1.1193628840E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p24_time:4.0  1.1322602480E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p25_time:4.0  1.0698497410E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p26_time:4.0  1.1445503880E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p27_time:4.0  1.2787160400E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p28_time:4.0  1.2249404020E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p29_time:4.0  1.2932339860E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p30_time:4.0  1.2617706580E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p32_time:4.0  9.1314020080E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p33_time:4.0  9.0023495260E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p34_time:4.0  9.6152511460E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p37_time:4.0  9.1681327130E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p38_time:4.0  9.4370418850E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p39_time:4.0  1.0904576860E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p40_time:4.0  1.1719668100E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:p8_time:4.0  1.0598166350E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:pf_time:4.0  1.0227209190E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:ph_time:4.0  1.0462299080E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:prg_time:4.0  9.3234267300E+00      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:pzhm1_time:4.0  1.0675030160E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r20_time:4.0  9.5314222030E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r21_time:4.0  1.0184624740E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck1_time:4.0  9.0939845970E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck2_time:4.0  9.2167932160E+00      1.0000000000E+00       heads                
     oname:q_otype:lst_usecol:bar_time:4.0  0.0000000000E+00      1.0000000000E+00       qdrn                 
-    oname:q_otype:lst_usecol:gal_time:4.0  -5.8569000000E-01     1.0000000000E+00       qdrn                 
+    oname:q_otype:lst_usecol:gal_time:4.0  -5.8561461534E-01     1.0000000000E+00       qdrn                 
      oname:mr_otype:lst_usecol:bar_time:4  0.0000000000E+00      1.0000000000E+00       mr                   
-     oname:mr_otype:lst_usecol:gal_time:4  4.1002641372E-02      1.0000000000E+00       mr                   
+     oname:mr_otype:lst_usecol:gal_time:4  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r20_time:4  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r21_time:4  0.0000000000E+00      1.0000000000E+00       mr                   
-    oname:h_otype:lst_usecol:ap1_time:5.0  1.0816538930E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p23_time:5.0  1.1345295650E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p24_time:5.0  1.1506252150E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p25_time:5.0  1.0894508160E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p26_time:5.0  1.1639369760E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p27_time:5.0  1.2953647300E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p28_time:5.0  1.2417441720E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p29_time:5.0  1.3078482700E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p30_time:5.0  1.2761468060E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p32_time:5.0  9.2228628790E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p33_time:5.0  9.0909223150E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p34_time:5.0  9.7334182800E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p37_time:5.0  9.2929595280E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p38_time:5.0  9.5829192540E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p39_time:5.0  1.1096626610E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p40_time:5.0  1.1898166540E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:p8_time:5.0  1.0765662750E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:pf_time:5.0  1.0335507730E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:ph_time:5.0  1.0565537820E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:prg_time:5.0  9.3539648180E+00      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:pzhm1_time:5.0  1.0854874570E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r20_time:5.0  9.6922715260E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r21_time:5.0  1.0412908880E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck1_time:5.0  9.1196780420E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck2_time:5.0  9.2675835610E+00      1.0000000000E+00       heads                
-    oname:q_otype:lst_usecol:bar_time:5.0  -3.8855000000E-03     1.0000000000E+00       qdrn                 
-    oname:q_otype:lst_usecol:gal_time:5.0  -7.9800000000E-01     1.0000000000E+00       qdrn                 
+    oname:h_otype:lst_usecol:ap1_time:5.0  1.0816380830E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p23_time:5.0  1.1344610470E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p24_time:5.0  1.1506113680E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p25_time:5.0  1.0894416340E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p26_time:5.0  1.1639316350E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p27_time:5.0  1.2953554900E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p28_time:5.0  1.2417288330E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p29_time:5.0  1.3078103740E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p30_time:5.0  1.2760907470E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p32_time:5.0  9.2227030070E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p33_time:5.0  9.0907973470E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p34_time:5.0  9.7332018450E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p37_time:5.0  9.2927924930E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p38_time:5.0  9.5826869260E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p39_time:5.0  1.1096516910E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p40_time:5.0  1.1898042580E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:p8_time:5.0  1.0765204800E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:pf_time:5.0  1.0335250640E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:ph_time:5.0  1.0565316520E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:prg_time:5.0  9.3537310610E+00      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:pzhm1_time:5.0  1.0854762940E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r20_time:5.0  9.6920017230E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r21_time:5.0  1.0412715510E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck1_time:5.0  9.1195266600E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck2_time:5.0  9.2674059010E+00      1.0000000000E+00       heads                
+    oname:q_otype:lst_usecol:bar_time:5.0  -3.8567379080E-03     1.0000000000E+00       qdrn                 
+    oname:q_otype:lst_usecol:gal_time:5.0  -7.9788722631E-01     1.0000000000E+00       qdrn                 
      oname:mr_otype:lst_usecol:bar_time:5  0.0000000000E+00      1.0000000000E+00       mr                   
-     oname:mr_otype:lst_usecol:gal_time:5  3.6257541948E-02      1.0000000000E+00       mr                   
+     oname:mr_otype:lst_usecol:gal_time:5  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r20_time:5  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r21_time:5  0.0000000000E+00      1.0000000000E+00       mr                   
-    oname:h_otype:lst_usecol:ap1_time:6.0  1.0371153310E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p23_time:6.0  1.0971610420E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p24_time:6.0  1.1080025760E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p25_time:6.0  1.0438532680E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p26_time:6.0  1.1188629060E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p27_time:6.0  1.2565162110E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p28_time:6.0  1.2024878890E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p29_time:6.0  1.2732146010E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p30_time:6.0  1.2416773880E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p32_time:6.0  8.9066477980E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p33_time:6.0  8.7774955170E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p34_time:6.0  9.3825969960E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p37_time:6.0  8.9285283320E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p38_time:6.0  9.1907219960E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p39_time:6.0  1.0651093800E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p40_time:6.0  1.1482553560E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:p8_time:6.0  1.0360084540E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:pf_time:6.0  9.9958594910E+00      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:ph_time:6.0  1.0240320010E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:prg_time:6.0  9.1249476260E+00      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:pzhm1_time:6.0  1.0418819110E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r20_time:6.0  9.2794364160E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r21_time:6.0  9.9499248890E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck1_time:6.0  8.8994097450E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck2_time:6.0  9.0119316420E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:ap1_time:6.0  1.0371128170E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p23_time:6.0  1.0971418830E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p24_time:6.0  1.1080059130E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p25_time:6.0  1.0438535790E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p26_time:6.0  1.1188690420E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p27_time:6.0  1.2565287040E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p28_time:6.0  1.2024970750E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p29_time:6.0  1.2732149850E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p30_time:6.0  1.2416678500E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p32_time:6.0  8.9065766920E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p33_time:6.0  8.7773860610E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p34_time:6.0  9.3825396070E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p37_time:6.0  8.9284485120E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p38_time:6.0  9.1906472780E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p39_time:6.0  1.0651105630E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p40_time:6.0  1.1482621770E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:p8_time:6.0  1.0359982630E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:pf_time:6.0  9.9957582260E+00      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:ph_time:6.0  1.0240247870E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:prg_time:6.0  9.1248257250E+00      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:pzhm1_time:6.0  1.0418771020E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r20_time:6.0  9.2793602580E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r21_time:6.0  9.9498782780E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck1_time:6.0  8.8993287330E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck2_time:6.0  9.0118683710E+00      1.0000000000E+00       heads                
     oname:q_otype:lst_usecol:bar_time:6.0  0.0000000000E+00      1.0000000000E+00       qdrn                 
-    oname:q_otype:lst_usecol:gal_time:6.0  -4.8758000000E-01     1.0000000000E+00       qdrn                 
+    oname:q_otype:lst_usecol:gal_time:6.0  -4.8750138624E-01     1.0000000000E+00       qdrn                 
      oname:mr_otype:lst_usecol:bar_time:6  0.0000000000E+00      1.0000000000E+00       mr                   
-     oname:mr_otype:lst_usecol:gal_time:6  4.0499488152E-02      1.0000000000E+00       mr                   
+     oname:mr_otype:lst_usecol:gal_time:6  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r20_time:6  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r21_time:6  0.0000000000E+00      1.0000000000E+00       mr                   
-    oname:h_otype:lst_usecol:ap1_time:7.0  1.1284745080E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p23_time:7.0  1.1644959820E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p24_time:7.0  1.1944393320E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p25_time:7.0  1.1373514930E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p26_time:7.0  1.2096055870E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p27_time:7.0  1.3344414260E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p28_time:7.0  1.2812686190E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p29_time:7.0  1.3412401870E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p30_time:7.0  1.3080794720E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p32_time:7.0  9.8466937630E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p33_time:7.0  9.6770606130E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p34_time:7.0  1.0347510960E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p37_time:7.0  9.8020663640E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p38_time:7.0  1.0091501960E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p39_time:7.0  1.1561120120E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p40_time:7.0  1.2321397600E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:p8_time:7.0  1.1178336090E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:pf_time:7.0  1.1008252150E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:ph_time:7.0  1.1213642430E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:prg_time:7.0  1.0145654900E+01      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:pzhm1_time:7.0  1.1374447890E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r20_time:7.0  1.0172148940E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r21_time:7.0  1.0880897180E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck1_time:7.0  9.8848553670E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck2_time:7.0  9.9948085130E+00      1.0000000000E+00       heads                
-    oname:q_otype:lst_usecol:bar_time:7.0  -4.6200000000E-01     1.0000000000E+00       qdrn                 
-    oname:q_otype:lst_usecol:gal_time:7.0  -3.5668000000E-01     1.0000000000E+00       qdrn                 
+    oname:h_otype:lst_usecol:ap1_time:7.0  1.1284679200E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p23_time:7.0  1.1644884740E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p24_time:7.0  1.1944332080E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p25_time:7.0  1.1373453010E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p26_time:7.0  1.2096015070E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p27_time:7.0  1.3344359040E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p28_time:7.0  1.2812618480E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p29_time:7.0  1.3412349110E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p30_time:7.0  1.3080726790E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p32_time:7.0  9.8465995660E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p33_time:7.0  9.6769518640E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p34_time:7.0  1.0347391180E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p37_time:7.0  9.8019957800E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p38_time:7.0  1.0091434930E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p39_time:7.0  1.1561057340E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p40_time:7.0  1.2321334420E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:p8_time:7.0  1.1178295530E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:pf_time:7.0  1.1007811210E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:ph_time:7.0  1.1213191720E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:prg_time:7.0  1.0145325550E+01      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:pzhm1_time:7.0  1.1374340310E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r20_time:7.0  1.0172091410E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r21_time:7.0  1.0880836310E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck1_time:7.0  9.8847063600E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck2_time:7.0  9.9946872920E+00      1.0000000000E+00       heads                
+    oname:q_otype:lst_usecol:bar_time:7.0  -4.6195857776E-01     1.0000000000E+00       qdrn                 
+    oname:q_otype:lst_usecol:gal_time:7.0  -3.5655040980E-01     1.0000000000E+00       qdrn                 
      oname:mr_otype:lst_usecol:bar_time:7  0.0000000000E+00      1.0000000000E+00       mr                   
-     oname:mr_otype:lst_usecol:gal_time:7  5.3417691419E-02      1.0000000000E+00       mr                   
+     oname:mr_otype:lst_usecol:gal_time:7  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r20_time:7  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r21_time:7  0.0000000000E+00      1.0000000000E+00       mr                   
-    oname:h_otype:lst_usecol:ap1_time:8.0  1.0839831580E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p23_time:8.0  1.1334885050E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p24_time:8.0  1.1518556400E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p25_time:8.0  1.0909167890E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p26_time:8.0  1.1634366370E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p27_time:8.0  1.2953475920E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p28_time:8.0  1.2423731340E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p29_time:8.0  1.3083588020E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p30_time:8.0  1.2764833000E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p32_time:8.0  9.5168020890E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p33_time:8.0  9.3767044580E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p34_time:8.0  9.9687988950E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p37_time:8.0  9.4648465750E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p38_time:8.0  9.7076270590E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p39_time:8.0  1.1110805220E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p40_time:8.0  1.1905850120E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:p8_time:8.0  1.0799560660E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:pf_time:8.0  1.0628695280E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:ph_time:8.0  1.0848309320E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:prg_time:8.0  9.8560468070E+00      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:pzhm1_time:8.0  1.0920339390E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r20_time:8.0  9.7585770240E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r21_time:8.0  1.0436393770E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck1_time:8.0  9.6136271670E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck2_time:8.0  9.6916224510E+00      1.0000000000E+00       heads                
-    oname:q_otype:lst_usecol:bar_time:8.0  -2.0797000000E-01     1.0000000000E+00       qdrn                 
-    oname:q_otype:lst_usecol:gal_time:8.0  -1.6918000000E-01     1.0000000000E+00       qdrn                 
+    oname:h_otype:lst_usecol:ap1_time:8.0  1.0839789930E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p23_time:8.0  1.1334822960E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p24_time:8.0  1.1518501950E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p25_time:8.0  1.0909111080E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p26_time:8.0  1.1634331100E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p27_time:8.0  1.2953446590E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p28_time:8.0  1.2423701560E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p29_time:8.0  1.3083700930E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p30_time:8.0  1.2764867260E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p32_time:8.0  9.5167666910E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p33_time:8.0  9.3766422580E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p34_time:8.0  9.9687742080E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p37_time:8.0  9.4648253220E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p38_time:8.0  9.7076266330E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p39_time:8.0  1.1110746480E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p40_time:8.0  1.1905797210E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:p8_time:8.0  1.0799623650E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:pf_time:8.0  1.0628588590E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:ph_time:8.0  1.0848194250E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:prg_time:8.0  9.8559237990E+00      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:pzhm1_time:8.0  1.0920267000E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r20_time:8.0  9.7585905730E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r21_time:8.0  1.0436376010E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck1_time:8.0  9.6135633710E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck2_time:8.0  9.6915794440E+00      1.0000000000E+00       heads                
+    oname:q_otype:lst_usecol:bar_time:8.0  -2.0795773876E-01     1.0000000000E+00       qdrn                 
+    oname:q_otype:lst_usecol:gal_time:8.0  -1.6912186101E-01     1.0000000000E+00       qdrn                 
      oname:mr_otype:lst_usecol:bar_time:8  0.0000000000E+00      1.0000000000E+00       mr                   
-     oname:mr_otype:lst_usecol:gal_time:8  5.1982081393E-02      1.0000000000E+00       mr                   
+     oname:mr_otype:lst_usecol:gal_time:8  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r20_time:8  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r21_time:8  0.0000000000E+00      1.0000000000E+00       mr                   
-    oname:h_otype:lst_usecol:ap1_time:9.0  1.0746573380E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p23_time:9.0  1.1275992760E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p24_time:9.0  1.1434654960E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p25_time:9.0  1.0819381120E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p26_time:9.0  1.1548457030E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p27_time:9.0  1.2879713460E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p28_time:9.0  1.2348622230E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p29_time:9.0  1.3020400760E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p30_time:9.0  1.2704384220E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p32_time:9.0  9.4573645470E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p33_time:9.0  9.3206964420E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p34_time:9.0  9.9011052530E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p37_time:9.0  9.4039461150E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p38_time:9.0  9.6442966190E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p39_time:9.0  1.1022599830E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p40_time:9.0  1.1825354290E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:p8_time:9.0  1.0727408650E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:pf_time:9.0  1.0560928450E+01      1.0000000000E+00       heads                
-     oname:h_otype:lst_usecol:ph_time:9.0  1.0782351170E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:prg_time:9.0  9.8028323150E+00      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:pzhm1_time:9.0  1.0835129600E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r20_time:9.0  9.7124638250E+00      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:r21_time:9.0  1.0309052030E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck1_time:9.0  9.5641059890E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:rck2_time:9.0  9.6371837620E+00      1.0000000000E+00       heads                
-    oname:q_otype:lst_usecol:bar_time:9.0  -1.6792000000E-01     1.0000000000E+00       qdrn                 
-    oname:q_otype:lst_usecol:gal_time:9.0  -1.3658000000E-01     1.0000000000E+00       qdrn                 
+    oname:h_otype:lst_usecol:ap1_time:9.0  1.0746544880E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p23_time:9.0  1.1275922500E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p24_time:9.0  1.1434622400E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p25_time:9.0  1.0819332840E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p26_time:9.0  1.1548407260E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p27_time:9.0  1.2879658270E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p28_time:9.0  1.2348603850E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p29_time:9.0  1.3020435250E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p30_time:9.0  1.2704399050E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p32_time:9.0  9.4572833060E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p33_time:9.0  9.3205689760E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p34_time:9.0  9.9010292250E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p37_time:9.0  9.4038855040E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p38_time:9.0  9.6442554960E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p39_time:9.0  1.1022555550E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p40_time:9.0  1.1825318710E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:p8_time:9.0  1.0727406220E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:pf_time:9.0  1.0560667570E+01      1.0000000000E+00       heads                
+     oname:h_otype:lst_usecol:ph_time:9.0  1.0782144310E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:prg_time:9.0  9.8025915840E+00      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:pzhm1_time:9.0  1.0835039980E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r20_time:9.0  9.7124324710E+00      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:r21_time:9.0  1.0309031990E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck1_time:9.0  9.5639767050E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:rck2_time:9.0  9.6370906650E+00      1.0000000000E+00       heads                
+    oname:q_otype:lst_usecol:bar_time:9.0  -1.6785863958E-01     1.0000000000E+00       qdrn                 
+    oname:q_otype:lst_usecol:gal_time:9.0  -1.3649119301E-01     1.0000000000E+00       qdrn                 
      oname:mr_otype:lst_usecol:bar_time:9  0.0000000000E+00      1.0000000000E+00       mr                   
-     oname:mr_otype:lst_usecol:gal_time:9  5.2358262432E-02      1.0000000000E+00       mr                   
+     oname:mr_otype:lst_usecol:gal_time:9  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r20_time:9  0.0000000000E+00      1.0000000000E+00       mr                   
      oname:mr_otype:lst_usecol:r21_time:9  0.0000000000E+00      1.0000000000E+00       mr                   
-   oname:h_otype:lst_usecol:ap1_time:10.0  1.0788811230E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p23_time:10.0  1.1312496420E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p24_time:10.0  1.1450626110E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p25_time:10.0  1.0822282210E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p26_time:10.0  1.1534993480E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p27_time:10.0  1.2877485820E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p28_time:10.0  1.2358400450E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p29_time:10.0  1.3036956420E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p30_time:10.0  1.2725539970E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p32_time:10.0  9.3918333480E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p33_time:10.0  9.2641108050E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p34_time:10.0  9.8469779660E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p37_time:10.0  9.3810866790E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p38_time:10.0  9.6254465870E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p39_time:10.0  1.1033169940E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:p40_time:10.0  1.1834352560E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:p8_time:10.0  1.0755916290E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:pf_time:10.0  1.0479047110E+01      1.0000000000E+00       heads                
-    oname:h_otype:lst_usecol:ph_time:10.0  1.0706311920E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:prg_time:10.0  9.6748831350E+00      1.0000000000E+00       heads                
- oname:h_otype:lst_usecol:pzhm1_time:10.0  1.0814166410E+01      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:r20_time:10.0  9.7023879650E+00      1.0000000000E+00       heads                
-   oname:h_otype:lst_usecol:r21_time:10.0  1.0517314050E+01      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:rck1_time:10.0  9.4450011610E+00      1.0000000000E+00       heads                
-  oname:h_otype:lst_usecol:rck2_time:10.0  9.5344892160E+00      1.0000000000E+00       heads                
-   oname:q_otype:lst_usecol:bar_time:10.0  -2.3138000000E-03     1.0000000000E+00       qdrn                 
-   oname:q_otype:lst_usecol:gal_time:10.0  -2.9910000000E-01     1.0000000000E+00       qdrn                 
+   oname:h_otype:lst_usecol:ap1_time:10.0  1.0788597920E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p23_time:10.0  1.1312058910E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p24_time:10.0  1.1450397790E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p25_time:10.0  1.0822141510E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p26_time:10.0  1.1534897650E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p27_time:10.0  1.2877299600E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p28_time:10.0  1.2358135160E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p29_time:10.0  1.3036474070E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p30_time:10.0  1.2724893640E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p32_time:10.0  9.3917840800E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p33_time:10.0  9.2640652580E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p34_time:10.0  9.8468876760E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p37_time:10.0  9.3810337950E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p38_time:10.0  9.6253674990E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p39_time:10.0  1.1032995980E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:p40_time:10.0  1.1834129440E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:p8_time:10.0  1.0755659240E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:pf_time:10.0  1.0478832440E+01      1.0000000000E+00       heads                
+    oname:h_otype:lst_usecol:ph_time:10.0  1.0706118830E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:prg_time:10.0  9.6747928480E+00      1.0000000000E+00       heads                
+ oname:h_otype:lst_usecol:pzhm1_time:10.0  1.0814053350E+01      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:r20_time:10.0  9.7022898690E+00      1.0000000000E+00       heads                
+   oname:h_otype:lst_usecol:r21_time:10.0  1.0517101470E+01      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:rck1_time:10.0  9.4449492990E+00      1.0000000000E+00       heads                
+  oname:h_otype:lst_usecol:rck2_time:10.0  9.5344323670E+00      1.0000000000E+00       heads                
+   oname:q_otype:lst_usecol:bar_time:10.0  -2.2972690913E-03     1.0000000000E+00       qdrn                 
+   oname:q_otype:lst_usecol:gal_time:10.0  -2.9906530984E-01     1.0000000000E+00       qdrn                 
     oname:mr_otype:lst_usecol:bar_time:10  0.0000000000E+00      1.0000000000E+00       mr                   
-    oname:mr_otype:lst_usecol:gal_time:10  4.8513658201E-02      1.0000000000E+00       mr                   
+    oname:mr_otype:lst_usecol:gal_time:10  0.0000000000E+00      1.0000000000E+00       mr                   
     oname:mr_otype:lst_usecol:r20_time:10  0.0000000000E+00      1.0000000000E+00       mr                   
     oname:mr_otype:lst_usecol:r21_time:10  0.0000000000E+00      1.0000000000E+00       mr                   
 * model command line
