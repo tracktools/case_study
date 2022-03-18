@@ -8,10 +8,11 @@ import pyemu
 
 # --- pst files 
 cwd = 'pst_master'
+cwd = 'ml'
 org_pst_name ='cal_ml.pst'
 eval_pst_name = 'caleval_ml.pst'
 parrep=True
-
+'''
 # read pest control file 
 pst = pyemu.Pst(os.path.join(cwd, org_pst_name))
 
@@ -27,7 +28,7 @@ if parrep : pst.parrep(os.path.join(cwd,par_file))
 pst.control_data.noptmax=0
 pst.write(os.path.join(cwd,eval_pst_name))
 pyemu.helpers.run(f'pestpp-glm {eval_pst_name}', cwd=cwd)
-
+'''
 # --- plot heads and particle tracks for all cases 
 case_dirs = sorted([os.path.join(cwd,d) for d in os.listdir(cwd) if d.startswith('ml_')])
 
