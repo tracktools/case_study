@@ -432,197 +432,197 @@ pcf
  pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6423495.37_zone:1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       hk                    1.0000000000E+00      0.0000000000E+00      1          
                                  pname:rc_inst:0_ptype:cn_pstyle:m   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       rech                  1.0000000000E+00      0.0000000000E+00      1          
               pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_s   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cghb                  1.0000000000E+00      0.0000000000E+00      1          
-              pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cghb                  1.0000000000E+00      0.0000000000E+00      1          
               pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_w   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cghb                  1.0000000000E+00      0.0000000000E+00      1          
+              pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cghb                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gajac   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gajac   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:gajac   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:gajac   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:gajac   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:gajac   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:gajac   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gal   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
              pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bar   log                    factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       cdrn                  1.0000000000E+00      0.0000000000E+00      1          
-     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-  pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-    pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-          pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
-   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+          pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:majolan   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
    pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan1   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan4   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+  pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
             pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gajac   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan3   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan5   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan2   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+    pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
+        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval   tied                   factor                1.0000000000E+00      1.0000000000E-05      1.0000000000E+05       criv                  1.0000000000E+00      0.0000000000E+00      1          
  pname:hk_inst:0_ptype:pp_pstyle:m_x:407575.68_y:6431995.37_zone:1   pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1 
  pname:hk_inst:0_ptype:pp_pstyle:m_x:408075.68_y:6431995.37_zone:1   pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1 
  pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6431995.37_zone:1   pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1 
@@ -805,158 +805,158 @@ pcf
  pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6423995.37_zone:1   pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1 
  pname:hk_inst:0_ptype:pp_pstyle:m_x:409575.68_y:6423995.37_zone:1   pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1 
  pname:hk_inst:0_ptype:pp_pstyle:m_x:408575.68_y:6423495.37_zone:1   pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1 
-     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
-        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
-        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
-  pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
-       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
-    pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
-          pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
-   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval 
-       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
-         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
-   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+          pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
+       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
    pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval 
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
+        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
+   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
+  pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
             pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gajac              pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac 
+       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
+   pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
+     pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
       pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont 
-     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
-        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
-        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
-  pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
-       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
-    pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
-          pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
-   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+         pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+    pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
+        pname:riv_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval 
-       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
-         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
-   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+          pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
+       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
    pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval 
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
+        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
+   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
+  pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
             pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gajac              pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac 
+       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
+   pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
+     pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
       pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont 
-     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
-        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
-        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
-  pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
-       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
-    pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
-          pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
-   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+         pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+    pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
+        pname:riv_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval 
-       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
-         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
-   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+          pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
+       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
    pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval 
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
+        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
+   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
+  pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
             pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:gajac              pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac 
+       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
+   pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
+     pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
       pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont 
-     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
-        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
-        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
-  pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
-       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
-    pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
-          pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
-   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+         pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+    pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
+        pname:riv_inst:3_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval 
-       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
-         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
-   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+          pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
+       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
    pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval 
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
+        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
+   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
+  pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
             pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:gajac              pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac 
+       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
+   pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
+     pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
       pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont 
-     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
-        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
-        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
-  pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
-       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
-    pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
-          pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
-   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+         pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+    pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
+        pname:riv_inst:4_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval 
-       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
-         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
-   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+          pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
+       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
    pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval 
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
+        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
+   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
+  pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
             pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:gajac              pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac 
+       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
+   pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
+     pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
       pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont 
-     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
-        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
-        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
-  pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
-       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
-    pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
-          pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
-   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+         pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+    pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
+        pname:riv_inst:5_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval 
-       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
-         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
-   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+          pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
+       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
    pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval 
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
+        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
+   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
+  pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
             pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:gajac              pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac 
+       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
+   pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
+     pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
       pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont 
-     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
-        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
-        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
-  pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
-       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
-    pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
-          pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
-   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+         pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+    pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
+        pname:riv_inst:6_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval 
-       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
-         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
-   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+          pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
+       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
    pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval 
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
+        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
+   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
+  pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
             pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:gajac              pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac 
+       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
+   pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
+     pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
       pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont 
-     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
-        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
-        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
-  pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
-       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
-    pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
-          pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
-   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+         pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+    pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
+        pname:riv_inst:7_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval 
-       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
-         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
-   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+          pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:majolan            pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan 
+       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont 
    pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval 
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan1           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1 
+        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval 
+   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont 
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan4           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4 
+  pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont    pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont 
             pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gajac              pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac 
+       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont         pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont 
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan3           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3 
+   pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval     pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval 
+     pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval       pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval 
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan5           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5 
       pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont        pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont 
+         pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:haillan2           pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2 
+    pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont      pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont 
+        pname:riv_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval          pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval 
 * observation groups
 heads                
 qdrn                 
@@ -1529,29 +1529,29 @@ pname:hk_inst:0_ptype:pp_pstyle:m_x:409051.03_y:6427781.70_zone:1  1.0 * log(pna
 pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1  1.0 * log(pname:hk_inst:0_ptype:pp_pstyle:m_x:409075.68_y:6432495.37_zone:1) =   0.000000E+00 1.0000000000E-01     regulhk              
 pname:rc_inst:0_ptype:cn_pstyle:m  1.0 * log(pname:rc_inst:0_ptype:cn_pstyle:m) =   0.000000E+00                                 1.0000000000E-01     regulrech            
 pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_s  1.0 * log(pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_s) =   0.000000E+00              1.0000000000E-01     regulcghb            
-pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n  1.0 * log(pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n) =   0.000000E+00              1.0000000000E-01     regulcghb            
 pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_w  1.0 * log(pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_w) =   0.000000E+00              1.0000000000E-01     regulcghb            
+pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n  1.0 * log(pname:d_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:ghb_n) =   0.000000E+00              1.0000000000E-01     regulcghb            
 pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gal  1.0 * log(pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gal) =   0.000000E+00             1.0000000000E-01     regulcdrn            
 pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bar  1.0 * log(pname:cond_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bar) =   0.000000E+00             1.0000000000E-01     regulcdrn            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval) =   0.000000E+00     1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval) =   0.000000E+00        1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval) =   0.000000E+00        1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont) =   0.000000E+00  1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont) =   0.000000E+00       1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont) =   0.000000E+00    1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan) =   0.000000E+00          1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1) =   0.000000E+00         1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval) =   0.000000E+00   1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2) =   0.000000E+00         1.0000000000E-01     regulcriv            
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_aval) =   0.000000E+00    1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont) =   0.000000E+00       1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5) =   0.000000E+00         1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3) =   0.000000E+00         1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4) =   0.000000E+00         1.0000000000E-01     regulcriv            
-pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont) =   0.000000E+00   1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:majolan) =   0.000000E+00          1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_amont) =   0.000000E+00       1.0000000000E-01     regulcriv            
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_aval) =   0.000000E+00   1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan1) =   0.000000E+00         1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:noir_aval) =   0.000000E+00        1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:moulinat_amont) =   0.000000E+00   1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan4) =   0.000000E+00         1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:bussaguet_amont) =   0.000000E+00  1.0000000000E-01     regulcriv            
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:gajac) =   0.000000E+00            1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_amont) =   0.000000E+00       1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan3) =   0.000000E+00         1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_seuil_aval) =   0.000000E+00   1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_aval) =   0.000000E+00     1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan5) =   0.000000E+00         1.0000000000E-01     regulcriv            
 pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:blanc_amont) =   0.000000E+00      1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:haillan2) =   0.000000E+00         1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:jpt_ecl_amont) =   0.000000E+00    1.0000000000E-01     regulcriv            
+pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval  1.0 * log(pname:riv_inst:0_ptype:gr_usecol:3_pstyle:m_idx0:thil_aval) =   0.000000E+00        1.0000000000E-01     regulcriv            
 pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gal  1.0 * log(pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:gal) =   0.000000E+00             1.0000000000E-01     regulcdrn            
 pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bar  1.0 * log(pname:cond_inst:1_ptype:gr_usecol:3_pstyle:m_idx0:bar) =   0.000000E+00             1.0000000000E-01     regulcdrn            
 pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gal  1.0 * log(pname:cond_inst:2_ptype:gr_usecol:3_pstyle:m_idx0:gal) =   0.000000E+00             1.0000000000E-01     regulcdrn            
@@ -1570,7 +1570,7 @@ pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:gal  1.0 * log(pname:cond_inst
 pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bar  1.0 * log(pname:cond_inst:8_ptype:gr_usecol:3_pstyle:m_idx0:bar) =   0.000000E+00             1.0000000000E-01     regulcdrn            
 * regularization
 603 663.3000000000001 0.05 nomemsave 
-1.0 1e-10 1.0e10 linreg continue 
+1.0 1e-15 1.0e10 linreg continue 
 1.3 1.0e-2 1 1.5 1.5 0.5 
 ++svd_pack(redsvd)
 ++uncertainty(false)

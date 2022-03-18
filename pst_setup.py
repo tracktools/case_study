@@ -227,9 +227,9 @@ pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=
 pst.reg_data.phimlim = phimlim
 pst.reg_data.phimaccept = pst.reg_data.phimlim*1.1
 pst.reg_data.fracphim = 0.05
-pst.reg_data.wfmin = 1.0e-10
+pst.reg_data.wfmin = 1.0e-15
 pst.reg_data.wfinit = 1.0
-pst.reg_data.wfac = 1.3
+pst.reg_data.wfac = 1.5
 pst.reg_data.wtol = 1.0e-2
 
 # pestpp-glm options 
