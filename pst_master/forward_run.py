@@ -63,6 +63,18 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
 def main():
 
     try:
+       os.remove(r'ml_01/sim/hds.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_01/sim/hds.csv')
+    try:
+       os.remove(r'ml_01/sim/drn.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_01/sim/drn.csv')
+    try:
+       os.remove(r'ml_01/sim/mr.csv')
+    except Exception as e:
+       print(r'error removing tmp file:ml_01/sim/mr.csv')
+    try:
        os.remove(r'ml_02/sim/hds.csv')
     except Exception as e:
        print(r'error removing tmp file:ml_02/sim/hds.csv')
