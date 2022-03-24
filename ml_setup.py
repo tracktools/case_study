@@ -14,8 +14,8 @@ from tracktools import ParticleGenerator
 # ----- General settings ----                                                        
 #-----------------------------------#
 
-case_ids = [i for i in range(1,11)] # see surveys.xlsx
-#case_ids = [2]
+#case_ids = [i for i in range(1,11)] # see surveys.xlsx
+case_ids = [2]
 
 mf6_exe = 'mf6'
 mp7_exe = 'mp7'
@@ -412,7 +412,7 @@ for case_id in case_ids:
             hB = riv_df.loc[riv_name,'absolute_B']
         # linear interpolation
         riv_stg = xc * hB + (1 - xc) * hA # stage                             
-        z_bot = min(riv_stg-0.1, xc * zB + (1 - xc) * zA) # bottom (min 0.1 m)
+        z_bot = min(riv_stg-0.5, xc * zB + (1 - xc) * zA) # bottom (min 0.5m below stage)
         # conductivity (cell size dependent)
         riv_cond = par_df.loc['C_'+riv_name,'val'] * res_dic[node] 
         # integer river id as aux var
