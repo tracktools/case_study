@@ -76,10 +76,10 @@ allpdata = pth.get_alldata()
 # sort by rising pid and time 
 spdata = [ pdata[np.lexsort((pdata['particleid'], pdata['time']))] for pdata in allpdata]
 
-# get index of time = 1.0
-idx = [ int(np.argwhere(pdata['time']==1.)) for  pdata in spdata]
 
 '''
+# get index of time = 1.0
+idx = [ int(np.argwhere(pdata['time']==1.)) for  pdata in spdata]
 # get particle ids, dt, dx, dy, v
 pid = np.array([pdata['particleid'][i]  for i, pdata in zip(idx,spdata)])
 dt = np.array([pdata['time'][i+1] -1. for i, pdata in zip(idx,spdata)])
@@ -207,36 +207,34 @@ edp_df['riv_leak'] = 0.
 edp_df.loc[edp_df.endriv,'riv_leak'] = edp_df.loc[
         edp_df.endriv,
         'node'].apply(
-                lambda n: griv_leak_df.loc[n,'q'].sum())
+                lambda n: riv_leak_df.loc[n,'q'].sum())
 
 # compute cell inflows from cbc
 edp_df.loc[edp_df.endriv,'rivcell_q'] = edp_df.loc[edp_df.endriv,
         'node'].apply(get_cell_inflows)
 
-
 # compute particle mixing ratio
 edp_df['alpha'] = edp_df['riv_leak']/ (edp_df['riv_leak']+edp_df['rivcell_q'])
 edp_df.loc[edp_df.alpha.isnull(),'alpha']=0.
-
 
 # add particle velocity and merge value into edp_df
 alldata = pth.get_alldata()
 spdata = [ pdata[np.lexsort((pdata['particleid'], pdata['time']))] for pdata in alldata]
 pid = np.array([pdata['particleid'][0]  for pdata in spdata])
-dt = np.array([pdata['time'][1] for pdata in spdata])
-dx = np.array([ pdata['x'][1] - pdata['x'][0]  for pdata in spdata])
-dy = np.array([ pdata['y'][1] - pdata['y'][0]  for pdata in spdata])
+dt = np.array([pdata['time'][2] -pdata['time'][1] for pdata in spdata])
+dx = np.array([ pdata['x'][2] - pdata['x'][1]  for pdata in spdata])
+dy = np.array([ pdata['y'][2] - pdata['y'][1]  for pdata in spdata])
 v = np.sqrt(dx**2+dy**2)/dt
+
 
 v_df = pd.DataFrame({'pid':pid,'v':v,'dt':dt})
 v_df.set_index('pid', inplace=True)
 
 edp_df.loc[edp_df.particleid,'v'] = v_df.loc[edp_df.particleid,'v']
 
-
-# without budget, without velocity weighint 
-edp_df['alpha'] = edp_df['endriv'].astype(int)
-edp_df.loc[edp_df.particleid,'v'] = 1.
+# without budget, without velocity weighing
+#edp_df['alpha'] = edp_df['endriv'].astype(int)
+#edp_df.loc[edp_df.particleid,'v'] = 1.
 
 # Grouped weighted average of mixing ratios
 # When they are provided, results are labeled with particle group names 
@@ -261,12 +259,8 @@ mr_df.loc['others'] = 1 - mr_df.sum()
 mr_df
 
 
+edp_df.loc[(edp_df.grpnme == 'BAR') & (edp_df.endriv==True),['grpnme', 'endriv', 'riv_leak',
+       'rivcell_q', 'alpha', 'v', 'src']]
 
 edp_df.loc[(edp_df.grpnme == 'BAR') & (edp_df.endriv==True),'v'].mean()
-edp_df.loc[edp_df.grpnme == 'GAL' & edp_df.endriv==False,'v'].mean()
 
-edp_df.loc[(edp_df.grpnme == 'GAL') & (edp_df.endriv==True)]
-
-edp_df.loc[(edp_df.endriv==True),'particleid']
-
-particle id : 236 from GAL ends in RIV

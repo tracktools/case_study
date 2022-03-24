@@ -237,7 +237,7 @@ ghb = flopy.mf6.ModflowGwfghb(ml, stress_period_data = ghb_data,
 # ---- Recharge package
 print('ModflowGwfrcha...')
 
-rch_data = par_df.loc['rech','val']/(1000*365*86400) # mm/y to m/s
+rch_data = par_df.loc['rech','val'] # mm/y to m/s
 
 rcha = flopy.mf6.ModflowGwfrcha(ml, recharge = rch_data,
                                         save_flows = True)
