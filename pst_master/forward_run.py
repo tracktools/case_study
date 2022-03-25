@@ -48,7 +48,11 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
     ta.load_rivname_dic(rivname_file)
 
     # compute mixing ratio
-    mr = ta.compute_mixing_ratio()
+    mr = ta.compute_mixing_ratio(
+            on='river',
+            edp_cell_budget = True, 
+            v_weight = True
+            )
 
     # write sim file
     if 'river' not in mr.columns : mr['river']=0.
