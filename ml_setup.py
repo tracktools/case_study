@@ -14,8 +14,8 @@ from tracktools import ParticleGenerator
 # ----- General settings ----                                                        
 #-----------------------------------#
 
-case_ids = [i for i in range(1,11)] # see surveys.xlsx
-#case_ids = [2]
+#case_ids = [i for i in range(1,11)] # see surveys.xlsx
+case_ids = [2]
 
 mf6_exe = 'mf6'
 mp7_exe = 'mp7'
