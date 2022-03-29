@@ -14,11 +14,6 @@ cwd = 'ml'
 run_model=False
 
 
-
-
-
-
-'''
 org_pst_name ='cal_ml.pst'
 eval_pst_name = 'caleval_ml.pst'
 
@@ -45,8 +40,7 @@ res[['type', 'fmt', 'locname', 'time']] = res.name.apply(
             )))[['oname', 'otype', 'usecol', 'time']]
 
 
-
-# --- plot for one obs group 
+# --- plot one2one plot per obs. group 
 for g in ['heads', 'qdrn', 'mr']:
     res_g = res.loc[(res.group == g) & (res.weight > 0), :]
     mx = max(res_g.measured.max(), res_g.modelled.max())
@@ -94,7 +88,6 @@ if run_model :
     pst.write(os.path.join(cwd,eval_pst_name))
     pyemu.helpers.run(f'pestpp-glm {eval_pst_name}', cwd=cwd)
 
-'''
 # --- plot heads and particle tracks for all cases 
 case_dirs = sorted([os.path.join(cwd,d) for d in os.listdir(cwd) if d.startswith('ml_')])
 
@@ -160,82 +153,60 @@ fig.savefig(os.path.join('fig','hk.png'))
 
 
 
-
-
-
-
-
-
-
 # Addtional plot function
 
 
 
-# def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
-#     """
-#     -----------
-#     Description
-#     -----------
-#     Make plot of measurement_phi & regularization_phi vs number of model runs 
-#     -----------
-#     Parameters
-#     -----------
-#     - pst (pyemu) : pst handler load from pyemu.Pst()
-#     - filename (str) : name of the output file containing the plot
-#     - pest (str) : type of pest algorithm used ('++' or 'hp')
-#     - log (bool) : plot phi in logaritmic scale
-#     -----------
-#     Returns
-#     -----------
-#     phi progress plot
-#     -----------
-#     Examples
-#     -----------
-#     >>> phiplot = plot_phi_progress(pst, filename='cal_phi_progress.pdf')
-#     """
-#     if pest == 'hp':
-#         # ----- Get ofr file
-#         ofr_file = pst.filename.replace(".pst",".ofr")
-#         # ---- Load ofr data as dataframe
-#         df = pd.read_csv(ofr_file, skiprows = list(range(3)), sep = r'\s+', index_col = False)
-#         # ---- Extract usefull data for plot
-#         it, phi, reg_phi = df.iteration, df.measurement, df.regularisation
-#     else:
-#         # ----- Get iobj file
-#         iobj_file = pst.filename.replace(".pst",".iobj")
-#         # ---- Load iobj data as dataframe
-#         df = pd.read_csv(iobj_file)
-#         # ---- Extract usefull data for plot
-#         it, phi, reg_phi = df.iteration, df.measurement_phi, df.regularization_phi
-#     # Prepare Plot figure
-#     plt.figure(figsize=(9,6))
-#     plt.rc('font', family='serif', size=10)
-#     ax = plt.subplot(1,1,1)
-#     ax1=ax.twinx()
-#     # ---- Plot processing
-#     lphi, = ax.plot(it, phi,color='tab:blue',marker='.', label='$\Phi_{measured}$')
-#     lphilim = ax.hlines(pst.reg_data.phimlim, 0, len(it)-1, lw = 1,
-#               colors='navy', linestyles='solid', label='$\Phi_{limit}$')
-#     lphiacc = ax.hlines(pst.reg_data.phimaccept, 0, len(it)-1, lw=1,
-#                colors='darkblue', linestyles='dotted', label='$\Phi_{accept}$')
-#     # Plot phi regularization
-#     lphireg, = ax1.plot(it,reg_phi,color='tab:orange',marker='+', label='$\Phi_{regul}$')
-#     # Add log scale if required
-#     if log == True:
-#         ax.set_yscale('log', basey = 10)
-#     # ---- Set labels
-#     ax.set_xlabel('Iterations')
-#     ax.set_ylabel('Measurement objective function ($\Phi_m$)',color='tab:blue')
-#     ax1.set_ylabel('Regularization objective function ($\Phi_r$)',color='tab:orange')
-#     # ---- Set grid & legend
-#     ax.grid()
-#     lines = [lphi, lphilim, lphiacc, lphireg]
-#     plt.legend(lines, [l.get_label() for l in lines],loc= 'upper center')
-#     plt.tight_layout()
-#     # ---- Export plot if requiered
-#     if filename is not None:
-#         plt.savefig(filename)
-#     return(ax)
+def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
+    """
+    Plot of measurement_phi & regularization_phi vs number of model runs 
+
+    Parameters
+    -----------
+    - pst (pyemu) : pst handler load from pyemu.Pst()
+    - filename (str) : name of the output file containing the plot
+    - pest (str) : type of pest algorithm used ('++' or 'hp')
+    - log (bool) : plot phi in logaritmic scale
+
+    Examples
+    -----------
+    >>> phiplot = plot_phi_progress(pst, filename='cal_phi_progress.pdf')
+    """
+    # ----- Get iobj file
+    iobj_file = pst.filename.replace(".pst",".iobj")
+    # ---- Load iobj data as dataframe
+    df = pd.read_csv(iobj_file)
+    # ---- Extract usefull data for plot
+    it, phi, reg_phi = df.iteration, df.measurement_phi, df.regularization_phi
+    # Prepare Plot figure
+    plt.figure(figsize=(9,6))
+    plt.rc('font', family='serif', size=10)
+    ax = plt.subplot(1,1,1)
+    ax1=ax.twinx()
+    # ---- Plot processing
+    lphi, = ax.plot(it, phi,color='tab:blue',marker='.', label='$\Phi_{measured}$')
+    lphilim = ax.hlines(pst.reg_data.phimlim, 0, len(it)-1, lw = 1,
+       colors='navy', linestyles='solid', label='$\Phi_{limit}$')
+    lphiacc = ax.hlines(pst.reg_data.phimaccept, 0, len(it)-1, lw=1,
+        colors='darkblue', linestyles='dotted', label='$\Phi_{accept}$')
+    # Plot phi regularization
+    lphireg, = ax1.plot(it,reg_phi,color='tab:orange',marker='+', label='$\Phi_{regul}$')
+    # Add log scale if required
+    if log == True:
+    ax.set_yscale('log', basey = 10)
+    # ---- Set labels
+    ax.set_xlabel('Iterations')
+    ax.set_ylabel('Measurement objective function ($\Phi_m$)',color='tab:blue')
+    ax1.set_ylabel('Regularization objective function ($\Phi_r$)',color='tab:orange')
+    # ---- Set grid & legend
+    ax.grid()
+    lines = [lphi, lphilim, lphiacc, lphireg]
+    plt.legend(lines, [l.get_label() for l in lines],loc= 'upper center')
+    plt.tight_layout()
+    # ---- Export plot if requiered
+    if filename is not None:
+    plt.savefig(filename)
+    return(ax)
 
 
 # def split_by_size(x, size):
