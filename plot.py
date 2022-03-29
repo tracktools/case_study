@@ -424,3 +424,36 @@ fig.savefig(os.path.join('fig','hk.png'))
 # filename=os.path.join('fig', 'mr_1to1.png')
 # plot_obs_sim_mr(pst, filename, grpnme = 'mr')
 
+# # ---- Export to .shp
+
+# # input filename
+# headif = os.path.join('...')
+# pthif = os.path.join('...')
+# edpif = os.path.join('...')
+
+# # output filename
+# headof = os.path.join('...')
+# hkof = os.path.join('...')
+# pthof = os.path.join('...')
+# edpof = os.path.join('...')
+
+# # load data
+# head = flopy.utils.binaryfile.HeadFile(headf)
+# pth = flopy.utils.PathlineFile(pthf)
+# edp = flopy.utils.EndpointFile(edpf)
+
+# # export to .shp
+# flopy.export.utils.output_helper(headof, ml, {"hds":head})
+# ml.npf.export(hkof)
+# shp_pth = pthobj.write_shapefile(pathline_data=pth.get_alldata(),
+#                                one_per_particle=True,
+#                                direction='ending',
+#                                mg = ml.modelgrid,
+#                                shpname=pthof)
+
+# shp_edp = edpobj.write_shapefile(endpoint_data=edp.get_alldata(),
+#                                one_per_particle=True,
+#                                direction='ending',
+#                                mg = ml.modelgrid,
+#                                shpname=edpof)
+
