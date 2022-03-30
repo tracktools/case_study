@@ -13,6 +13,8 @@ tpl_ml_dir = 'ml_tpl'
 org_ml_dir = 'ml'
 pst_dir = 'pst'
 
+pst_name_suffix = ''
+
 # set path, relative to ml dir
 com_ext_dir = 'com_ext'
 
@@ -246,19 +248,22 @@ pst.pestpp_options['max_run_fail'] = 5
 #pst.parameter_groups.loc['hk',"derinc"] = 0.10
 
 # ---- write pst   
-pst.write(os.path.join(pf.new_d, f'cal_{model_name}.pst'))
+pst_name = f'cal_{pst_name_suffix}.pst' 
+pst.write(os.path.join(pf.new_d,pst_name ))
 
-# ---- run  pst   
-pyemu.helpers.run(f'pestpp-glm cal_{model_name}.pst', cwd=pf.new_d)
+# ---- run  pst with noptmax=0
+pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
+
+# write pst with noptmax =30
 pst.control_data.noptmax=30
-pst.write(os.path.join(pf.new_d, f'cal_{model_name}.pst'))
+pst.write(os.path.join(pf.new_d, pst_name))
 
 # start workers
+'''
 pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
 
-'''
 import pyemu
 pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=40,
                               worker_root= 'workers',cleanup=False,

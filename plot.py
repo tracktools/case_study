@@ -9,30 +9,41 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 
 # --- pst files 
-cwd = 'pst_master'
-#cwd = 'ml'
-run_model=True
 
-org_pst_name ='cal_ml.pst'
-eval_pst_name = 'caleval_ml.pst'
+# completed PEST run - calibrated parameter set
+cal_dir = 'pst_master' 
+cal_pst_name ='cal_ml.pst'
+par_file = cal_pst_name.replace('pst','.par')
+
+# evaluation PEST run (noptmax=0) 
+eval_dir = 'pst'  
+eval_pst_name = 'eval_ml.pst'
 
 # read pest control file 
-pst = pyemu.Pst(os.path.join(cwd, org_pst_name))
+cal_pst = pyemu.Pst(os.path.join(cal_dir, cal_pst_name))
 
-# plot calibration results
-phiprog = pst.plot(kind='phi_progress')
+# plot phi progress
+phiprog = cal_pst.plot(kind='phi_progress')
 phiprog.get_figure().savefig(os.path.join('fig','phiprog.png'))
 
-phipie = pst.plot(kind="phi_pie")
+# run model with final parameters 
+cal_pst.parrep(os.path.join(cal_dir,par_file))
+cal_pst.control_data.noptmax=0
+cal_pst.write(os.path.join(eval_dir,eval_pst_name))
+
+pyemu.helpers.run(f'pestpp-glm {eval_pst_name}', cwd=eval_dir)
+
+# evaluation 
+eval_pst = pyemu.Pst(os.path.join(eval_dir, eval_pst_name))
+phipie = eval_pst.plot(kind="phi_pie")
 phipie.get_figure().savefig(os.path.join('fig','phipie.png'))
 
 # not intuitive 
-one2one = pst.plot(kind="1to1")
+one2one = eval_pst.plot(kind="1to1")
 one2one[1].savefig(os.path.join('fig','one2one.png'))
 
-
 #fetch residuals and add columns from name
-res = pst.res
+res = eval_pst.res
 res[['type', 'fmt', 'locname', 'time']] = res.name.apply(
     lambda x: pd.Series(
         dict([s.split(':') for s in x.split('_') if ':' in s]
@@ -79,16 +90,9 @@ for g in ['heads', 'qdrn', 'mr']:
         axis=1)
     fig.savefig(os.path.join('fig',f'one2one_{g}.png'))
 
-# run model with final parameters 
-if run_model : 
-    par_file = org_pst_name.replace('pst','par')
-    pst.parrep(os.path.join(cwd,par_file))
-    pst.control_data.noptmax=0
-    pst.write(os.path.join(cwd,eval_pst_name))
-    pyemu.helpers.run(f'pestpp-glm {eval_pst_name}', cwd=cwd)
 
 # --- plot heads and particle tracks for all cases 
-case_dirs = sorted([os.path.join(cwd,d) for d in os.listdir(cwd) if d.startswith('ml_')])
+case_dirs = sorted([os.path.join(eval_dir,d) for d in os.listdir(eval_dir) if d.startswith('ml_')])
 
 for case_dir in case_dirs: 
 
@@ -150,7 +154,6 @@ fig.savefig(os.path.join('fig','hk.png'))
 
 
 
-'''
 
 # Addtional plot function
 
@@ -192,7 +195,7 @@ def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
     lphireg, = ax1.plot(it,reg_phi,color='tab:orange',marker='+', label='$\Phi_{regul}$')
     # Add log scale if required
     if log == True:
-    ax.set_yscale('log', basey = 10)
+        ax.set_yscale('log', basey = 10)
     # ---- Set labels
     ax.set_xlabel('Iterations')
     ax.set_ylabel('Measurement objective function ($\Phi_m$)',color='tab:blue')
@@ -204,10 +207,10 @@ def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
     plt.tight_layout()
     # ---- Export plot if requiered
     if filename is not None:
-    plt.savefig(filename)
+        plt.savefig(filename)
     return(ax)
 
-
+'''
 # def split_by_size(x, size):
 #     """
 #     -----------
@@ -380,8 +383,8 @@ def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
 
 # # ---- Usage
 # # Phi progress
-# filename=os.path.join('fig', 'phi_progress.pdf')
-# ax = plot_phi_progress(pst, filename, pest='++', log=False)
+filename=os.path.join('fig', 'phi_progress.pdf')
+ax = plot_phi_progress(cal_pst, filename, pest='++', log=False)
 # # Parameters evolution
 # params, parnames = [], []
 # for p in pst.parameter_data.index:
