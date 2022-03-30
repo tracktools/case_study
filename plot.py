@@ -10,9 +10,8 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 # --- pst files 
 cwd = 'pst_master'
-cwd = 'ml'
-run_model=False
-
+#cwd = 'ml'
+run_model=True
 
 org_pst_name ='cal_ml.pst'
 eval_pst_name = 'caleval_ml.pst'
@@ -151,7 +150,7 @@ fig.savefig(os.path.join('fig','hk.png'))
 
 
 
-
+'''
 
 # Addtional plot function
 
@@ -232,7 +231,7 @@ def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
 #     res = [ x[i:i + size] for i in range(0, len(x), size) ]
 #     return(res)
 
-
+'''
 
 # def plot_params_evolution(pst, params, filename, parnames=None, pest = '++', plot_type = 'bar'):
 #     """
