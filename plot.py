@@ -12,12 +12,12 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 # completed PEST run - calibrated parameter set
 cal_dir = 'pst_master' 
-cal_pst_name ='cal_ml.pst'
-par_file = cal_pst_name.replace('pst','19.par')
+cal_pst_name ='cal.pst'
+par_file = cal_pst_name.replace('pst','par')
 
 # evaluation PEST run (noptmax=0) 
 eval_dir = 'pst'  
-eval_pst_name = 'eval_ml.pst'
+eval_pst_name = 'eval.pst'
 
 # read pest control file 
 cal_pst = pyemu.Pst(os.path.join(cal_dir, cal_pst_name))

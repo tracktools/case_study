@@ -226,9 +226,9 @@ cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
 pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
 
 # regularization settings
-pst.reg_data.phimlim = phimlim
+pst.reg_data.phimlim = phimlim*1.5
 pst.reg_data.phimaccept = pst.reg_data.phimlim*1.1
-pst.reg_data.fracphim = 0.10
+pst.reg_data.fracphim = 0.2
 pst.reg_data.wfmin = 1.0e-10
 pst.reg_data.wfinit = 1e-3
 pst.reg_data.wfac = 1.5
@@ -246,9 +246,12 @@ pst.pestpp_options['max_run_fail'] = 5
 
 # set derinc values for pp
 #pst.parameter_groups.loc['hk',"derinc"] = 0.10
+pst.parameter_groups.loc[ pst.parameter_groups.index,'forcen'] = 'always_3'
+pst.parameter_groups.loc[ pst.parameter_groups.index,'derinc'] = 0.05
+pst.parameter_groups.loc[ pst.parameter_groups.index,'dermthd'] = 'best_fit'
 
 # ---- write pst   
-pst_name = f'cal_{pst_name_suffix}.pst' 
+pst_name = f'cal{pst_name_suffix}.pst' 
 pst.write(os.path.join(pf.new_d,pst_name ))
 
 # ---- run  pst with noptmax=0
@@ -259,11 +262,11 @@ pst.control_data.noptmax=30
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # start workers
-'''
-pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=64,
+
+pyemu.helpers.start_workers("pst",'pestpp-glm','cal.pst',num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
-
+'''
 import pyemu
 pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=40,
                               worker_root= 'workers',cleanup=False,
