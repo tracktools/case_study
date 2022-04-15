@@ -136,6 +136,7 @@ for case_dir in case_dirs:
             index_cols=0, prefix='mr',obsgp = 'mr')
 
 pf.add_py_function('helpers.py','run_cases()',is_pre_cmd=False)
+pf.add_py_function('helpers.py','run_case()',is_pre_cmd=None)
 pf.add_py_function('helpers.py','ptrack_pproc()',is_pre_cmd=None)
 pf.add_py_function('helpers.py','compute_glob()',is_pre_cmd=None)
 
