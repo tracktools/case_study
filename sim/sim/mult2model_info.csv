@@ -1,3 +1,0 @@
-,org_file,model_file,use_cols,index_cols,fmt,sep,head_rows,upper_bound,lower_bound,operator,zero_based
-0,org/drn_spd_1.txt,ext/drn_spd_1.txt,[2],[4],free, ,0,[1e+30],[-1e+30],d,False
-1,org/wel_spd_1.txt,ext/wel_spd_1.txt,[2],[3],free, ,0,[1e+30],[-1e+30],d,False
