@@ -129,9 +129,36 @@ obs['obsval']=0.
 pst.model_command = ['python3 forward_run.py'] 
 
 # test model run with pest
+cwd = pf.new_d
 pst_name = 'sim.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
-pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
+pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=cwd)
+
+# jactest
+pst.parameter_groups['inctyp'] = 'absolute'
+pst.parameter_groups.loc['hdrn','derinc']=0.1
+pst.parameter_groups.loc['qwell','derinc']=10./3600
+jactest_df = pyemu.helpers.build_jac_test_csv(pst,5)
+jactest_df.to_csv(os.path.join(cwd,'jactest_in.csv'))
+
+# sweep option
+pst.pestpp_options['sweep_parameter_csv_file'] = 'jactest_in.csv'
+pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
+
+# write
+pst.write(os.path.join(cwd,pst_name))
+
+# run
+pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=64,
+                              worker_root= 'workers',cleanup=False,
+                                master_dir='pst_master')
+
+'''
+
+pyemu.plot.plot_utils.plot_jac_test(csv_in,csv_out)
+        targetobs=obs_list,
+        outputdirectory=pdf_dir)
+
 
 
 # --- setup pest-free model interface 
@@ -154,4 +181,5 @@ info_df.to_csv(info_file,index=False)
 import helpers
 cwd = 'sim/sim'
 helpers.run(cwd=cwd)
+'''
 
