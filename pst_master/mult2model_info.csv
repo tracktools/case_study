@@ -1,24 +1,3 @@
-,org_file,model_file,use_cols,index_cols,fmt,sep,head_rows,upper_bound,lower_bound,operator,mlt_file,fac_file,pp_file,pp_fill_value,pp_lower_limit,pp_upper_limit,zone_file,zero_based
-0,org/k.txt,com_ext/k.txt,,,free,,0,1.0,1e-06,m,mult/hk_inst0_pilotpoint.csv,hk_inst0pp.fac,hk_inst0pp.dat,1.0,1e-10,10000000000.0,hk_inst0pp.dat.zone,False
-1,org/rech_spd_1.txt,com_ext/rech_spd_1.txt,,,free,,0,1.5854895991882293e-08,1.5854895991882293e-09,m,mult/rc_inst0_constant.csv,,,,,,,False
-2,org/ghb_spd_1.txt,com_ext/ghb_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/d_inst0_grid.csv,,,,,,,False
-3,org/drn_spd_1.txt,ml_01/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst0_grid.csv,,,,,,,False
-4,org/riv_spd_1.txt,ml_01/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst0_grid.csv,,,,,,,False
-5,org/drn_spd_1.txt,ml_02/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst1_grid.csv,,,,,,,False
-6,org/riv_spd_1.txt,ml_02/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst1_grid.csv,,,,,,,False
-7,org/drn_spd_1.txt,ml_03/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst2_grid.csv,,,,,,,False
-8,org/riv_spd_1.txt,ml_03/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst2_grid.csv,,,,,,,False
-9,org/drn_spd_1.txt,ml_04/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst3_grid.csv,,,,,,,False
-10,org/riv_spd_1.txt,ml_04/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst3_grid.csv,,,,,,,False
-11,org/drn_spd_1.txt,ml_05/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst4_grid.csv,,,,,,,False
-12,org/riv_spd_1.txt,ml_05/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst4_grid.csv,,,,,,,False
-13,org/drn_spd_1.txt,ml_06/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst5_grid.csv,,,,,,,False
-14,org/riv_spd_1.txt,ml_06/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst5_grid.csv,,,,,,,False
-15,org/drn_spd_1.txt,ml_07/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst6_grid.csv,,,,,,,False
-16,org/riv_spd_1.txt,ml_07/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst6_grid.csv,,,,,,,False
-17,org/drn_spd_1.txt,ml_08/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst7_grid.csv,,,,,,,False
-18,org/riv_spd_1.txt,ml_08/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst7_grid.csv,,,,,,,False
-19,org/drn_spd_1.txt,ml_09/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst8_grid.csv,,,,,,,False
-20,org/riv_spd_1.txt,ml_09/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst8_grid.csv,,,,,,,False
-21,org/drn_spd_1.txt,ml_10/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst9_grid.csv,,,,,,,False
-22,org/riv_spd_1.txt,ml_10/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst9_grid.csv,,,,,,,False
+,org_file,model_file,use_cols,index_cols,fmt,sep,head_rows,upper_bound,lower_bound,operator,zero_based
+0,org/drn_spd_1.txt,ext/drn_spd_1.txt,[2],[4],free, ,0,[1e+30],[-1e+30],d,False
+1,org/wel_spd_1.txt,ext/wel_spd_1.txt,[2],[3],free, ,0,[1e+30],[-1e+30],d,False

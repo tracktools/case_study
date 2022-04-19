@@ -164,6 +164,7 @@ drn_inst0_idx = par.loc[(par.pargp=='cdrn') & (par.inst == 0)].index
 drn_tied_idx = par.loc[(par.pargp=='cdrn') & (par.inst > 0)].index
 
 par.loc[riv_tied_idx,'partrans'] = 'tied'
+par.loc[drn_tied_idx,'partrans'] = 'tied'
 
 for i in range(1,ninst):
     # tie criv
@@ -262,14 +263,9 @@ pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 # write pst with noptmax =30
 pst.control_data.noptmax=30
 pst.write(os.path.join(pf.new_d, pst_name))
-
+'''
 # start workers
 pyemu.helpers.start_workers("pst",'pestpp-glm','cal.pst',num_workers=64,
-                              worker_root= 'workers',cleanup=False,
-                                master_dir='pst_master')
-'''
-import pyemu
-pyemu.helpers.start_workers("pst",'pestpp-glm','cal_ml.pst',num_workers=40,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
 '''
