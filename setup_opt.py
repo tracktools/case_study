@@ -16,8 +16,9 @@ gis_dir = 'gis'
 tpl_ml_dir = 'ml_tpl' 
 
 # calibrated model 
-cal_ml_dir = 'ml'
+cal_ml_dir = 'pst'
 
+# optimization directory
 opt_dir = 'opt'
 
 # set path, relative to ml dir
@@ -272,7 +273,8 @@ gs_cov = grid_gs.covariance_matrix(
 pcov.replace(gs_cov)
 
 pcov.to_ascii(os.path.join(pf.new_d,'pcov.txt'))
-pcov.to_binary(os.path.join(pf.new_d,'pcov.jcb'))
+#pcov.to_binary(os.path.join(pf.new_d,'pcov.jcb'))
+pcov.to_uncfile(os.path.join(pf.new_d,'pcov.unc'))
 
 #plt.imshow(np.log10(pcov.x))
 
@@ -331,7 +333,7 @@ pst.pestpp_options['opt_obj_func'] = obj_obsnme
 pst.pestpp_options['opt_direction'] = 'min'
 
 # prior parameter covariance matrix 
-#pst.pestpp_options['parcov'] = 'pcov.jcb'
+pst.pestpp_options['parcov'] = 'pcov.unc'
 
 # Number of SLP iterations (if noptmax = 1: LP)
 pst.control_data.noptmax = 1
