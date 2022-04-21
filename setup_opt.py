@@ -16,7 +16,7 @@ gis_dir = 'gis'
 tpl_ml_dir = 'ml_tpl' 
 
 # calibrated model 
-cal_ml_dir = 'pst'
+cal_ml_dir = 'cal'
 
 # optimization directory
 opt_dir = 'opt'
@@ -163,18 +163,23 @@ prop_file = os.path.join(sim_dir,'ext','drn_spd_1.txt')
 pargp='hdrn'
 hdrn_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='h',
-                  pargp='hdrn', index_cols=[4], 
+                  pargp=pargp, index_cols=[4], 
                   use_cols=[2],
+                  lower_bound=par_df.loc[pargp,'parlbnd'], upper_bound=par_df.loc[pargp,'parubnd'],
+                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
                   transform='none',
                   par_type='grid',
                   par_style='direct')
 
 # well discharge rate  
 prop_file = os.path.join(sim_dir,'ext','well_spd_1.txt')
+pargp='qwel'
 qwel_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='q',
-                  pargp='qwel', index_cols=[3], 
+                  pargp=pargp, index_cols=[3], 
                   use_cols=[2], use_rows=[7,8],
+                  lower_bound=par_df.loc[pargp,'parlbnd'], upper_bound=par_df.loc[pargp,'parubnd'],
+                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
                   transform='none',
                   par_type='grid',
                   par_style='direct')
@@ -250,6 +255,11 @@ for i in range(1,ninst):
     idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
     par.loc[idx,'partied'] = drn_inst0_idx.values
 
+# --- Derivative calculation
+
+pst.parameter_groups.loc['forcen'] = 'always_3'
+pst.parameter_groups.loc['derinc'] = 0.1
+pst.parameter_groups.loc['dermthd'] = 'best_fit'
 
 # --- Prior parameter covariance matrix 
 
@@ -319,7 +329,7 @@ obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 # constraint definition (mr < ref_value)
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
-obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.30
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.05
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obgnme']='l_mr'
 pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
 
@@ -328,7 +338,7 @@ pst.pestpp_options['opt_dec_var_groups'] = ['qwel','hdrn']
 
 # objective function definition 
 obj_obsnme = 'oname:glob_otype:lst_usecol:q_time:99.0'
-obs.loc[obj_obsnme,'weight']=1
+obs.loc[obj_obsnme,'weight']=0.
 pst.pestpp_options['opt_obj_func'] = obj_obsnme
 pst.pestpp_options['opt_direction'] = 'min'
 
@@ -336,14 +346,14 @@ pst.pestpp_options['opt_direction'] = 'min'
 pst.pestpp_options['parcov'] = 'pcov.unc'
 
 # Number of SLP iterations (if noptmax = 1: LP)
-pst.control_data.noptmax = 1
+pst.control_data.noptmax = 5
 
 # SLP options 
 pst.pestpp_options['opt_coin_log'] = 4 # verbosity level of simplex solver 
 pst.pestpp_options['opt_recalc_chance_every'] = 1
 
 # risk 
-risk = 0.05
+risk = 0.5
 pst.pestpp_options['opt_risk'] = risk
 
 # ---- Write pst   
@@ -351,13 +361,9 @@ pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # --- Run pestpp-opt
-pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
+#pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
-'''
 # start workers
-pyemu.helpers.start_workers("pst",'pestpp-opt',pst_name,num_workers=64,
-                              worker_root= 'workers',cleanup=True,
+pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=5,
+                              worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
-'''
-
-

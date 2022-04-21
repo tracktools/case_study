@@ -60,7 +60,7 @@ pp_df = pf.add_parameters(filenames=prop_filename, par_type="pilotpoint",
                    par_name_base='hk',pargp=pargp, geostruct=grid_gs,
                    lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
                    ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                   zone_array=zone_array,pp_space=os.path.join('..',gis_dir,'pp.shp'))
+                   zone_array=zone_array,pp_space=pp_filename)
 
 # get names of outer pp (will be tied)
 ppo_idx = pp_df.loc[pp_df.name.str.startswith('ppo')].index
@@ -253,10 +253,10 @@ pst.pestpp_options['panther_agent_no_ping_timeout_secs'] = 3600
 pst.pestpp_options['max_run_fail'] = 5
 
 # set derinc values for pp
-#pst.parameter_groups.loc['hk',"derinc"] = 0.10
 pst.parameter_groups.loc[ pst.parameter_groups.index,'forcen'] = 'always_3'
 pst.parameter_groups.loc[ pst.parameter_groups.index,'derinc'] = 0.05
-pst.parameter_groups.loc[ pst.parameter_groups.index,'dermthd'] = 'best_fit'
+pst.parameter_groups.loc[ pst.parameter_groups.index,'dermthd'] = 'parabolic'
+pst.parameter_groups.loc['hk',"derinc"] = 0.10
 
 # ---- write pst   
 pst_name = f'cal{pst_name_suffix}.pst' 
@@ -268,9 +268,8 @@ pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 # write pst with noptmax =30
 pst.control_data.noptmax=30
 pst.write(os.path.join(pf.new_d, pst_name))
-'''
+
 # start workers
-pyemu.helpers.start_workers("pst",'pestpp-glm','cal.pst',num_workers=64,
+pyemu.helpers.start_workers("pst",'pestpp-glm',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
-'''
