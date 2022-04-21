@@ -1,72 +1,164 @@
 import os, sys, shutil
-import re
 import pandas as pd
 import numpy as np
 import flopy
 import pyemu
 import helpers
 
-# --- settings
+
 mf6_exe = 'mf6'
 
-# parameter data (initial values)
-par_df = pd.read_excel(os.path.join('data','par.xlsx'), index_col = 0)
+# set paths, relative to cwd
+data_dir = 'data'
+gis_dir = 'gis'
 
-# simulation directory
-sim_dir = 'sim'
+# template model, for spatial reference only
+tpl_ml_dir = 'ml_tpl' 
 
 # calibrated model 
-org_model_ws = os.path.join('pst','ml_01')
+cal_ml_dir = 'ml'
 
-# temporary model 
-tmp_model_ws = os.path.join(sim_dir,'tmp')
+opt_dir = 'opt'
 
-# simulation model  
-sim_model_ws = os.path.join(sim_dir,'sim')
+# set path, relative to ml dir
+com_ext_dir = 'com_ext'
 
-# ---- processing
+# set paths, relative to case_dirs
+sim_dir =  'sim' 
+ext_dir = 'ext'
 
-# clear dirs
-helpers.clear_dirs([tmp_model_ws,sim_model_ws])
+# parameter data (prior confidence interval) 
+par_df = pd.read_excel(os.path.join(data_dir,'par.xlsx'), index_col = 0)
 
-# clear dir and cp calibrated model
-if os.path.exists(tmp_model_ws): shutil.rmtree(tmp_model_ws)
+# ---- load mf model and set spatial reference (grid cell centroids)
+model_name = 'ml' 
 
-shutil.copytree(org_model_ws, tmp_model_ws)
+sim = flopy.mf6.MFSimulation.load(sim_ws=tpl_ml_dir,exe_name=mf6_exe)
 
-# load original model with props from ../com_ext
-sim = flopy.mf6.MFSimulation.load(sim_ws=org_model_ws, exe_name=mf6_exe)
+ml = sim.get_model(model_name)
+ncpl = ml.modelgrid.ncpl
 
-# set all_data_internal and write to tmp dir
-sim.set_sim_path(tmp_model_ws)
-sim.write_simulation() 
-sim.tdis.perioddata = [ (1, 1, 1) ]
+sr = {i:(x,y) for i,x,y in zip(range(ncpl),
+    ml.modelgrid.xcellcenters,ml.modelgrid.ycellcenters)}
 
-# clear former ext files 
-ext_dir = os.path.join(tmp_model_ws,'ext')
-helpers.clear_dirs([ext_dir])
+# -----------------------------------------------------------------
+# ---------------  initialize PstFrom instance  -------------------
+# -----------------------------------------------------------------
 
-# set simulation parameter data as external 
-ml = sim.get_model('ml')
-ml.drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
-ml.wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
-
-# write simulation with new external files 
-sim.write_simulation()
-
-# run model 
-helpers.run_case(case_dir=tmp_model_ws)
-
-# ---- initialize PstFrom instance 
-pf = pyemu.utils.PstFrom(original_d=tmp_model_ws, new_d=sim_model_ws,
-                 remove_existing=True,
+pf = pyemu.utils.PstFrom(original_d=cal_ml_dir, new_d=opt_dir,
+                 remove_existing=True,spatial_reference=sr,
                  longnames=True,
                  zero_based=False)
 
-# ---- parameters  
+# -----------------------------------------------------------------
+# ---  parameter and observation settings for history matching  ---
+# -----------------------------------------------------------------
+
+# fetch list of case directories (without last=99, for sim)
+case_dirs = sorted([d for d in os.listdir('ml') if d.startswith('ml_')])[:-1]
+
+# --- process case independent parameters
+# a = twice largest spacing between pp
+v = pyemu.geostats.ExpVario(contribution=1.0,a=2000.)
+grid_gs = pyemu.geostats.GeoStruct(variograms=v, transform='log')
+
+prop_filename =os.path.join('com_ext','k.txt')
+pp_filename =os.path.join('..',gis_dir,'pp.shp')
+
+zone_array = np.ones((1,ml.modelgrid.ncpl))
+pargp='hk'
+
+pp_df = pf.add_parameters(filenames=prop_filename, par_type="pilotpoint",
+                   par_name_base='hk',pargp=pargp, geostruct=grid_gs,
+                   lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                   ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                   zone_array=zone_array,pp_space=os.path.join('..',gis_dir,'pp.shp'))
+
+# get names of outer pp (will be tied)
+ppo_idx = pp_df.loc[pp_df.name.str.startswith('ppo')].index
+
+# recharge
+prop_filename = os.path.join('com_ext','rech_spd_1.txt')
+pargp = 'rech'  
+pf.add_parameters(filenames=prop_filename, 
+                  par_name_base='rc',
+                  pargp=pargp,
+                  lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                  par_type='constant')
+
+# ghb cond
+prop_filename = os.path.join('com_ext','ghb_spd_1.txt')
+pargp='cghb'
+pf.add_parameters(filenames=prop_filename, 
+                  par_name_base='d',
+                  pargp=pargp, index_cols=[4], 
+                  use_cols=[3],
+                  lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                  par_type='grid')
+
+# -- Iterate over cases
+for case_dir in case_dirs:
+
+    case_id = int(case_dir.split('_')[1])
+
+    # --- Case-dependent parameter processing 
+
+    # drn cond
+    prop_filename = os.path.join(case_dir,'ext','drn_spd_1.txt')
+    pargp='cdrn'
+    pf.add_parameters(filenames=prop_filename, 
+                      par_name_base=['cond'],
+                      pargp=pargp, index_cols=[4], 
+                      use_cols=[3],
+                      lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                      ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                      par_type='grid')
+
+    # river cond
+    prop_filename = os.path.join(case_dir,'ext','riv_spd_1.txt')
+    pargp='criv'
+    pf.add_parameters(filenames=prop_filename, 
+                      par_name_base='riv',
+                      pargp=pargp, index_cols=[6], 
+                      use_cols=[3],
+                      lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                      ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                      par_type='grid')
+
+    # --- Observation processing
+    # heads
+    hds_filename = os.path.join(case_dir,sim_dir,'hds.csv')
+
+    hds_df = pf.add_observations(hds_filename, insfile=hds_filename+'.ins',
+            index_cols='time', obsgp = 'heads',
+            prefix='h')
+
+    # drain discharge
+    drn_filename = os.path.join(case_dir,sim_dir,'drn.csv')
+
+    drn_df = pf.add_observations(drn_filename, insfile=drn_filename+'.ins',
+            index_cols=0, prefix='q', obsgp = 'qdrn')
+
+    # mixing ratios 
+    mr_filename = os.path.join(case_dir,sim_dir,'mr.csv')
+
+    mr_df = pf.add_observations(mr_filename, insfile=mr_filename+'.ins',
+            index_cols=0, prefix='mr',obsgp = 'mr')
+
+
+
+# -----------------------------------------------------------------
+# -------------- simulation settings for optimization  ------------
+# -----------------------------------------------------------------
+
+sim_dir = 'ml_99'
+
+# ---- decision variables  
 
 # drn levels 
-prop_file = os.path.join('ext','drn_spd_1.txt')
+prop_file = os.path.join(sim_dir,'ext','drn_spd_1.txt')
 pargp='hdrn'
 hdrn_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='h',
@@ -77,7 +169,7 @@ hdrn_df = pf.add_parameters(filenames=prop_file,
                   par_style='direct')
 
 # well discharge rate  
-prop_file = os.path.join('ext','wel_spd_1.txt')
+prop_file = os.path.join(sim_dir,'ext','well_spd_1.txt')
 qwel_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='q',
                   pargp='qwel', index_cols=[3], 
@@ -86,72 +178,181 @@ qwel_df = pf.add_parameters(filenames=prop_file,
                   par_type='grid',
                   par_style='direct')
 
-# ---- observations 
+# ---- objective and constraints 
 
 # mixing ratios 
-mr_file = os.path.join('sim', 'mr.csv')
+mr_file = os.path.join(sim_dir,'sim', 'mr.csv')
 
 mr_df = pf.add_observations(mr_file, insfile=mr_file+'.ins',
         index_cols=0, prefix='mr', obsgp = 'mr')
 
 # discharge values 
-q_file = os.path.join('sim','q.csv')
+q_file = os.path.join(sim_dir,'sim','q.csv')
 
 q_df = pf.add_observations(q_file, insfile=q_file+'.ins',
         index_cols=0, prefix='q',obsgp = 'q')
 
 # global values
-glob_file = os.path.join('sim','glob.csv')
+glob_file = os.path.join(sim_dir,'sim','glob.csv')
 
 glob_df = pf.add_observations(glob_file, insfile=glob_file+'.ins',
         index_cols=0, prefix='glob',obsgp = 'glob')
 
-pf.add_py_function('helpers.py', 'run_case()',is_pre_cmd=False)
-pf.add_py_function('helpers.py', 'ptrack_pproc()',is_pre_cmd=None)
-pf.add_py_function('helpers.py', 'compute_glob()',is_pre_cmd=None)
 
-# ---- build Pst  
+# -------------------------------------------------------
+# --------------      pst setup         -----------------
+# -------------------------------------------------------
+
+# functions for forward_run.py
+pf.add_py_function('helpers.py','run_cases()',is_pre_cmd=False)
+pf.add_py_function('helpers.py','run_sim()',is_pre_cmd=False)
+pf.add_py_function('helpers.py','run_case()',is_pre_cmd=None)
+pf.add_py_function('helpers.py','ptrack_pproc()',is_pre_cmd=None)
+pf.add_py_function('helpers.py','compute_glob()',is_pre_cmd=None)
+
+# ---- Build Pst  
 pst = pf.build_pst()
-
-par = pst.parameter_data
-
-# get parnames to query par_df excel file 
-idx = (par.pname.str.upper() + '_' + par.idx0.str.upper()).values
-par['parval1'] = par_df.loc[idx,'val'].values
-par['parlbnd'] = par_df.loc[idx,'parlbnd'].values
-par['parubnd'] = par_df.loc[idx,'parubnd'].values
-
-# set obsval to 0.
-obs = pst.observation_data
-obs['obsval']=0.
 
 # replace python by python3
 pst.model_command = ['python3 forward_run.py'] 
 
-# test model run with pest
-pst_name = 'sim.pst'
-pst.write(os.path.join(pf.new_d, pst_name))
+# --- parameter processing
+par = pst.parameter_data 
+
+# tie outer pp to 1st outer pp
+par.loc[ppo_idx[1:],'partrans'] = 'tied'
+par.loc[ppo_idx[1:],'partied'] = ppo_idx[0]
+
+# tie riv and drn conds to 1st case (inst)
+par['inst']=par.inst.astype(int)
+ninst = len(par.loc[par.pargp=='criv','inst'].unique())
+
+riv_inst0_idx = par.loc[(par.pargp=='criv') & (par.inst == 0)].index
+riv_tied_idx = par.loc[(par.pargp=='criv') & (par.inst > 0)].index
+
+drn_inst0_idx = par.loc[(par.pargp=='cdrn') & (par.inst == 0)].index
+drn_tied_idx = par.loc[(par.pargp=='cdrn') & (par.inst > 0)].index
+
+par.loc[riv_tied_idx,'partrans'] = 'tied'
+par.loc[drn_tied_idx,'partrans'] = 'tied'
+
+for i in range(1,ninst):
+    # tie criv
+    idx = par.loc[(par.pargp=='criv') & (par.inst == i)].index
+    par.loc[idx,'partied'] = riv_inst0_idx.values
+    # tie cdrn
+    idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
+    par.loc[idx,'partied'] = drn_inst0_idx.values
+
+
+# --- build up prior parameter covariance matrix 
+
+pgroups = pst.parameter_groups.pargpnme.values
+
+for pg in pgroups:
+    par.loc[par.pargp == pg,'parlbnd'] = par_df.loc[pg,'priorlbnd']/par_df.loc[pg,'val']
+    par.loc[par.pargp == pg,'parubnd'] = par_df.loc[pg,'priorubnd']/par_df.loc[pg,'val']
+
+pcov = pyemu.Cov.from_parameter_data(pst)
+gs_cov = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.parnme)
+pcov.replace(gs_cov)
+
+#pcov.to_binary('pcov.jcb') 
+
+plt.imshow(np.log10(pcov.x))
+
+# ---- observation processing  
+obs = pst.observation_data
+
+# load observation data
+surveys_df = pd.read_excel(os.path.join(data_dir,'surveys.xlsx'), index_col = 0)
+
+# extract obs type and loc from (long) name
+obs[['prefix','type','loc','time']] = obs.obsnme.apply(
+    lambda x: pd.Series(
+        dict([s.split(':') for s in x.split('_') if ':' in s])))
+
+# get ob id and case
+obs['id'] = obs[['prefix', 'loc']].agg('_'.join, axis=1).str.upper()
+obs['case'] = obs['time'].astype(float).astype(int)
+
+# set obs values from surveys df
+obs['obsval'] = [surveys_df.loc[case_id,obs_id]
+        for case_id,obs_id in zip(obs.case,obs.id)]
+
+# convert discharge rates from m3/h to m3/s
+obs.loc[obs.obgnme == 'qdrn','obsval'] = obs.loc[obs.obgnme == 'qdrn','obsval']*(-1./3600)
+
+# convert mixing ratios from % to [-]
+obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
+
+# adjusting weights from measurement error 
+weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
+
+for obgnme in obs.obgnme.unique():
+    # weighting based on measurement error 
+    obs.loc[obs.obgnme==obgnme,'weight'] = 1./weights_df.loc[obgnme,'sigma']
+
+
+# 0-weight to unavailable obs
+obs.loc[obs.obsval.isna(),['weight','obsval']]=0
+
+
+#---- Optimization settings
+
+# constraint definition (mr < ref_value)
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.30
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obgnme']='l_mr'
+pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
+
+# decision variables (well discharge rates and drain levels)
+pst.pestpp_options['opt_dec_var_groups'] = ['qwel','hdrn']
+
+# objective function definition 
+pst.pestpp_options['opt_obj_func'] = 'oname:glob_otype:lst_usecol:q_time:99.0'
+pst.pestpp_options['opt_direction'] = 'min'
+
+# prior parameter covariance matrix 
+pst.pestpp_options['parcov'] = 'pcov.jcb'
+
+# run manager options 
+pst.pestpp_options['overdue_resched_fac'] = 2
+pst.pestpp_options['panther_agent_no_ping_timeout_secs'] = 3600
+pst.pestpp_options['max_run_fail'] = 5
+
+# set derinc values for pp
+pst.parameter_groups.loc['forcen'] = 'always_3'
+pst.parameter_groups.loc['derinc'] = 0.10
+pst.parameter_groups.loc['dermthd'] = 'parabolic'
+
+
+
+
+
+
+
+
+
+
+
+# ---- write pst   
+pst_name = f'cal{pst_name_suffix}.pst' 
+pst.write(os.path.join(pf.new_d,pst_name ))
+
+# ---- run  pst with noptmax=0
 pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 
+# write pst with noptmax =30
+pst.control_data.noptmax=30
+pst.write(os.path.join(pf.new_d, pst_name))
 
-# --- setup pest-free model interface 
 
-# write initial parameter value file 
-parfile = os.path.join(pf.new_d,'par.dat')
+'''
+# start workers
+pyemu.helpers.start_workers("pst",'pestpp-glm','cal.pst',num_workers=64,
+                              worker_root= 'workers',cleanup=True,
+                                master_dir='pst_master')
+'''
 
-with open(parfile,'w') as f:
-    f.write(par['parval1'].to_string())
-
-# write ml_info file for helpers.run()
-tpl_files = pst.template_files
-col_idx = [2,2]
-info_df = pd.DataFrame({'tpl_file':tpl_files,'col_idx':col_idx})
-info_file = os.path.join(pf.new_d,'ml_info.csv')
-info_df.to_csv(info_file,index=False)
-
-# check model run 
-
-import helpers
-cwd = 'sim/sim'
-helpers.run(cwd=cwd)
 

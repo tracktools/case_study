@@ -14,8 +14,10 @@ from tracktools import ParticleGenerator
 # ----- General settings ----                                                        
 #-----------------------------------#
 
-case_ids = [i for i in range(1,11)] # see surveys.xlsx
-#case_ids = [2]
+# see surveys.xlsx
+# id < 99 for  history matching 
+# id = 99 for simulation
+case_ids = [i for i in range(1,11)]  + [99]
 
 mf6_exe = 'mf6'
 mp7_exe = 'mp7'
@@ -340,6 +342,8 @@ for case_id in case_ids:
     csim.simulation_data.wrap_multidim_arrays = False
 
     # set length of stress period data as case id
+    # perlen has no effect for s.s simulations
+    # it is used hereafter to identify the survey 
     csim.tdis.perioddata = [ ( float(case_id), 1, 1) ]
     
     ml = csim.get_model('ml')

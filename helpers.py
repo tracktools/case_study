@@ -40,6 +40,11 @@ def run(par_file = 'par.dat', info_file='ml_info.csv', cwd='.'):
     run_case(case_dir=cwd)
 
 
+# run simulation case only
+def run_sim():
+    run_case(case_dir='ml_99')
+
+#  run series of cases 
 def run_cases(cwd='.', cases_dirs = None):
     print("running models")
     bwd = os.getcwd()
@@ -50,6 +55,7 @@ def run_cases(cwd='.', cases_dirs = None):
         run_case(case_dir=case_dir)
     os.chdir(bwd)
 
+# run single case 
 def run_case(case_dir='.'):
     ml_name = 'ml'
     mp_name = 'mp'

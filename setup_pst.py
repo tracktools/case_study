@@ -51,7 +51,7 @@ v = pyemu.geostats.ExpVario(contribution=1.0,a=2000.)
 grid_gs = pyemu.geostats.GeoStruct(variograms=v, transform='log')
 
 prop_filename =os.path.join('com_ext','k.txt')
-pp_filename =os.path.join('..',gis_dir,'pp.shp')
+pp_filename =os.path.join('..',gis_dir,'pp_refined.shp')
 
 zone_array = np.ones((1,ml.modelgrid.ncpl))
 pargp='hk'
@@ -90,6 +90,10 @@ pf.add_parameters(filenames=prop_filename,
 for case_dir in case_dirs:
 
     case_id = int(case_dir.split('_')[1])
+
+    # skip simulation case 
+    if case_id ==0 :
+        continue
 
     # --- Case-dependent parameter processing 
 
@@ -225,7 +229,8 @@ phimlim = np.array(
 
 # Tikhonov reg 
 pyemu.helpers.zero_order_tikhonov(pst)
-cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.name)
+cov_mat = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.parnme)
+# mind that no warning is generated when names in cov_mat do not match names in pst
 pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=0.2)
 
 # regularization settings
