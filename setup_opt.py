@@ -216,7 +216,12 @@ pst = pf.build_pst()
 # replace python by python3
 pst.model_command = ['python3 forward_run.py'] 
 
-# --- parameter processing
+# run manager options 
+pst.pestpp_options['overdue_resched_fac'] = 2
+pst.pestpp_options['panther_agent_no_ping_timeout_secs'] = 3600
+pst.pestpp_options['max_run_fail'] = 5
+
+# --- Parameter processing
 par = pst.parameter_data 
 
 # tie outer pp to 1st outer pp
@@ -245,23 +250,33 @@ for i in range(1,ninst):
     par.loc[idx,'partied'] = drn_inst0_idx.values
 
 
-# --- build up prior parameter covariance matrix 
+# --- Prior parameter covariance matrix 
 
-pgroups = pst.parameter_groups.pargpnme.values
-
+# multipliers bounds from parameter bounds 
+pgroups = ['hk', 'criv', 'cdrn', 'cghb', 'rech']
 for pg in pgroups:
     par.loc[par.pargp == pg,'parlbnd'] = par_df.loc[pg,'priorlbnd']/par_df.loc[pg,'val']
     par.loc[par.pargp == pg,'parubnd'] = par_df.loc[pg,'priorubnd']/par_df.loc[pg,'val']
 
+# initialize pcov from pst 
 pcov = pyemu.Cov.from_parameter_data(pst)
-gs_cov = grid_gs.covariance_matrix(pp_df.x,pp_df.y,pp_df.parnme)
+pcov.to_ascii(os.path.join(pf.new_d,'pcov_diag.txt'))
+
+# covariance matrix of adjustable pilot points (not tied)
+adj_pp_names = par.loc[(par['partrans'] != 'tied') & (par['pargp'] == 'hk')].index.values
+gs_cov = grid_gs.covariance_matrix(
+        pp_df.loc[adj_pp_names,'x'],
+        pp_df.loc[adj_pp_names,'y'],
+        pp_df.loc[adj_pp_names,'parnme'])
+
 pcov.replace(gs_cov)
 
-#pcov.to_binary('pcov.jcb') 
+pcov.to_ascii(os.path.join(pf.new_d,'pcov.txt'))
+pcov.to_binary(os.path.join(pf.new_d,'pcov.jcb'))
 
-plt.imshow(np.log10(pcov.x))
+#plt.imshow(np.log10(pcov.x))
 
-# ---- observation processing  
+# ---- Observation processing  
 obs = pst.observation_data
 
 # load observation data
@@ -289,7 +304,7 @@ obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
 # adjusting weights from measurement error 
 weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
 
-for obgnme in obs.obgnme.unique():
+for obgnme in ['heads','qdrn','mr']:
     # weighting based on measurement error 
     obs.loc[obs.obgnme==obgnme,'weight'] = 1./weights_df.loc[obgnme,'sigma']
 
@@ -298,7 +313,7 @@ for obgnme in obs.obgnme.unique():
 obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 
-#---- Optimization settings
+# ---- Optimization settings
 
 # constraint definition (mr < ref_value)
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
@@ -310,47 +325,35 @@ pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
 pst.pestpp_options['opt_dec_var_groups'] = ['qwel','hdrn']
 
 # objective function definition 
-pst.pestpp_options['opt_obj_func'] = 'oname:glob_otype:lst_usecol:q_time:99.0'
+obj_obsnme = 'oname:glob_otype:lst_usecol:q_time:99.0'
+obs.loc[obj_obsnme,'weight']=1
+pst.pestpp_options['opt_obj_func'] = obj_obsnme
 pst.pestpp_options['opt_direction'] = 'min'
 
 # prior parameter covariance matrix 
-pst.pestpp_options['parcov'] = 'pcov.jcb'
+#pst.pestpp_options['parcov'] = 'pcov.jcb'
 
-# run manager options 
-pst.pestpp_options['overdue_resched_fac'] = 2
-pst.pestpp_options['panther_agent_no_ping_timeout_secs'] = 3600
-pst.pestpp_options['max_run_fail'] = 5
+# Number of SLP iterations (if noptmax = 1: LP)
+pst.control_data.noptmax = 1
 
-# set derinc values for pp
-pst.parameter_groups.loc['forcen'] = 'always_3'
-pst.parameter_groups.loc['derinc'] = 0.10
-pst.parameter_groups.loc['dermthd'] = 'parabolic'
+# SLP options 
+pst.pestpp_options['opt_coin_log'] = 4 # verbosity level of simplex solver 
+pst.pestpp_options['opt_recalc_chance_every'] = 1
 
+# risk 
+risk = 0.05
+pst.pestpp_options['opt_risk'] = risk
 
-
-
-
-
-
-
-
-
-
-# ---- write pst   
-pst_name = f'cal{pst_name_suffix}.pst' 
-pst.write(os.path.join(pf.new_d,pst_name ))
-
-# ---- run  pst with noptmax=0
-pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
-
-# write pst with noptmax =30
-pst.control_data.noptmax=30
+# ---- Write pst   
+pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
+# --- Run pestpp-opt
+pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 
 '''
 # start workers
-pyemu.helpers.start_workers("pst",'pestpp-glm','cal.pst',num_workers=64,
+pyemu.helpers.start_workers("pst",'pestpp-opt',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=True,
                                 master_dir='pst_master')
 '''
