@@ -258,8 +258,13 @@ for i in range(1,ninst):
 # --- Derivative calculation
 
 pst.parameter_groups.loc['forcen'] = 'always_3'
-pst.parameter_groups.loc['derinc'] = 0.1
 pst.parameter_groups.loc['dermthd'] = 'best_fit'
+
+#pst.parameter_groups.loc['derinc'] = 0.1
+pst.parameter_groups.loc[ 'hdrn','inctyp'] = 'absolute'
+pst.parameter_groups.loc[ 'qwel','inctyp'] = 'absolute'
+pst.parameter_groups.loc[ 'hdrn','derinc'] = 0.10 # m
+pst.parameter_groups.loc[ 'qwel','derinc'] = 25./3600 # m
 
 # --- Prior parameter covariance matrix 
 

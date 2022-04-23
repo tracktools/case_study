@@ -23,4 +23,4 @@
 21,org/drn_spd_1.txt,ml_10/ext/drn_spd_1.txt,[3],[4],free, ,0,[1.0],[1e-10],m,mult/cond_inst9_grid.csv,,,,,,,False
 22,org/riv_spd_1.txt,ml_10/ext/riv_spd_1.txt,[3],[6],free, ,0,[1.0],[1e-10],m,mult/riv_inst9_grid.csv,,,,,,,False
 23,org/drn_spd_1.txt,ml_99/ext/drn_spd_1.txt,[2],[4],free, ,0,[10.0],[7.0],d,,,,,,,,False
-24,org/well_spd_1.txt,ml_99/ext/well_spd_1.txt,[2],[3],free, ,0,[0.0],[-0.1388888888888889],d,,,,,,,,False
+24,org/well_spd_1.txt,ml_99/ext/well_spd_1.txt,[2],[3],free, ,0,[0.1388888888888889],[-0.1388888888888889],d,,,,,,,,False

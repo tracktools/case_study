@@ -12,8 +12,8 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 # completed PEST run - calibrated parameter set
 cal_dir = 'pst_master' 
-cal_pst_name ='cal.pst'
-par_file = cal_pst_name.replace('pst','16.par')
+cal_pst_name ='cal_bf.pst'
+par_file = cal_pst_name.replace('pst','par')
 
 # evaluation PEST run (noptmax=0) 
 eval_dir = 'pst'  

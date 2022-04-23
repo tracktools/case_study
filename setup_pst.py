@@ -13,7 +13,7 @@ tpl_ml_dir = 'ml_tpl'
 org_ml_dir = 'ml'
 pst_dir = 'pst'
 
-pst_name_suffix = ''
+pst_name_suffix = '_bf'
 
 # set path, relative to ml dir
 com_ext_dir = 'com_ext'
@@ -254,8 +254,8 @@ pst.pestpp_options['max_run_fail'] = 5
 
 # set derinc values for pp
 pst.parameter_groups.loc[ pst.parameter_groups.index,'forcen'] = 'always_3'
-pst.parameter_groups.loc[ pst.parameter_groups.index,'derinc'] = 0.05
-pst.parameter_groups.loc[ pst.parameter_groups.index,'dermthd'] = 'parabolic'
+pst.parameter_groups.loc[ pst.parameter_groups.index,'derinc'] = 0.1
+pst.parameter_groups.loc[ pst.parameter_groups.index,'dermthd'] = 'best_fit'
 pst.parameter_groups.loc['hk',"derinc"] = 0.10
 
 # ---- write pst   
