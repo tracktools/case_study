@@ -54,7 +54,7 @@ pf = pyemu.utils.PstFrom(original_d=cal_ml_dir, new_d=opt_dir,
 # -----------------------------------------------------------------
 # ---  parameter and observation settings for history matching  ---
 # -----------------------------------------------------------------
-
+'''
 # fetch list of case directories (without last=99, for sim)
 case_dirs = sorted([d for d in os.listdir('ml') if d.startswith('ml_')])[:-1]
 
@@ -149,7 +149,7 @@ for case_dir in case_dirs:
             index_cols=0, prefix='mr',obsgp = 'mr')
 
 
-
+'''
 # -----------------------------------------------------------------
 # -------------- simulation settings for optimization  ------------
 # -----------------------------------------------------------------
@@ -210,7 +210,7 @@ glob_df = pf.add_observations(glob_file, insfile=glob_file+'.ins',
 # -------------------------------------------------------
 
 # functions for forward_run.py
-pf.add_py_function('helpers.py','run_cases()',is_pre_cmd=False)
+#pf.add_py_function('helpers.py','run_cases()',is_pre_cmd=False)
 pf.add_py_function('helpers.py','run_sim()',is_pre_cmd=False)
 pf.add_py_function('helpers.py','run_case()',is_pre_cmd=None)
 pf.add_py_function('helpers.py','ptrack_pproc()',is_pre_cmd=None)
@@ -230,6 +230,7 @@ pst.pestpp_options['max_run_fail'] = 5
 # --- Parameter processing
 par = pst.parameter_data 
 
+'''
 # tie outer pp to 1st outer pp
 par.loc[ppo_idx[1:],'partrans'] = 'tied'
 par.loc[ppo_idx[1:],'partied'] = ppo_idx[0]
@@ -255,19 +256,33 @@ for i in range(1,ninst):
     idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
     par.loc[idx,'partied'] = drn_inst0_idx.values
 
+'''
 # --- Derivative calculation
 
-pst.parameter_groups.loc['forcen'] = 'always_3'
-pst.parameter_groups.loc['dermthd'] = 'best_fit'
+pst.parameter_groups['forcen'] = 'always_3'
+pst.parameter_groups['dermthd'] = 'parabolic'
 
 #pst.parameter_groups.loc['derinc'] = 0.1
-pst.parameter_groups.loc[ 'hdrn','inctyp'] = 'absolute'
-pst.parameter_groups.loc[ 'qwel','inctyp'] = 'absolute'
-pst.parameter_groups.loc[ 'hdrn','derinc'] = 0.10 # m
-pst.parameter_groups.loc[ 'qwel','derinc'] = 25./3600 # m
+pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
+pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
+pst.parameter_groups.loc['hdrn','derinc'] = 0.10 # m
+pst.parameter_groups.loc['qwel','derinc'] = 25./3600 # m
+
+par = pst.parameter_data
+
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 9.00
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
+
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.40
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
 
 # --- Prior parameter covariance matrix 
 
+'''
 # multipliers bounds from parameter bounds 
 pgroups = ['hk', 'criv', 'cdrn', 'cghb', 'rech']
 for pg in pgroups:
@@ -292,10 +307,11 @@ pcov.to_ascii(os.path.join(pf.new_d,'pcov.txt'))
 pcov.to_uncfile(os.path.join(pf.new_d,'pcov.unc'))
 
 #plt.imshow(np.log10(pcov.x))
-
+'''
 # ---- Observation processing  
 obs = pst.observation_data
 
+'''
 # load observation data
 surveys_df = pd.read_excel(os.path.join(data_dir,'surveys.xlsx'), index_col = 0)
 
@@ -312,19 +328,21 @@ obs['case'] = obs['time'].astype(float).astype(int)
 obs['obsval'] = [surveys_df.loc[case_id,obs_id]
         for case_id,obs_id in zip(obs.case,obs.id)]
 
+'''
 # convert discharge rates from m3/h to m3/s
 obs.loc[obs.obgnme == 'qdrn','obsval'] = obs.loc[obs.obgnme == 'qdrn','obsval']*(-1./3600)
 
 # convert mixing ratios from % to [-]
 obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
 
+'''
 # adjusting weights from measurement error 
 weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
 
 for obgnme in ['heads','qdrn','mr']:
     # weighting based on measurement error 
     obs.loc[obs.obgnme==obgnme,'weight'] = 1./weights_df.loc[obgnme,'sigma']
-
+'''
 
 # 0-weight to unavailable obs
 obs.loc[obs.obsval.isna(),['weight','obsval']]=0
@@ -334,7 +352,7 @@ obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 # constraint definition (mr < ref_value)
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
-obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.05
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.20
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obgnme']='l_mr'
 pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
 
@@ -348,10 +366,10 @@ pst.pestpp_options['opt_obj_func'] = obj_obsnme
 pst.pestpp_options['opt_direction'] = 'min'
 
 # prior parameter covariance matrix 
-pst.pestpp_options['parcov'] = 'pcov.unc'
+#pst.pestpp_options['parcov'] = 'pcov.unc'
 
 # Number of SLP iterations (if noptmax = 1: LP)
-pst.control_data.noptmax = 5
+pst.control_data.noptmax = 1
 
 # SLP options 
 pst.pestpp_options['opt_coin_log'] = 4 # verbosity level of simplex solver 
@@ -366,9 +384,11 @@ pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # --- Run pestpp-opt
-#pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
+pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
+'''
 # start workers
 pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=5,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
+'''
