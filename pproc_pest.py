@@ -1,4 +1,4 @@
-import os
+import os, shutil
 import numpy as np 
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -8,37 +8,48 @@ import pyemu
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-# --- pst files 
+# flag to copy calibrated model to cal dir 
+store_cal = True
+store_dir = 'store' # will be cleared !
 
-# completed PEST run - calibrated parameter set
+# completed PEST run dir - calibrated parameter set
 cal_dir = 'pst_master' 
 cal_pst_name ='cal_bf.pst'
 par_file = cal_pst_name.replace('pst','par')
 
-# evaluation PEST run (noptmax=0) 
+# evaluation dir (calibrated parameters -  noptmax=0) 
 eval_dir = 'pst'  
 eval_pst_name = 'eval.pst'
 
-# read pest control file 
+# calibration pst file 
 cal_pst = pyemu.Pst(os.path.join(cal_dir, cal_pst_name))
 
 # plot phi progress
 phiprog = cal_pst.plot(kind='phi_progress')
 phiprog.get_figure().savefig(os.path.join('fig','phiprog.png'))
 
-# run model with final parameters 
+# evaluation pst file (with best parameters)
 cal_pst.parrep(os.path.join(cal_dir,par_file))
 cal_pst.control_data.noptmax=0
 cal_pst.write(os.path.join(eval_dir,eval_pst_name))
 
+# run calibrated model 
 pyemu.helpers.run(f'pestpp-glm {eval_pst_name}', cwd=eval_dir)
 
-# evaluation 
+# copy calibrated ml files to cal dir
+if cp_to_cal:
+    helpers.clear_dirs([store_dir])
+    cases_dirs = [os.path.join(eval_dir) for d in os.listdir(eval_dir) if (os.path.isdir(d) and d.startswith('ml_'))]
+    com_ext_dir = os.path.join(eval_dir,'com_ext')
+    for d in (cases_dirs + [com_ext_dir]):
+        shutil.copytree(d,store_dir)
+
+# phie pie 
 eval_pst = pyemu.Pst(os.path.join(eval_dir, eval_pst_name))
 phipie = eval_pst.plot(kind="phi_pie")
 phipie.get_figure().savefig(os.path.join('fig','phipie.png'))
 
-# not intuitive 
+# scatter plot 
 one2one = eval_pst.plot(kind="1to1")
 one2one[1].savefig(os.path.join('fig','one2one.png'))
 
@@ -153,11 +164,7 @@ fig.savefig(os.path.join('fig','hk.png'))
 
 
 
-
-
 # Addtional plot function
-
-
 
 def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
     """

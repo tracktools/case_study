@@ -42,7 +42,7 @@ def run(par_file = 'par.dat', info_file='ml_info.csv', cwd='.'):
 
 # run simulation case only
 def run_sim():
-    run_case(case_dir='ml_99')
+    run_case(case_dir='sim')
 
 #  run series of cases 
 def run_cases(cwd='.', cases_dirs = None):

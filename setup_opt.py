@@ -5,38 +5,44 @@ import flopy
 import pyemu
 import helpers
 
-
-mf6_exe = 'mf6'
-
-# set paths, relative to cwd
+# data and gis dir
 data_dir = 'data'
 gis_dir = 'gis'
 
-# template model, for spatial reference only
-tpl_ml_dir = 'ml_tpl' 
-
-# calibrated model 
-cal_ml_dir = 'cal'
-
-# optimization directory
+# optimization dir
 opt_dir = 'opt'
 
-# set path, relative to ml dir
-com_ext_dir = 'com_ext'
+# calibrated ml dir  
+cal_dir = 'store'
 
-# set paths, relative to case_dirs
-sim_dir =  'sim' 
-ext_dir = 'ext'
+# template case for simulation (arbitrary)
+tpl_ml_dir = os.path.join(cal_dir,'ml_01')
+
+# name of simulation directory 
+sim_dir = 'sim'
+
+# mf6 exe
+mf6_exe = 'mf6'
+
+# clear dirs
+helpers.clear_dirs([opt_dir])
 
 # parameter data (prior confidence interval) 
 par_df = pd.read_excel(os.path.join(data_dir,'par.xlsx'), index_col = 0)
 
 # ---- load mf model and set spatial reference (grid cell centroids)
-model_name = 'ml' 
-
 sim = flopy.mf6.MFSimulation.load(sim_ws=tpl_ml_dir,exe_name=mf6_exe)
 
-ml = sim.get_model(model_name)
+# set all_data_internal and write to tmp dir
+sim.set_sim_path(sim_dir)
+sim.write_simulation() 
+sim.tdis.perioddata = [ (1, 1, 1) ]
+
+# clear former ext files for simulation case 
+sim_ext_dir = os.path.join(sim_dir,'ext')
+helpers.clear_dirs([ext_dir])
+
+ml = sim.get_model('ml')
 ncpl = ml.modelgrid.ncpl
 
 sr = {i:(x,y) for i,x,y in zip(range(ncpl),
@@ -46,7 +52,7 @@ sr = {i:(x,y) for i,x,y in zip(range(ncpl),
 # ---------------  initialize PstFrom instance  -------------------
 # -----------------------------------------------------------------
 
-pf = pyemu.utils.PstFrom(original_d=cal_ml_dir, new_d=opt_dir,
+pf = pyemu.utils.PstFrom(original_d=cal_dir, new_d=opt_dir,
                  remove_existing=True,spatial_reference=sr,
                  longnames=True,
                  zero_based=False)
@@ -130,20 +136,20 @@ for case_dir in case_dirs:
 
     # --- Observation processing
     # heads
-    hds_filename = os.path.join(case_dir,sim_dir,'hds.csv')
+    hds_filename = os.path.join(case_dir,'sim','hds.csv')
 
     hds_df = pf.add_observations(hds_filename, insfile=hds_filename+'.ins',
             index_cols='time', obsgp = 'heads',
             prefix='h')
 
     # drain discharge
-    drn_filename = os.path.join(case_dir,sim_dir,'drn.csv')
+    drn_filename = os.path.join(case_dir,'sim','drn.csv')
 
     drn_df = pf.add_observations(drn_filename, insfile=drn_filename+'.ins',
             index_cols=0, prefix='q', obsgp = 'qdrn')
 
     # mixing ratios 
-    mr_filename = os.path.join(case_dir,sim_dir,'mr.csv')
+    mr_filename = os.path.join(case_dir,'sim','mr.csv')
 
     mr_df = pf.add_observations(mr_filename, insfile=mr_filename+'.ins',
             index_cols=0, prefix='mr',obsgp = 'mr')
@@ -153,8 +159,6 @@ for case_dir in case_dirs:
 # -----------------------------------------------------------------
 # -------------- simulation settings for optimization  ------------
 # -----------------------------------------------------------------
-
-sim_dir = 'ml_99'
 
 # ---- decision variables  
 
