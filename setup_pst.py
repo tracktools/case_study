@@ -13,7 +13,7 @@ tpl_ml_dir = 'ml_tpl'
 org_ml_dir = 'ml'
 pst_dir = 'pst'
 
-pst_name_suffix = '_bf'
+pst_name_suffix = ''
 
 # set path, relative to ml dir
 com_ext_dir = 'com_ext'
@@ -90,10 +90,6 @@ pf.add_parameters(filenames=prop_filename,
 for case_dir in case_dirs:
 
     case_id = int(case_dir.split('_')[1])
-
-    # skip simulation case 
-    if case_id ==0 :
-        continue
 
     # --- Case-dependent parameter processing 
 
@@ -254,9 +250,10 @@ pst.pestpp_options['max_run_fail'] = 5
 
 # set derinc values for pp
 pst.parameter_groups.loc[ pst.parameter_groups.index,'forcen'] = 'always_3'
-pst.parameter_groups.loc[ pst.parameter_groups.index,'derinc'] = 0.1
 pst.parameter_groups.loc[ pst.parameter_groups.index,'dermthd'] = 'best_fit'
-pst.parameter_groups.loc['hk',"derinc"] = 0.10
+
+pst.parameter_groups.loc[ pst.parameter_groups.index,'derinc'] = 0.1
+pst.parameter_groups.loc['hk',"derinc"] = 0.15
 
 # ---- write pst   
 pst_name = f'cal{pst_name_suffix}.pst' 

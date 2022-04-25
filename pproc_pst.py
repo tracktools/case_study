@@ -5,16 +5,15 @@ from matplotlib import pyplot as plt
 import matplotlib as mpl
 import flopy
 import pyemu
-from matplotlib.backends.backend_pdf import PdfPages
-
+#from matplotlib.backends.backend_pdf import PdfPages
 
 # flag to copy calibrated model to cal dir 
 store_cal = True
-store_dir = 'store' # will be cleared !
+store_dir = 'store' # content will be cleared !
 
 # completed PEST run dir - calibrated parameter set
 cal_dir = 'pst_master' 
-cal_pst_name ='cal_bf.pst'
+cal_pst_name ='cal.pst'
 par_file = cal_pst_name.replace('pst','par')
 
 # evaluation dir (calibrated parameters -  noptmax=0) 
@@ -37,12 +36,13 @@ cal_pst.write(os.path.join(eval_dir,eval_pst_name))
 pyemu.helpers.run(f'pestpp-glm {eval_pst_name}', cwd=eval_dir)
 
 # copy calibrated ml files to cal dir
-if cp_to_cal:
-    helpers.clear_dirs([store_dir])
-    cases_dirs = [os.path.join(eval_dir) for d in os.listdir(eval_dir) if (os.path.isdir(d) and d.startswith('ml_'))]
-    com_ext_dir = os.path.join(eval_dir,'com_ext')
-    for d in (cases_dirs + [com_ext_dir]):
-        shutil.copytree(d,store_dir)
+if store_cal:
+    if os.path.exists(store_dir):
+        shutil.rmtree(store_dir)
+    cases_dirs = [d for d in os.listdir(eval_dir)\
+        if (os.path.isdir(os.path.join(eval_dir,d)) and d.startswith('ml_'))]
+    for d in (cases_dirs + ['com_ext']):
+        shutil.copytree(os.path.join(eval_dir,d),os.path.join(store_dir,d))
 
 # phie pie 
 eval_pst = pyemu.Pst(os.path.join(eval_dir, eval_pst_name))
