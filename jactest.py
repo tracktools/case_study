@@ -21,8 +21,7 @@ pst = pyemu.Pst(os.path.join(cwd, org_pst_name))
 pst.parameter_groups.loc[ 'hdrn','inctyp'] = 'absolute'
 pst.parameter_groups.loc[ 'qwel','inctyp'] = 'absolute'
 pst.parameter_groups.loc[ 'hdrn','derinc'] = 0.05 # m
-pst.parameter_groups.loc[ 'qwell','derinc'] = 10./3600 # m
-
+pst.parameter_groups.loc[ 'qwell','derinc'] = 5./3600 # m
 
 # parrep 
 if parrep : pst.parrep(os.path.join(cwd,par_file))
@@ -37,7 +36,7 @@ par_names = [
        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20'
        ]
 
-jactest_df = pyemu.helpers.build_jac_test_csv(pst,8,par_names)
+jactest_df = pyemu.helpers.build_jac_test_csv(pst,10,par_names)
 
 jactest_df.to_csv(os.path.join(cwd,'jactest_in.csv'))
 
@@ -49,11 +48,10 @@ pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
 pst.write(os.path.join(cwd,pst_name))
 
 # run
-pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=1,
+pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
 '''
-
 # plot
 cwd = 'pst_master'
 pdf_dir = os.path.join('fig','jactest')

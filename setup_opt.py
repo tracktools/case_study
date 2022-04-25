@@ -13,7 +13,7 @@ gis_dir = 'gis'
 cal_dir = 'store'
 
 # template case for simulation (contains river level)
-tpl_ml_dir = os.path.join(cal_dir,'ml_01')
+tpl_ml_dir = os.path.join(cal_dir,'ml_04')
 
 # optimization dir
 opt_dir = 'opt'
@@ -275,18 +275,18 @@ for i in range(1,ninst):
 
 par = pst.parameter_data
 
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.2
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 8.5
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.0
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 9.0
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -50./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -50./3600
 
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.00
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.50
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
 
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.40
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.65
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
 
@@ -392,7 +392,7 @@ pst.pestpp_options['opt_direction'] = 'min'
 #pst.pestpp_options['parcov'] = 'pcov.unc'
 
 # Number of SLP iterations (if noptmax = 1: LP)
-pst.control_data.noptmax = 1
+pst.control_data.noptmax = 3
 
 # SLP options 
 pst.pestpp_options['opt_coin_log'] = 4 # verbosity level of simplex solver 
