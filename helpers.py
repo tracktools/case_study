@@ -119,7 +119,7 @@ def compute_glob(case_dir):
     # input files 
     mr_file = os.path.join(case_dir,'sim','mr.csv')
     drn_file = os.path.join(case_dir,'sim','drn.csv')
-    wel_file = os.path.join(case_dir,'ext','well_spd_1.txt')
+    wel_file = os.path.join(case_dir,'ext','wel_spd_1.txt')
 
     # load input files
     mr_df = pd.read_csv(mr_file,index_col=0)

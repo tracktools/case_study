@@ -9,45 +9,54 @@ import helpers
 data_dir = 'data'
 gis_dir = 'gis'
 
-# optimization dir
-opt_dir = 'opt'
-
 # calibrated ml dir  
 cal_dir = 'store'
 
-# template case for simulation (arbitrary)
+# template case for simulation (contains river level)
 tpl_ml_dir = os.path.join(cal_dir,'ml_01')
 
-# name of simulation directory 
-sim_dir = 'sim'
+# optimization dir
+opt_dir = 'opt'
 
 # mf6 exe
 mf6_exe = 'mf6'
 
-# clear dirs
-helpers.clear_dirs([opt_dir])
-
 # parameter data (prior confidence interval) 
 par_df = pd.read_excel(os.path.join(data_dir,'par.xlsx'), index_col = 0)
 
+# -----------------------------------------------------------------
+# ---------------     Simulation model setup    -------------------
+# -----------------------------------------------------------------
+new_sim_dir = os.path.join(cal_dir,'sim')
+
+# copy model file 
+if os.path.exists(new_sim_dir): shutil.rmtree(new_sim_dir)
+
+shutil.copytree(tpl_ml_dir, new_sim_dir)
+
 # ---- load mf model and set spatial reference (grid cell centroids)
-sim = flopy.mf6.MFSimulation.load(sim_ws=tpl_ml_dir,exe_name=mf6_exe)
+sim = flopy.mf6.MFSimulation.load(sim_ws=new_sim_dir,exe_name=mf6_exe)
 
-# set all_data_internal and write to tmp dir
-sim.set_sim_path(sim_dir)
-sim.write_simulation() 
+# set all_data_internal and write 
+sim.set_all_data_internal()
 sim.tdis.perioddata = [ (1, 1, 1) ]
-
-# clear former ext files for simulation case 
-sim_ext_dir = os.path.join(sim_dir,'ext')
-helpers.clear_dirs([ext_dir])
-
 ml = sim.get_model('ml')
 ncpl = ml.modelgrid.ncpl
 
 sr = {i:(x,y) for i,x,y in zip(range(ncpl),
     ml.modelgrid.xcellcenters,ml.modelgrid.ycellcenters)}
 
+# clear output dir  
+helpers.clear_dirs([
+    os.path.join(new_sim_dir,'ext'),
+    os.path.join(new_sim_dir,'sim')])
+
+ml.drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
+ml.wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
+
+sim.write_simulation() 
+
+helpers.run_case(new_sim_dir)
 # -----------------------------------------------------------------
 # ---------------  initialize PstFrom instance  -------------------
 # -----------------------------------------------------------------
@@ -163,7 +172,7 @@ for case_dir in case_dirs:
 # ---- decision variables  
 
 # drn levels 
-prop_file = os.path.join(sim_dir,'ext','drn_spd_1.txt')
+prop_file = os.path.join('sim','ext','drn_spd_1.txt')
 pargp='hdrn'
 hdrn_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='h',
@@ -176,7 +185,7 @@ hdrn_df = pf.add_parameters(filenames=prop_file,
                   par_style='direct')
 
 # well discharge rate  
-prop_file = os.path.join(sim_dir,'ext','well_spd_1.txt')
+prop_file = os.path.join('sim','ext','wel_spd_1.txt')
 pargp='qwel'
 qwel_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='q',
@@ -191,19 +200,19 @@ qwel_df = pf.add_parameters(filenames=prop_file,
 # ---- objective and constraints 
 
 # mixing ratios 
-mr_file = os.path.join(sim_dir,'sim', 'mr.csv')
+mr_file = os.path.join('sim','sim', 'mr.csv')
 
 mr_df = pf.add_observations(mr_file, insfile=mr_file+'.ins',
         index_cols=0, prefix='mr', obsgp = 'mr')
 
 # discharge values 
-q_file = os.path.join(sim_dir,'sim','q.csv')
+q_file = os.path.join('sim','sim','q.csv')
 
 q_df = pf.add_observations(q_file, insfile=q_file+'.ins',
         index_cols=0, prefix='q',obsgp = 'q')
 
 # global values
-glob_file = os.path.join(sim_dir,'sim','glob.csv')
+glob_file = os.path.join('sim','sim','glob.csv')
 
 glob_df = pf.add_observations(glob_file, insfile=glob_file+'.ins',
         index_cols=0, prefix='glob',obsgp = 'glob')
@@ -261,6 +270,27 @@ for i in range(1,ninst):
     par.loc[idx,'partied'] = drn_inst0_idx.values
 
 '''
+
+# --- Initial values of decision variables 
+
+par = pst.parameter_data
+
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.2
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 8.5
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
+
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.00
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
+
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.40
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
+
+
 # --- Derivative calculation
 
 pst.parameter_groups['forcen'] = 'always_3'
@@ -272,17 +302,6 @@ pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
 pst.parameter_groups.loc['hdrn','derinc'] = 0.10 # m
 pst.parameter_groups.loc['qwel','derinc'] = 25./3600 # m
 
-par = pst.parameter_data
-
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 9.00
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
-
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.40
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
 
 # --- Prior parameter covariance matrix 
 
@@ -355,16 +374,16 @@ obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 # ---- Optimization settings
 
 # constraint definition (mr < ref_value)
-obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
-obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.20
-obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obgnme']='l_mr'
+obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','weight']=1
+obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','obsval']=0.20
+obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','obgnme']='l_mr'
 pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
 
 # decision variables (well discharge rates and drain levels)
 pst.pestpp_options['opt_dec_var_groups'] = ['qwel','hdrn']
 
 # objective function definition 
-obj_obsnme = 'oname:glob_otype:lst_usecol:q_time:99.0'
+obj_obsnme = 'oname:glob_otype:lst_usecol:q_time:1.0'
 obs.loc[obj_obsnme,'weight']=0.
 pst.pestpp_options['opt_obj_func'] = obj_obsnme
 pst.pestpp_options['opt_direction'] = 'min'

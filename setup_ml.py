@@ -368,7 +368,7 @@ for case_id in case_ids:
                                      maxbound=len(wells_data),
                                      boundnames = True)
 
-    wel.stress_period_data.store_as_external_file(os.path.join('ext','well_spd.txt'))
+    wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
 
     # ---- Drain package
     print('ModflowGwfdrn...')
