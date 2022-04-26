@@ -47,11 +47,13 @@ pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
 # write
 pst.write(os.path.join(cwd,pst_name))
 
+'''
 # run
 pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
 '''
+
 # plot
 cwd = 'pst_master'
 pdf_dir = os.path.join('fig','jactest')
@@ -59,16 +61,16 @@ csvin = os.path.join(cwd,'jactest_in.csv')
 csvout = os.path.join(cwd,'jactest_out.csv')
 targetobs = None # ['oname:h_otype:lst_usecol:p32_time:2.0']
 
-targetobs = ['oname:mr_otype:lst_usecol:bar_time:99',
-   'oname:mr_otype:lst_usecol:gal_time:99',
-   'oname:mr_otype:lst_usecol:r20_time:99',
-   'oname:mr_otype:lst_usecol:r21_time:99',
-  'oname:q_otype:lst_usecol:bar_time:99.0',
-  'oname:q_otype:lst_usecol:gal_time:99.0',
-  'oname:q_otype:lst_usecol:r20_time:99.0',
-  'oname:q_otype:lst_usecol:r21_time:99.0',
-'oname:glob_otype:lst_usecol:mr_time:99.0',
- 'oname:glob_otype:lst_usecol:q_time:99.0']
+targetobs = ['oname:mr_otype:lst_usecol:bar_time:1.0',
+   'oname:mr_otype:lst_usecol:gal_time:1.0',
+   'oname:mr_otype:lst_usecol:r20_time:1.0',
+   'oname:mr_otype:lst_usecol:r21_time:1.0',
+  'oname:q_otype:lst_usecol:bar_time:1.0',
+  'oname:q_otype:lst_usecol:gal_time:1.0',
+  'oname:q_otype:lst_usecol:r20_time:1.0',
+  'oname:q_otype:lst_usecol:r21_time:1.0',
+'oname:glob_otype:lst_usecol:mr_time:1.0',
+ 'oname:glob_otype:lst_usecol:q_time:1.0']
 
 maxoutputpages=1
 outputdirectory=pdf_dir
@@ -183,4 +185,3 @@ for param, group in plotframe.groupby("parameter"):
         plt.close()
 
 
-'''

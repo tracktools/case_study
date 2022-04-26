@@ -277,8 +277,8 @@ par = pst.parameter_data
 
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.0
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 9.0
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -50./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -50./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
 
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.50
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
@@ -407,11 +407,9 @@ pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # --- Run pestpp-opt
-pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
+#pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
-'''
 # start workers
-pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=5,
+pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=8,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
-'''
