@@ -13,7 +13,7 @@ gis_dir = 'gis'
 cal_dir = 'store'
 
 # template case for simulation (contains river level)
-tpl_ml_dir = os.path.join(cal_dir,'ml_04')
+tpl_ml_dir = os.path.join(cal_dir,'ml_07')
 
 # optimization dir
 opt_dir = 'opt'
@@ -275,7 +275,7 @@ for i in range(1,ninst):
 
 par = pst.parameter_data
 
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.0
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.2
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 9.0
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
@@ -299,8 +299,8 @@ pst.parameter_groups['dermthd'] = 'parabolic'
 #pst.parameter_groups.loc['derinc'] = 0.1
 pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
 pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
-pst.parameter_groups.loc['hdrn','derinc'] = 0.10 # m
-pst.parameter_groups.loc['qwel','derinc'] = 25./3600 # m
+pst.parameter_groups.loc['hdrn','derinc'] = 0.05 # m
+pst.parameter_groups.loc['qwel','derinc'] = 10./3600 # m
 
 
 # --- Prior parameter covariance matrix 
@@ -407,9 +407,11 @@ pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # --- Run pestpp-opt
-#pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
+pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
 # start workers
+'''
 pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=8,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
+'''

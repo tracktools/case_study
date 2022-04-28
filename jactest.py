@@ -6,6 +6,7 @@ import os
 import matplotlib as mpl
 import flopy
 import pyemu
+import helpers
 
 # --- pst files 
 cwd = 'opt'
@@ -20,24 +21,67 @@ pst = pyemu.Pst(os.path.join(cwd, org_pst_name))
 
 pst.parameter_groups.loc[ 'hdrn','inctyp'] = 'absolute'
 pst.parameter_groups.loc[ 'qwel','inctyp'] = 'absolute'
-pst.parameter_groups.loc[ 'hdrn','derinc'] = 0.05 # m
-pst.parameter_groups.loc[ 'qwell','derinc'] = 5./3600 # m
+pst.parameter_groups.loc[ 'hdrn','derinc'] = 0.15 # m
+pst.parameter_groups.loc[ 'qwell','derinc'] = 50./3600 # m
+
+par = pst.parameter_data 
+
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 8.8
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 8.8
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
+
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.00
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
+
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.65
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
+
 
 # parrep 
 if parrep : pst.parrep(os.path.join(cwd,par_file))
 
 
-# generate jactest run list
-
-par_names = [
+# long parameter names 
+pnames = [
        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar',
        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal',
        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21',
        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20'
        ]
 
-jactest_df = pyemu.helpers.build_jac_test_csv(pst,10,par_names)
+# short parameter names 
+pids = ['H_BAR','H_GAL','Q_R20','Q_R21']
 
+# long observation name 
+onames = ['oname:glob_otype:lst_usecol:q_time:1.0',
+ 'oname:glob_otype:lst_usecol:mr_time:1.0',
+ 'oname:q_otype:lst_usecol:r21_time:1.0',
+ 'oname:q_otype:lst_usecol:r20_time:1.0',
+ 'oname:q_otype:lst_usecol:gal_time:1.0',
+ 'oname:mr_otype:lst_usecol:r21_time:1.0',
+ 'oname:mr_otype:lst_usecol:bar_time:1.0',
+ 'oname:q_otype:lst_usecol:bar_time:1.0',
+ 'oname:mr_otype:lst_usecol:r20_time:1.0',
+ 'oname:mr_otype:lst_usecol:gal_time:1.0']
+
+# short observation name 
+oids = ['Q','MR','Q_R21','Q_R20','Q_GAL','MR_R21','MR_BAR','Q_BAR','MR_R20','MR_GAL']
+
+# replace dics
+pdic = {long:short for long,short in zip(pnames,pids)}
+odic = {long:short for long,short in zip(onames,oids)}
+
+# target obs for PyEMU func
+targetobs = onames
+
+# generate jactest run list
+#jactest_df = pyemu.helpers.build_jac_test_csv(pst,8,pnames)
+jactest_df = helpers.build_jac_test_csv(pst,9,pnames)
 jactest_df.to_csv(os.path.join(cwd,'jactest_in.csv'))
 
 # sweep option
@@ -47,13 +91,10 @@ pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
 # write
 pst.write(os.path.join(cwd,pst_name))
 
-'''
 # run
-pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=64,
+pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=2,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
-'''
-
 # plot
 cwd = 'pst_master'
 pdf_dir = os.path.join('fig','jactest')
@@ -61,16 +102,6 @@ csvin = os.path.join(cwd,'jactest_in.csv')
 csvout = os.path.join(cwd,'jactest_out.csv')
 targetobs = None # ['oname:h_otype:lst_usecol:p32_time:2.0']
 
-targetobs = ['oname:mr_otype:lst_usecol:bar_time:1.0',
-   'oname:mr_otype:lst_usecol:gal_time:1.0',
-   'oname:mr_otype:lst_usecol:r20_time:1.0',
-   'oname:mr_otype:lst_usecol:r21_time:1.0',
-  'oname:q_otype:lst_usecol:bar_time:1.0',
-  'oname:q_otype:lst_usecol:gal_time:1.0',
-  'oname:q_otype:lst_usecol:r20_time:1.0',
-  'oname:q_otype:lst_usecol:r21_time:1.0',
-'oname:glob_otype:lst_usecol:mr_time:1.0',
- 'oname:glob_otype:lst_usecol:q_time:1.0']
 
 maxoutputpages=1
 outputdirectory=pdf_dir
@@ -183,5 +214,62 @@ for param, group in plotframe.groupby("parameter"):
                 )
             )
         plt.close()
+
+# plot selection only
+
+df=plotframe.copy()
+df.parameter = df.parameter.replace(pdic)
+df.columns = pd.Series(df.columns).replace(odic)
+
+
+# short parameter names 
+plist = ['H_BAR','H_GAL','Q_R20','Q_R21']
+olist = ['MR_BAR','MR_GAL','MR_R20','MR_R21']
+
+fig,axs = plt.subplots(4,4,figsize=(10,10))
+
+for oname,j in zip(olist,range(4)):
+    for pname,i in zip(plist,range(4)):
+        ax = axs[i,j]
+        idx = df.parameter == pname
+        ax.scatter(df.loc[idx,'increment'],df.loc[idx,oname])
+        ax.plot(df.loc[idx,'increment'],df.loc[idx,oname], "r")
+        ax.tick_params(direction="in")  
+        ax.set_xlabel(pname)
+        ax.set_ylabel(oname)
+        ax.xaxis.set_major_formatter(ticker.StrMethodFormatter('{x:.2f}'))
+
+plt.tight_layout()
+
+fig.savefig(os.path.join('fig','jactest_explicit.png'),dpi=150)
+
+
+
+fig,axs = plt.subplots(1,2,figsize=(7,5))
+pname ='H_GAL'
+oname = 'Q_GAL'
+ax = axs[0]
+idx = df.parameter == pname
+ax.scatter(df.loc[idx,'increment'],df.loc[idx,oname])
+ax.plot(df.loc[idx,'increment'],df.loc[idx,oname], "r")
+ax.tick_params(direction="in")  
+ax.set_xlabel(pname)
+ax.set_ylabel(oname)
+ax.xaxis.set_major_formatter(ticker.StrMethodFormatter('{x:.2f}'))
+
+pname ='H_BAR'
+oname = 'Q_BAR'
+ax = axs[1]
+idx = df.parameter == pname
+ax.scatter(df.loc[idx,'increment'],df.loc[idx,oname])
+ax.plot(df.loc[idx,'increment'],df.loc[idx,oname], "r")
+ax.tick_params(direction="in")  
+ax.set_xlabel(pname)
+ax.set_ylabel(oname)
+ax.xaxis.set_major_formatter(ticker.StrMethodFormatter('{x:.2f}'))
+
+fig.savefig(os.path.join('fig','jactest_qdrn.png'),dpi=150)
+
+
 
 
