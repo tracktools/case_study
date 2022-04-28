@@ -96,11 +96,17 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
             )
 
     ta.load_pgrp_names(pgrpname_file)
-    ta.load_rivname_dic(rivname_file)
+    #ta.load_rivname_dic(rivname_file)
+    ta.load_rivname_dic(mfriv_file= os.path.join(case_dir,'ext', 'riv_spd_1.txt'))
+    
+    # selection of river reaches to consider as contaminant source
+    reach_list = ['THIL_AVAL','THIL_AMONT','MOULINAT_AMONT','GAJAC','BUSSAGUET_AMONT']
+    agg_dic = {'river' : reach_list}
 
     # compute mixing ratio
     mr = ta.compute_mixing_ratio(
-            on='river',
+            #on='river',
+            on=agg_dic,
             edp_cell_budget = True, 
             v_weight = True
             )
@@ -152,4 +158,94 @@ def clear_dirs(dlist):
         if os.path.exists(d):
            shutil.rmtree(d)
         os.mkdir(d)
+
+
+
+def build_jac_test_csv(pst, num_steps, par_names=None, forward=True):
+    """build a dataframe of jactest inputs for use with pestpp-swp
+
+    Args:
+        pst (`pyemu.Pst`): existing control file
+        num_steps (`int`): number of pertubation steps for each parameter
+        par_names [`str`]: list of parameter names of pars to test.
+            If None, all adjustable pars are used. Default is None
+        forward (`bool`): flag to start with forward pertubations.
+            Default is True
+
+    Returns:
+        `pandas.DataFrame`: the sequence of model runs to evaluate
+        for the jactesting.
+
+
+    """
+    if isinstance(pst, str):
+        pst = pyemu.Pst(pst)
+    # pst.add_transform_columns()
+    pst.build_increments()
+    incr = pst.parameter_data.increment.to_dict()
+    irow = 0
+    par = pst.parameter_data
+    if par_names is None:
+        par_names = pst.adj_par_names
+    total_runs = num_steps * len(par_names) + 1
+    idx = ["base"]
+    for par_name in par_names:
+        idx.extend(["{0}_{1}".format(par_name, i) for i in range(num_steps)])
+    df = pd.DataFrame(index=idx, columns=pst.par_names)
+    li = par.partrans == "log"
+    lbnd = par.parlbnd.copy()
+    ubnd = par.parubnd.copy()
+    lbnd.loc[li] = lbnd.loc[li].apply(np.log10)
+    ubnd.loc[li] = ubnd.loc[li].apply(np.log10)
+    lbnd = lbnd.to_dict()
+    ubnd = ubnd.to_dict()
+
+    org_vals = par.parval1.copy()
+    org_vals.loc[li] = org_vals.loc[li].apply(np.log10)
+    if forward:
+        sign = 1.0
+    else:
+        sign = -1.0
+
+    # base case goes in as first row, no perturbations
+    df.loc["base", pst.par_names] = par.parval1.copy()
+    irow = 1
+    full_names = ["base"]
+    for jcol, par_name in enumerate(par_names):
+        org_val = org_vals.loc[par_name]
+        last_val = org_val
+        # NOTE : not increment, but absolute values 
+        incr_list = np.linspace(
+                org_val-incr[par_name]*int(num_steps/2),
+                org_val+incr[par_name]*int(num_steps/2),
+                num_steps)
+        for step in range(num_steps):
+            vals = org_vals.copy()
+            i = incr[par_name]
+            #val = last_val + (sign * incr[par_name])
+            val = incr_list[step]
+            
+            if val > ubnd[par_name]:
+                sign = -1.0
+                val = org_val + (sign * incr[par_name])
+                if val < lbnd[par_name]:
+                    raise Exception("parameter {0} went out of bounds".format(par_name))
+            elif val < lbnd[par_name]:
+                sign = 1.0
+                val = org_val + (sign * incr[par_name])
+                if val > ubnd[par_name]:
+                    raise Exception("parameter {0} went out of bounds".format(par_name))
+
+            vals.loc[par_name] = val
+            vals.loc[li] = 10 ** vals.loc[li]
+            df.loc[idx[irow], pst.par_names] = vals
+            full_names.append(
+                "{0}_{1:<15.6E}".format(par_name, vals.loc[par_name]).strip()
+            )
+
+            irow += 1
+            last_val = val
+    df.index = full_names
+    return df
+
 
