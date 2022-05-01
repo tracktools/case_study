@@ -48,6 +48,7 @@ helpers.clear_dirs([ext_dir])
 
 # set simulation parameter data as external 
 ml = sim.get_model('ml')
+ml.riv.stress_period_data.store_as_external_file(os.path.join('ext','riv_spd.txt'))
 ml.drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
 ml.wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
 
@@ -134,6 +135,7 @@ pst_name = 'sim.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=cwd)
 
+'''
 # jactest
 pst.parameter_groups['inctyp'] = 'absolute'
 pst.parameter_groups.loc['hdrn','derinc']=0.1
@@ -153,7 +155,6 @@ pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
 
-'''
 
 pyemu.plot.plot_utils.plot_jac_test(csv_in,csv_out)
         targetobs=obs_list,

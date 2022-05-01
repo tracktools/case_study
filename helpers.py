@@ -32,7 +32,7 @@ def run(par_file = 'par.dat', info_file='ml_info.csv', cwd='.'):
         mlfile_df.loc[row_idx,col_idx] = parvals
 
         # write model file 
-        mlfile = os.path.join(cwd,tpl_file.replace('.tpl',''))
+        mlfile = os.path.join(cwd,'ext',tpl_file.replace('.tpl',''))
         with open(mlfile,'w') as f:
             f.write(mlfile_df.to_string(index=False,header=False))
 

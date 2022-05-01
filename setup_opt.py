@@ -51,6 +51,7 @@ helpers.clear_dirs([
     os.path.join(new_sim_dir,'ext'),
     os.path.join(new_sim_dir,'sim')])
 
+ml.riv.stress_period_data.store_as_external_file(os.path.join('ext','riv_spd.txt'))
 ml.drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
 ml.wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
 
@@ -402,11 +403,11 @@ pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # --- Run pestpp-opt
-pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
+#pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
 # start workers
-'''
 pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=8,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
-'''
+
+

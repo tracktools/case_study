@@ -81,7 +81,7 @@ targetobs = onames
 
 # generate jactest run list
 #jactest_df = pyemu.helpers.build_jac_test_csv(pst,8,pnames)
-jactest_df = helpers.build_jac_test_csv(pst,9,pnames)
+jactest_df = helpers.build_jac_test_csv(pst,10,pnames)
 jactest_df.to_csv(os.path.join(cwd,'jactest_in.csv'))
 
 # sweep option
@@ -92,13 +92,10 @@ pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
 pst.write(os.path.join(cwd,pst_name))
 
 # run
-pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=2,
+pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=40,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
-<<<<<<< HEAD
 
-=======
->>>>>>> 429bd1edfba2d6b19d067b228fa388b846f9808d
 # plot
 cwd = 'pst_master'
 pdf_dir = os.path.join('fig','jactest')

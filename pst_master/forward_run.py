@@ -55,11 +55,17 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
             )
 
     ta.load_pgrp_names(pgrpname_file)
-    ta.load_rivname_dic(rivname_file)
+    #ta.load_rivname_dic(rivname_file)
+    ta.load_rivname_dic(mfriv_file= os.path.join(case_dir,'ext', 'riv_spd_1.txt'))
+    
+    # selection of river reaches to consider as contaminant source
+    reach_list = ['THIL_AVAL','THIL_AMONT','MOULINAT_AMONT','GAJAC','BUSSAGUET_AMONT']
+    agg_dic = {'river' : reach_list}
 
     # compute mixing ratio
     mr = ta.compute_mixing_ratio(
-            on='river',
+            #on='river',
+            on=agg_dic,
             edp_cell_budget = True, 
             v_weight = True
             )
