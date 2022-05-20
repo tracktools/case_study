@@ -388,7 +388,7 @@ pst.pestpp_options['opt_direction'] = 'min'
 #pst.pestpp_options['parcov'] = 'pcov.unc'
 
 # Number of SLP iterations (if noptmax = 1: LP)
-pst.control_data.noptmax = 1
+pst.control_data.noptmax = 5
 
 # SLP options 
 pst.pestpp_options['opt_coin_log'] = 4 # verbosity level of simplex solver 
