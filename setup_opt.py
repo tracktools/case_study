@@ -276,6 +276,11 @@ for i in range(1,ninst):
 
 par = pst.parameter_data
 
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 9.
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
+
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.50
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
@@ -289,8 +294,8 @@ par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3
 
 # --- Derivative calculation
 
-pst.parameter_groups['forcen'] = 'always_3'
-pst.parameter_groups['dermthd'] = 'parabolic'
+pst.parameter_groups['forcen'] = 'always_5'
+pst.parameter_groups['dermthd'] = 'best_fit'
 
 #pst.parameter_groups.loc['derinc'] = 0.1
 pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
@@ -371,7 +376,7 @@ obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 # constraint definition (mr < ref_value)
 obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','weight']=1
-obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','obsval']=0.20
+obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','obsval']=0.10
 obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','obgnme']='l_mr'
 pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
 
@@ -403,11 +408,12 @@ pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # --- Run pestpp-opt
-#pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
+pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
 # start workers
+'''
 pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=8,
                               worker_root= 'workers',cleanup=False,
-                                master_dir='pst_master')
-
+                                master_dir='master_opt')
+'''
 

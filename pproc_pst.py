@@ -12,7 +12,7 @@ store_cal = True
 store_dir = 'store' # content will be cleared !
 
 # completed PEST run dir - calibrated parameter set
-cal_dir = 'pst_master' 
+cal_dir = 'master_glm' 
 cal_pst_name ='cal.pst'
 par_file = cal_pst_name.replace('pst','par')
 

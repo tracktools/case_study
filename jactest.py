@@ -41,7 +41,6 @@ par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.65
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
 
-
 # parrep 
 if parrep : pst.parrep(os.path.join(cwd,par_file))
 
@@ -92,7 +91,7 @@ pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
 pst.write(os.path.join(cwd,pst_name))
 
 # run
-pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=40,
+pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=5,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='pst_master')
 

@@ -269,4 +269,4 @@ pst.write(os.path.join(pf.new_d, pst_name))
 # start workers
 pyemu.helpers.start_workers("pst",'pestpp-glm',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
-                                master_dir='pst_master')
+                                master_dir='master_glm')
