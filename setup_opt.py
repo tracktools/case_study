@@ -70,16 +70,16 @@ pf = pyemu.utils.PstFrom(original_d=cal_dir, new_d=opt_dir,
 # -----------------------------------------------------------------
 # ---  parameter and observation settings for history matching  ---
 # -----------------------------------------------------------------
-'''
-# fetch list of case directories (without last=99, for sim)
-case_dirs = sorted([d for d in os.listdir('ml') if d.startswith('ml_')])[:-1]
+
+# fetch list of case directories
+case_dirs = sorted([d for d in os.listdir(cal_dir) if d.startswith('ml_')])
 
 # --- process case independent parameters
 # a = twice largest spacing between pp
 v = pyemu.geostats.ExpVario(contribution=1.0,a=2000.)
 grid_gs = pyemu.geostats.GeoStruct(variograms=v, transform='log')
 
-prop_filename =os.path.join('com_ext','k.txt')
+prop_filename =os.path.join(cal_dir,'com_ext','k.txt')
 pp_filename =os.path.join('..',gis_dir,'pp.shp')
 
 zone_array = np.ones((1,ml.modelgrid.ncpl))
@@ -165,7 +165,6 @@ for case_dir in case_dirs:
             index_cols=0, prefix='mr',obsgp = 'mr')
 
 
-'''
 # -----------------------------------------------------------------
 # -------------- simulation settings for optimization  ------------
 # -----------------------------------------------------------------
@@ -198,7 +197,7 @@ qwel_df = pf.add_parameters(filenames=prop_file,
                   par_type='grid',
                   par_style='direct')
 
-# ---- objective and constraints 
+# ---- simulation directory :  objective and constraints 
 
 # mixing ratios 
 mr_file = os.path.join('sim','sim', 'mr.csv')
@@ -224,7 +223,7 @@ glob_df = pf.add_observations(glob_file, insfile=glob_file+'.ins',
 # -------------------------------------------------------
 
 # functions for forward_run.py
-#pf.add_py_function('helpers.py','run_cases()',is_pre_cmd=False)
+pf.add_py_function('helpers.py','run_cases()',is_pre_cmd=False)
 pf.add_py_function('helpers.py','run_sim()',is_pre_cmd=False)
 pf.add_py_function('helpers.py','run_case()',is_pre_cmd=None)
 pf.add_py_function('helpers.py','ptrack_pproc()',is_pre_cmd=None)
@@ -244,7 +243,6 @@ pst.pestpp_options['max_run_fail'] = 5
 # --- Parameter processing
 par = pst.parameter_data 
 
-'''
 # tie outer pp to 1st outer pp
 par.loc[ppo_idx[1:],'partrans'] = 'tied'
 par.loc[ppo_idx[1:],'partied'] = ppo_idx[0]
@@ -270,7 +268,6 @@ for i in range(1,ninst):
     idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
     par.loc[idx,'partied'] = drn_inst0_idx.values
 
-'''
 
 # --- Initial values of decision variables 
 
@@ -306,7 +303,6 @@ pst.parameter_groups.loc['qwel','derinc'] = 10./3600 # m
 
 # --- Prior parameter covariance matrix 
 
-'''
 # multipliers bounds from parameter bounds 
 pgroups = ['hk', 'criv', 'cdrn', 'cghb', 'rech']
 for pg in pgroups:
@@ -328,14 +324,12 @@ pcov.replace(gs_cov)
 
 pcov.to_ascii(os.path.join(pf.new_d,'pcov.txt'))
 #pcov.to_binary(os.path.join(pf.new_d,'pcov.jcb'))
-pcov.to_uncfile(os.path.join(pf.new_d,'pcov.unc'))
-
+#pcov.to_uncfile(os.path.join(pf.new_d,'pcov.unc'))
 #plt.imshow(np.log10(pcov.x))
-'''
+
 # ---- Observation processing  
 obs = pst.observation_data
 
-'''
 # load observation data
 surveys_df = pd.read_excel(os.path.join(data_dir,'surveys.xlsx'), index_col = 0)
 
@@ -352,26 +346,37 @@ obs['case'] = obs['time'].astype(float).astype(int)
 obs['obsval'] = [surveys_df.loc[case_id,obs_id]
         for case_id,obs_id in zip(obs.case,obs.id)]
 
-'''
 # convert discharge rates from m3/h to m3/s
 obs.loc[obs.obgnme == 'qdrn','obsval'] = obs.loc[obs.obgnme == 'qdrn','obsval']*(-1./3600)
 
 # convert mixing ratios from % to [-]
 obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
 
-'''
 # adjusting weights from measurement error 
 weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
 
 for obgnme in ['heads','qdrn','mr']:
     # weighting based on measurement error 
     obs.loc[obs.obgnme==obgnme,'weight'] = 1./weights_df.loc[obgnme,'sigma']
-'''
 
 # 0-weight to unavailable obs
 obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 
+
+# compute jacobian matrix for FOSM
+
+pst_name = 'fosm.pst'
+pst.noptmax=-1
+pst.write(os.path.join(pf.new_d, pst_name))
+
+pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=8,
+                              worker_root= 'workers',cleanup=False,
+                                master_dir='master_fosm')
+
+
+
+'''
 # ---- Optimization settings
 
 # constraint definition (mr < ref_value)
@@ -390,7 +395,8 @@ pst.pestpp_options['opt_obj_func'] = obj_obsnme
 pst.pestpp_options['opt_direction'] = 'min'
 
 # prior parameter covariance matrix 
-#pst.pestpp_options['parcov'] = 'pcov.unc'
+pst.pestpp_options['parcov'] = 'pcov.unc'
+
 
 # Number of SLP iterations (if noptmax = 1: LP)
 pst.control_data.noptmax = 5
@@ -411,9 +417,7 @@ pst.write(os.path.join(pf.new_d, pst_name))
 pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
 # start workers
-'''
 pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=8,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_opt')
 '''
-
