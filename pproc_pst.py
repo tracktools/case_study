@@ -14,7 +14,7 @@ store_dir = 'store' # content will be cleared !
 # completed PEST run dir - calibrated parameter set
 cal_dir = 'master_glm' 
 cal_pst_name ='cal.pst'
-par_file = cal_pst_name.replace('pst','par')
+par_file = cal_pst_name.replace('pst','13.par')
 
 # evaluation dir (calibrated parameters -  noptmax=0) 
 eval_dir = 'pst'  
