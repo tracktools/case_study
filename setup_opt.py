@@ -117,7 +117,6 @@ pf.add_parameters(filenames=prop_filename,
 
 # -- Iterate over cases
 for case_dir in case_dirs:
-
     case_id = int(case_dir.split('_')[1])
 
     # --- Case-dependent parameter processing 
@@ -180,7 +179,7 @@ hdrn_df = pf.add_parameters(filenames=prop_file,
                   use_cols=[2],
                   lower_bound=par_df.loc[pargp,'parlbnd'], upper_bound=par_df.loc[pargp,'parubnd'],
                   ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                  transform='none',
+                  transform='fixed',
                   par_type='grid',
                   par_style='direct')
 
@@ -193,7 +192,7 @@ qwel_df = pf.add_parameters(filenames=prop_file,
                   use_cols=[2], use_rows=[7,8],
                   lower_bound=par_df.loc[pargp,'parlbnd'], upper_bound=par_df.loc[pargp,'parubnd'],
                   ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                  transform='none',
+                  transform='fixed',
                   par_type='grid',
                   par_style='direct')
 
@@ -217,6 +216,8 @@ glob_file = os.path.join('sim','sim','glob.csv')
 glob_df = pf.add_observations(glob_file, insfile=glob_file+'.ins',
         index_cols=0, prefix='glob',obsgp = 'glob')
 
+# set list of forecasts 
+forecasts = mr_df.index.to_list() + q_df.index.to_list() + glob_df.index.to_list()
 
 # -------------------------------------------------------
 # --------------      pst setup         -----------------
@@ -268,65 +269,6 @@ for i in range(1,ninst):
     idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
     par.loc[idx,'partied'] = drn_inst0_idx.values
 
-
-# --- Initial values of decision variables 
-
-par = pst.parameter_data
-
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 9.
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
-
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.50
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
-
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.65
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
-
-
-# --- Derivative calculation
-
-pst.parameter_groups['forcen'] = 'always_5'
-pst.parameter_groups['dermthd'] = 'best_fit'
-
-#pst.parameter_groups.loc['derinc'] = 0.1
-pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
-pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
-pst.parameter_groups.loc['hdrn','derinc'] = 0.05 # m
-pst.parameter_groups.loc['qwel','derinc'] = 10./3600 # m
-
-
-# --- Prior parameter covariance matrix 
-
-# multipliers bounds from parameter bounds 
-pgroups = ['hk', 'criv', 'cdrn', 'cghb', 'rech']
-for pg in pgroups:
-    par.loc[par.pargp == pg,'parlbnd'] = par_df.loc[pg,'priorlbnd']/par_df.loc[pg,'val']
-    par.loc[par.pargp == pg,'parubnd'] = par_df.loc[pg,'priorubnd']/par_df.loc[pg,'val']
-
-# initialize pcov from pst 
-pcov = pyemu.Cov.from_parameter_data(pst)
-pcov.to_ascii(os.path.join(pf.new_d,'pcov_diag.txt'))
-
-# covariance matrix of adjustable pilot points (not tied)
-adj_pp_names = par.loc[(par['partrans'] != 'tied') & (par['pargp'] == 'hk')].index.values
-gs_cov = grid_gs.covariance_matrix(
-        pp_df.loc[adj_pp_names,'x'],
-        pp_df.loc[adj_pp_names,'y'],
-        pp_df.loc[adj_pp_names,'parnme'])
-
-pcov.replace(gs_cov)
-
-pcov.to_ascii(os.path.join(pf.new_d,'pcov.txt'))
-#pcov.to_binary(os.path.join(pf.new_d,'pcov.jcb'))
-#pcov.to_uncfile(os.path.join(pf.new_d,'pcov.unc'))
-#plt.imshow(np.log10(pcov.x))
-
 # ---- Observation processing  
 obs = pst.observation_data
 
@@ -363,17 +305,61 @@ for obgnme in ['heads','qdrn','mr']:
 obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 
+# --- Bounds and initial values for decision variables 
 
-# compute jacobian matrix for FOSM
+par = pst.parameter_data
+
+# initial value
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 9.
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
+
+# lower bound
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.50
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
+
+# upper bound
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.65
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
+
+
+# --- Derivative calculation
+pst.parameter_groups['forcen'] = 'always_5'
+pst.parameter_groups['dermthd'] = 'best_fit'
+
+#pst.parameter_groups.loc['derinc'] = 0.1
+pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
+pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
+pst.parameter_groups.loc['hdrn','derinc'] = 0.05 # m
+pst.parameter_groups.loc['qwel','derinc'] = 10./3600 # m
+
+# --- Prior parameter covariance matrix 
+
+# multipliers bounds from parameter bounds 
+pgroups = ['hk', 'criv', 'cdrn', 'cghb', 'rech']
+for pg in pgroups:
+    par.loc[par.pargp == pg,'parlbnd'] = par_df.loc[pg,'priorlbnd']/par_df.loc[pg,'val']
+    par.loc[par.pargp == pg,'parubnd'] = par_df.loc[pg,'priorubnd']/par_df.loc[pg,'val']
+
+cov = pf.build_prior(fmt='coo', filename=os.path.join(opt_dir,'pcov.jcb'),sigma_range=6)
+
+# ---- Forecast definition  
+pst.pestpp_options['forecasts'] = forecasts
+
+# ---- compute jacobian matrix for FOSM
 
 pst_name = 'fosm.pst'
 pst.noptmax=-1
 pst.write(os.path.join(pf.new_d, pst_name))
 
-pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=8,
+pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_fosm')
-
 
 
 '''
