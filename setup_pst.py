@@ -43,7 +43,7 @@ pf = pyemu.utils.PstFrom(original_d=org_ml_dir, new_d=pst_dir,
                  zero_based=False)
 
 # fetch list of case directories
-case_dirs = sorted([d for d in os.listdir('ml') if d.startswith('ml_')])
+case_dirs = sorted([d for d in os.listdir('ml') if d.startswith('ml_')])[:-1]
 
 # --- Process case independent parameters
 # a = twice largest spacing between pp
@@ -232,7 +232,7 @@ pyemu.helpers.first_order_pearson_tikhonov(pst,cov_mat,reset=False,abs_drop_tol=
 # regularization settings
 pst.reg_data.phimlim = phimlim*1.5
 pst.reg_data.phimaccept = pst.reg_data.phimlim*1.1
-pst.reg_data.fracphim = 0.2
+pst.reg_data.fracphim = 0.1
 pst.reg_data.wfmin = 1.0e-10
 pst.reg_data.wfinit = 1e-3
 pst.reg_data.wfac = 1.5
@@ -252,7 +252,7 @@ pst.pestpp_options['max_run_fail'] = 5
 pst.parameter_groups.loc[ pst.parameter_groups.index,'forcen'] = 'always_3'
 pst.parameter_groups.loc[ pst.parameter_groups.index,'dermthd'] = 'best_fit'
 
-pst.parameter_groups.loc[ pst.parameter_groups.index,'derinc'] = 0.1
+pst.parameter_groups.loc[ pst.parameter_groups.index,'derinc'] = 0.10
 pst.parameter_groups.loc['hk',"derinc"] = 0.15
 
 # ---- write pst   

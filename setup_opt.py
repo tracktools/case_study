@@ -34,30 +34,33 @@ if os.path.exists(new_sim_dir): shutil.rmtree(new_sim_dir)
 
 shutil.copytree(tpl_ml_dir, new_sim_dir)
 
+# clear output dir  
+helpers.clear_dirs([
+    #os.path.join(new_sim_dir,'ext'),
+    os.path.join(new_sim_dir,'sim')])
+
 # ---- load mf model and set spatial reference (grid cell centroids)
 sim = flopy.mf6.MFSimulation.load(sim_ws=new_sim_dir,exe_name=mf6_exe)
 
-# set all_data_internal and write 
-sim.set_all_data_internal()
-sim.tdis.perioddata = [ (1, 1, 1) ]
+sim.tdis.perioddata = [ (99, 1, 1) ]
 ml = sim.get_model('ml')
 ncpl = ml.modelgrid.ncpl
 
 sr = {i:(x,y) for i,x,y in zip(range(ncpl),
     ml.modelgrid.xcellcenters,ml.modelgrid.ycellcenters)}
 
-# clear output dir  
-helpers.clear_dirs([
-    os.path.join(new_sim_dir,'ext'),
-    os.path.join(new_sim_dir,'sim')])
-
+'''
+# set all_data_internal and write 
+sim.set_all_data_internal()
 ml.riv.stress_period_data.store_as_external_file(os.path.join('ext','riv_spd.txt'))
 ml.drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
 ml.wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
 
+'''
 sim.write_simulation() 
 
 helpers.run_case(new_sim_dir)
+
 # -----------------------------------------------------------------
 # ---------------  initialize PstFrom instance  -------------------
 # -----------------------------------------------------------------
@@ -167,21 +170,19 @@ for case_dir in case_dirs:
 # -----------------------------------------------------------------
 # -------------- simulation settings for optimization  ------------
 # -----------------------------------------------------------------
-
 # ---- decision variables  
-
 # drn levels 
 prop_file = os.path.join('sim','ext','drn_spd_1.txt')
-pargp='hdrn'
-hdrn_df = pf.add_parameters(filenames=prop_file, 
-                  par_name_base='h',
-                  pargp=pargp, index_cols=[4], 
-                  use_cols=[2],
-                  lower_bound=par_df.loc[pargp,'parlbnd'], upper_bound=par_df.loc[pargp,'parubnd'],
-                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                  transform='fixed',
-                  par_type='grid',
-                  par_style='direct')
+drn_df = pf.add_parameters(filenames=prop_file, 
+                  par_name_base=['h','cond'],
+                  pargp=['hdrn','cdrn'], index_cols=[4], 
+                  lower_bound=[par_df.loc['hdrn','parlbnd'],par_df.loc['cdrn','parlbnd']],
+                  upper_bound=[par_df.loc['hdrn','parubnd'], par_df.loc['cdrn','parubnd']],
+                  ult_lbound=[par_df.loc['hdrn','parlbnd'], par_df.loc['cdrn','parlbnd']],
+                  ult_ubound=[par_df.loc['hdrn','parubnd'],par_df.loc['cdrn','parubnd']],
+                  use_cols=[2,3],
+                  par_type='grid'
+                  )
 
 # well discharge rate  
 prop_file = os.path.join('sim','ext','wel_spd_1.txt')
@@ -197,18 +198,18 @@ qwel_df = pf.add_parameters(filenames=prop_file,
                   par_style='direct')
 
 # ---- simulation directory :  objective and constraints 
-
+ 
 # mixing ratios 
 mr_file = os.path.join('sim','sim', 'mr.csv')
 
-mr_df = pf.add_observations(mr_file, insfile=mr_file+'.ins',
-        index_cols=0, prefix='mr', obsgp = 'mr')
+sim_mr_df = pf.add_observations(mr_file, insfile=mr_file+'.ins',
+        index_cols=0, prefix='mr', obsgp = 'sim_mr')
 
 # discharge values 
 q_file = os.path.join('sim','sim','q.csv')
 
-q_df = pf.add_observations(q_file, insfile=q_file+'.ins',
-        index_cols=0, prefix='q',obsgp = 'q')
+sim_q_df = pf.add_observations(q_file, insfile=q_file+'.ins',
+        index_cols=0, prefix='q',obsgp = 'sim_q')
 
 # global values
 glob_file = os.path.join('sim','sim','glob.csv')
@@ -217,7 +218,7 @@ glob_df = pf.add_observations(glob_file, insfile=glob_file+'.ins',
         index_cols=0, prefix='glob',obsgp = 'glob')
 
 # set list of forecasts 
-forecasts = mr_df.index.to_list() + q_df.index.to_list() + glob_df.index.to_list()
+forecasts = sim_mr_df.index.to_list() + sim_q_df.index.to_list() + glob_df.index.to_list()
 
 # -------------------------------------------------------
 # --------------      pst setup         -----------------
@@ -307,32 +308,40 @@ obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 # --- Bounds and initial values for decision variables 
 
+
 par = pst.parameter_data
+#list of decision variables 
+dec_var = [
+        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar',        
+        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal',
+        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:r21',
+        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:r20'
+        ]
 
 # initial value
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 9.
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 9.
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:r21','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:r20','parval1'] = -250./3600
 
 # lower bound
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.50
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parlbnd'] = 8.50
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parlbnd'] = 8.00
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:r21','parlbnd'] = -500./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:r20','parlbnd'] = -500./3600
 
 # upper bound
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.65
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parubnd'] = 9.65
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parubnd'] = 9.65
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:r21','parubnd'] = -50./3600 
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:r20','parubnd'] = -50./3600
 
 
 # --- Derivative calculation
-pst.parameter_groups['forcen'] = 'always_5'
+pst.parameter_groups['forcen'] = 'always_3'
 pst.parameter_groups['dermthd'] = 'best_fit'
 
-#pst.parameter_groups.loc['derinc'] = 0.1
+pst.parameter_groups.loc['derinc'] = 0.1
 pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
 pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
 pst.parameter_groups.loc['hdrn','derinc'] = 0.05 # m
@@ -350,18 +359,18 @@ cov = pf.build_prior(fmt='coo', filename=os.path.join(opt_dir,'pcov.jcb'),sigma_
 
 # ---- Forecast definition  
 pst.pestpp_options['forecasts'] = forecasts
+pst.observation_data.loc[forecasts,'weight']=0.
 
 # ---- compute jacobian matrix for FOSM
 
 pst_name = 'fosm.pst'
-pst.noptmax=-1
+pst.control_data.noptmax=-1
 pst.write(os.path.join(pf.new_d, pst_name))
 
 pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_fosm')
-
-
+'''
 '''
 # ---- Optimization settings
 

@@ -78,7 +78,7 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
     try : 
         case_id = int(case_dir.split('_')[1])
     except :
-        case_id = 1.
+        case_id = 99. # id for sim
 
     cbc_file = os.path.join(case_dir,ml_name + '.cbc')
     grb_file = os.path.join(case_dir,ml_name + '.disv.grb')

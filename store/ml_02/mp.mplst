@@ -91,9 +91,9 @@ The simulation will be run with stoptime =   0.1000000E+31
 Particle Summary:
          0 particles are pending release.
          0 particles remain active.
-        30 particles terminated at boundary faces.
+       292 particles terminated at boundary faces.
          0 particles terminated at weak sink cells.
-       770 particles terminated at weak source cells.
+       508 particles terminated at weak source cells.
          0 particles terminated at strong source/sink cells or other cells with no potential exit face.
          0 particles terminated in cells with a specified zone number.
          0 particles were stranded in inactive or dry cells.
@@ -102,4 +102,4 @@ Particle Summary:
  
 
 Normal termination.                                                        
- Elapsed time =     0.19700E+00 seconds
+ Elapsed time =     0.18000E+00 seconds
