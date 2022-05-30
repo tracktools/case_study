@@ -18,7 +18,7 @@ from tracktools import ParticleGenerator
 # id < 99 for  history matching 
 # id = 99 for simulation
 #case_ids = [i for i in range(1,11)]
-case_ids = [1,2,4,5,6,7,8,9,10,99]
+case_ids = [2,4,5,6,7,8,9,10,99]
 mf6_exe = 'mf6'
 mp7_exe = 'mp7'
 gridgen_exe = 'gridgen'

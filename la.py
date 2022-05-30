@@ -1,38 +1,48 @@
-import os
+mport os
 import numpy as np 
 import pandas as pd
 from matplotlib import pyplot as plt
 import pyemu
 
 
-# completed PEST run - calibrated parameter set
-cal_dir = 'pst_master' 
-
-pst_file ='cal.pst'
-jco_file = pst_file.replace('.pst','.jcb')     
+fosm_dir = 'master_fosm' 
 
 
-css_df=la.get_par_css_dataframe()
-css_df['hill_css'].plot.bar()
+dec_var = [
+        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar',
+        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal',
+        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21',
+        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20'
+        ]
 
-# directory for output files
-cwd = 'la'
 
-# read pp template file 
-pp_file = os.path.join(cal_dir,'hk_inst0pp.dat')
-pp_df = pyemu.pst.pst_utilsread_parfile(pp_file)
-pp_names = pyemu.pst.pst_utils.parse_tpl_file(pp_file+'.tpl')
-pp_df.set_index(pp_names,inplace=True)
+# pst file 
+pst_file = os.path.join(fosm_dir,'fosm.pst')
+pst = pyemu.Pst(pst_file)
 
-pst = pyemu.Pst(os.path.join(cal_dir, pst_file))
-la = pyemu.Schur(jco=os.path.join(cal_dir, jco_file),verbose=False)
+par = pst.parameter_data
+par.loc[dec_var,'partrans']='fixed'
 
-la.parcov.to_uncfile(os.path.join(cwd, 'parcov.unc'), covmat_file=os.path.join(cwd,'parcov.mat'))
-la.obscov.to_uncfile(os.path.join(cwd, 'obscov.unc'), covmat_file=None)
+# jacobian matrix 
+jco_file = os.path.join(fosm_dir,'fosm.jcb')
+jco = pyemu.Jco.from_binary(jco_file)
 
-la.posterior_parameter.to_ascii(os.path.join(cwd, 'posterior.mat'))
+# prior parameter covariance matrix 
+parcov_file = os.path.join(fosm_dir,'pcov.jcb')
+parcov = pyemu.Cov.from_binary(parcov_file)
 
-par_sum = la.get_parameter_summary().sort_index()
-par_sum.loc[par_sum.index[:100],'percent_reduction'].plot(kind='bar',figsize=(10,4),edgecolor='none')
-par_sum.iloc[0:10,:]
+# observation covariance matrix 
+obscov = pyemu.Cov.from_observation_data(pst)
 
+sc = pyemu.Schur(
+        pst=pst, 
+        jco=jco, 
+        parcov=parcov, 
+        obscov=obscov, 
+        forecasts=pst.forecast_names
+        )
+
+forecasts = sc.pst.forecast_names
+
+
+sc.get_forecast_summary()
