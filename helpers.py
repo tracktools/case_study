@@ -97,7 +97,7 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
 
     ta.load_pgrp_names(pgrpname_file)
     #ta.load_rivname_dic(rivname_file)
-    ta.load_rivname_dic(mfriv_file= os.path.join(case_dir,'ext', 'riv_spd_1.txt'))
+    ta.load_rivname_dic(mfriv_file= os.path.join(case_dir,'ext', f'riv_spd_{case_id:02d}_1.txt'))
     
     # selection of river reaches to consider as contaminant source
     reach_list = ['THIL_AVAL','THIL_AMONT','MOULINAT_AMONT','GAJAC','BUSSAGUET_AMONT']
@@ -122,10 +122,13 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
 
 # compute global variables (Q and mr)
 def compute_glob(case_dir):
+
+    case_id = int(case_dir.split('_')[1])
+    
     # input files 
     mr_file = os.path.join(case_dir,'sim','mr.csv')
     drn_file = os.path.join(case_dir,'sim','drn.csv')
-    wel_file = os.path.join(case_dir,'ext','wel_spd_1.txt')
+    wel_file = os.path.join(case_dir,'ext',f'wel_spd_{case_id:02d}_1.txt')
 
     # load input files
     mr_df = pd.read_csv(mr_file,index_col=0)

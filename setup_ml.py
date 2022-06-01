@@ -369,7 +369,7 @@ for case_id in case_ids:
                                      maxbound=len(wells_data),
                                      boundnames = True)
 
-    wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
+    wel.stress_period_data.store_as_external_file(os.path.join('ext',f'wel_spd_{case_id:02d}.txt'))
 
     # ---- Drain package
     print('ModflowGwfdrn...')
@@ -392,7 +392,7 @@ for case_id in case_ids:
                                              boundnames = True,
                                              observations=drn_obs)
 
-    drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
+    drn.stress_period_data.store_as_external_file(os.path.join('ext',f'drn_spd_{case_id:02d}.txt'))
 
     # ---- Riv package
     print('ModflowGwfriv...')
@@ -430,7 +430,7 @@ for case_id in case_ids:
                                              maxbound = len(riv_data),
                                              boundnames = True)
 
-    riv.stress_period_data.store_as_external_file(os.path.join('ext','riv_spd.txt'))
+    riv.stress_period_data.store_as_external_file(os.path.join('ext',f'riv_spd_{case_id:02d}.txt'))
     
 
     print('Writing model...')

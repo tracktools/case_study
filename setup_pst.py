@@ -89,13 +89,13 @@ pf.add_parameters(filenames=prop_filename,
 
 # -- Iterate over cases
 for case_dir in case_dirs:
-
     case_id = int(case_dir.split('_')[1])
+    print('=============>' + str(case_id))
 
     # --- Case-dependent parameter processing 
 
     # drn cond
-    prop_filename = os.path.join(case_dir,'ext','drn_spd_1.txt')
+    prop_filename = os.path.join(case_dir,'ext','drn_spd_1'+str(case_id)+'.txt')
     pargp='cdrn'
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base=['cond'],
@@ -106,7 +106,7 @@ for case_dir in case_dirs:
                       par_type='grid')
 
     # river cond
-    prop_filename = os.path.join(case_dir,'ext','riv_spd_1.txt')
+    prop_filename = os.path.join(case_dir,'ext','riv_spd_1'+str(case_id)+'.txt')
     pargp='criv'
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base='riv',
@@ -261,13 +261,15 @@ pst_name = f'cal{pst_name_suffix}.pst'
 pst.write(os.path.join(pf.new_d,pst_name ))
 
 # ---- run  pst with noptmax=0
-pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
+#pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 
 # write pst with noptmax =30
 pst.control_data.noptmax=30
 pst.write(os.path.join(pf.new_d, pst_name))
 
+'''
 # start workers
 pyemu.helpers.start_workers("pst",'pestpp-glm',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_glm')
+'''

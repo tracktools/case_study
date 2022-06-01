@@ -41,11 +41,11 @@ sr = {i:(x,y) for i,x,y in zip(range(ncpl),
 # drn levels are set to 1, they will be handled with multipliers
 
 # get template drn ext file 
-tpl_drn_file = os.path.join(cal_dir,'ml_02','ext','drn_spd_1.txt')
+tpl_drn_file = os.path.join(cal_dir,'ml_02','ext',f'drn_spd_{case_id:02d}_1.txt')
 tpl_drn_df = pd.read_csv(tpl_drn_file,delim_whitespace=True, header=None)
 
 # fetch parameter from drn ext file 
-sim_drn_file = os.path.join(cal_dir,sim_dir,'ext','drn_spd_1.txt')
+sim_drn_file = os.path.join(cal_dir,sim_dir,'ext',f'drn_spd_{case_id:02d}_1.txt')
 sim_drn_df = pd.read_csv(sim_drn_file,delim_whitespace=True, header=None)
 sim_drn_df.iloc[:,3]=tpl_drn_df.iloc[:,3]
 
@@ -125,7 +125,7 @@ for case_dir in case_dirs:
     # --- Case-dependent parameter processing 
 
     # drn cond
-    prop_filename = os.path.join(case_dir,'ext','drn_spd_1.txt')
+    prop_filename = os.path.join(case_dir,'ext',f'drn_spd_{case_id:02d}_1.txt')
     pargp='cdrn'
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base=['cond'],
@@ -136,7 +136,7 @@ for case_dir in case_dirs:
                       par_type='grid')
 
     # river cond
-    prop_filename = os.path.join(case_dir,'ext','riv_spd_1.txt')
+    prop_filename = os.path.join(case_dir,'ext',f'riv_spd_{case_id:02d}_1.txt')
     pargp='criv'
     pf.add_parameters(filenames=prop_filename, 
                       par_name_base='riv',
@@ -171,8 +171,10 @@ for case_dir in case_dirs:
 # -------------- simulation settings for optimization  ------------
 # -----------------------------------------------------------------
 
+case_id = 99
+
 # river cond
-prop_filename = os.path.join(sim_dir,'ext','riv_spd_1.txt')
+prop_filename = os.path.join(sim_dir,'ext',f'riv_spd_{case_id:02d}_1.txt')
 pargp='criv'
 pf.add_parameters(filenames=prop_filename, 
                   par_name_base='riv',
@@ -191,7 +193,7 @@ pf.add_parameters(filenames=prop_filename,
 # Doing so, multiplier values correspond to parameter values. 
 
 
-prop_file = os.path.join(sim_dir,'ext','drn_spd_1.txt')
+prop_file = os.path.join(sim_dir,'ext',f'drn_spd_{case_id:02d}_1.txt')
 drn_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base=['h','cond'],
                   pargp=['hdrn','cdrn'], index_cols=[4], 
@@ -204,7 +206,7 @@ drn_df = pf.add_parameters(filenames=prop_file,
                   )
 
 # well discharge rate  
-prop_file = os.path.join(sim_dir,'ext','wel_spd_1.txt')
+prop_file = os.path.join(sim_dir,'ext',f'wel_spd_{case_id:02d}_1.txt')
 pargp='qwel'
 qwel_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='q',
