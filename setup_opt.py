@@ -12,9 +12,6 @@ gis_dir = 'gis'
 # calibrated ml dir  
 cal_dir = 'store'
 
-# template case for simulation (contains river level)
-tpl_ml_dir = os.path.join(cal_dir,'ml_07')
-
 # optimization dir
 opt_dir = 'opt'
 
@@ -30,39 +27,39 @@ par_df = pd.read_excel(os.path.join(data_dir,'par.xlsx'), index_col = 0)
 # -----------------------------------------------------------------
 # ---------------     Simulation model setup    -------------------
 # -----------------------------------------------------------------
-new_sim_dir = os.path.join(cal_dir,sim_dir)
 
-# copy model file 
-if os.path.exists(new_sim_dir): shutil.rmtree(new_sim_dir)
+# ---- load mf model and fetch spatial reference (grid cell centroids)
+sim = flopy.mf6.MFSimulation.load(sim_ws=os.path.join(cal_dir,sim_dir),exe_name=mf6_exe)
 
-shutil.copytree(tpl_ml_dir, new_sim_dir)
-
-# clear output dir  
-helpers.clear_dirs([
-    #os.path.join(new_sim_dir,'ext'),
-    os.path.join(new_sim_dir,sim_dir)])
-
-# ---- load mf model and set spatial reference (grid cell centroids)
-sim = flopy.mf6.MFSimulation.load(sim_ws=new_sim_dir,exe_name=mf6_exe)
-
-sim.tdis.perioddata = [ (99, 1, 1) ]
 ml = sim.get_model('ml')
 ncpl = ml.modelgrid.ncpl
 
 sr = {i:(x,y) for i,x,y in zip(range(ncpl),
     ml.modelgrid.xcellcenters,ml.modelgrid.ycellcenters)}
 
-'''
-# set all_data_internal and write 
-sim.set_all_data_internal()
-ml.riv.stress_period_data.store_as_external_file(os.path.join('ext','riv_spd.txt'))
-ml.drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
-ml.wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
+# new drn cond values should be written in the sim drn ext file 
+# drn levels are set to 1, they will be handled with multipliers
 
-'''
-sim.write_simulation() 
+# get template drn ext file 
+tpl_drn_file = os.path.join(cal_dir,'ml_02','ext','drn_spd_1.txt')
+tpl_drn_df = pd.read_csv(tpl_drn_file,delim_whitespace=True, header=None)
 
-helpers.run_case(new_sim_dir)
+# fetch parameter from drn ext file 
+sim_drn_file = os.path.join(cal_dir,sim_dir,'ext','drn_spd_1.txt')
+sim_drn_df = pd.read_csv(sim_drn_file,delim_whitespace=True, header=None)
+sim_drn_df.iloc[:,3]=tpl_drn_df.iloc[:,3]
+
+# write sim df with updated parameter values
+with open(sim_drn_file, 'w') as f:
+        f.write(
+            sim_drn_df.to_string(
+                header=False,
+                index=False,
+            )
+            + '\n'
+        )
+
+helpers.run_case(os.path.join(cal_dir,sim_dir))
 
 # -----------------------------------------------------------------
 # ---------------  initialize PstFrom instance  -------------------
@@ -338,11 +335,14 @@ dec_var = [
         'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20'
         ]
 
+par.loc[dec_var,'partrans']='none'
+
+
 # initial value
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 9.
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -100./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -100./3600
 
 # lower bound
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parlbnd'] = 8.50
@@ -376,13 +376,13 @@ for pg in pgroups:
     par.loc[par.pargp == pg,'parubnd'] = par_df.loc[pg,'priorubnd']/par_df.loc[pg,'val']
 
 cov = pf.build_prior(fmt='coo', filename=os.path.join(opt_dir,'pcov.jcb'),sigma_range=6)
+cov.to_uncfile(os.path.join(opt_dir,'pcov.unc'))
 
 # ---- Forecast definition  
 pst.pestpp_options['forecasts'] = forecasts
 pst.observation_data.loc[forecasts,'weight']=0.
 
 # ---- compute jacobian matrix for FOSM
-
 pst_name = 'fosm.pst'
 pst.control_data.noptmax=-1
 pst.write(os.path.join(pf.new_d, pst_name))
@@ -392,21 +392,20 @@ pst.write(os.path.join(pf.new_d, pst_name))
 pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_fosm')
-'''
 
 # ---- Optimization settings
 
 # constraint definition (mr < ref_value)
-obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','weight']=1
-obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','obsval']=0.10
-obs.loc['oname:glob_otype:lst_usecol:mr_time:1.0','obgnme']='l_mr'
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.30
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obgnme']='l_mr'
 pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
 
 # decision variables (well discharge rates and drain levels)
 pst.pestpp_options['opt_dec_var_groups'] = ['qwel','hdrn']
 
 # objective function definition 
-obj_obsnme = 'oname:glob_otype:lst_usecol:q_time:1.0'
+obj_obsnme = 'oname:glob_otype:lst_usecol:q_time:99.0'
 obs.loc[obj_obsnme,'weight']=0.
 pst.pestpp_options['opt_obj_func'] = obj_obsnme
 pst.pestpp_options['opt_direction'] = 'min'
@@ -431,10 +430,9 @@ pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # --- Run pestpp-opt
-pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
+#pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
 # start workers
-pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=8,
+pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=10,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_opt')
-'''

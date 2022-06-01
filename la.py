@@ -1,4 +1,4 @@
-mport os
+import os
 import numpy as np 
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -45,4 +45,4 @@ sc = pyemu.Schur(
 forecasts = sc.pst.forecast_names
 
 
-sc.get_forecast_summary()
+print(sc.get_forecast_summary())

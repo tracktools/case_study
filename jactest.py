@@ -9,7 +9,7 @@ import pyemu
 import helpers
 
 # --- pst files 
-cwd = 'opt'
+opt_dir = 'opt'
 org_pst_name ='opt_50.pst'
 pst_name = 'jactest.pst'
 
@@ -17,7 +17,7 @@ parrep=False
 par_file = os.path.join('pst_master',org_pst_name.replace('pst','par'))
 
 # read pest file  
-pst = pyemu.Pst(os.path.join(cwd, org_pst_name))
+pst = pyemu.Pst(os.path.join(opt_dir, org_pst_name))
 
 pst.parameter_groups.loc[ 'hdrn','inctyp'] = 'absolute'
 pst.parameter_groups.loc[ 'qwel','inctyp'] = 'absolute'
@@ -25,30 +25,28 @@ pst.parameter_groups.loc[ 'hdrn','derinc'] = 0.15 # m
 pst.parameter_groups.loc[ 'qwell','derinc'] = 50./3600 # m
 
 par = pst.parameter_data 
-
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 8.8
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 8.8
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 8.8
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
 
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parlbnd'] = 8.00
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parlbnd'] = 8.00
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parlbnd'] = 8.00
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parlbnd'] = 8.00
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
 
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parubnd'] = 9.65
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parubnd'] = 9.65
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parubnd'] = 9.65
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parubnd'] = 9.65
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
 
 # parrep 
-if parrep : pst.parrep(os.path.join(cwd,par_file))
+if parrep : pst.parrep(os.path.join(opt_dir,par_file))
 
 
 # long parameter names 
 pnames = [
-       'pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar',
-       'pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal',
+       'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar',
+       'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal',
        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21',
        'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20'
        ]
@@ -57,16 +55,16 @@ pnames = [
 pids = ['H_BAR','H_GAL','Q_R20','Q_R21']
 
 # long observation name 
-onames = ['oname:glob_otype:lst_usecol:q_time:1.0',
- 'oname:glob_otype:lst_usecol:mr_time:1.0',
- 'oname:q_otype:lst_usecol:r21_time:1.0',
- 'oname:q_otype:lst_usecol:r20_time:1.0',
- 'oname:q_otype:lst_usecol:gal_time:1.0',
- 'oname:mr_otype:lst_usecol:r21_time:1.0',
- 'oname:mr_otype:lst_usecol:bar_time:1.0',
- 'oname:q_otype:lst_usecol:bar_time:1.0',
- 'oname:mr_otype:lst_usecol:r20_time:1.0',
- 'oname:mr_otype:lst_usecol:gal_time:1.0']
+onames = ['oname:glob_otype:lst_usecol:q_time:99.0',
+ 'oname:glob_otype:lst_usecol:mr_time:99.0',
+ 'oname:q_otype:lst_usecol:r21_time:99.0',
+ 'oname:q_otype:lst_usecol:r20_time:99.0',
+ 'oname:q_otype:lst_usecol:gal_time:99.0',
+ 'oname:mr_otype:lst_usecol:r21_time:99.0',
+ 'oname:mr_otype:lst_usecol:bar_time:99.0',
+ 'oname:q_otype:lst_usecol:bar_time:99.0',
+ 'oname:mr_otype:lst_usecol:r20_time:99.0',
+ 'oname:mr_otype:lst_usecol:gal_time:99.0']
 
 # short observation name 
 oids = ['Q','MR','Q_R21','Q_R20','Q_GAL','MR_R21','MR_BAR','Q_BAR','MR_R20','MR_GAL']
@@ -81,26 +79,25 @@ targetobs = onames
 # generate jactest run list
 #jactest_df = pyemu.helpers.build_jac_test_csv(pst,8,pnames)
 jactest_df = helpers.build_jac_test_csv(pst,10,pnames)
-jactest_df.to_csv(os.path.join(cwd,'jactest_in.csv'))
+jactest_df.to_csv(os.path.join(opt_dir,'jactest_in.csv'))
 
 # sweep option
 pst.pestpp_options['sweep_parameter_csv_file'] = 'jactest_in.csv'
 pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
 
 # write
-pst.write(os.path.join(cwd,pst_name))
+pst.write(os.path.join(opt_dir,pst_name))
 
 # run
-pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=5,
+pyemu.helpers.start_workers(opt_dir,'pestpp-swp',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
-                                master_dir='pst_master')
+                                master_dir='master_swp')
 
 # plot
-cwd = 'pst_master'
+cwd = 'master_swp'
 pdf_dir = os.path.join('fig','jactest')
 csvin = os.path.join(cwd,'jactest_in.csv')
 csvout = os.path.join(cwd,'jactest_out.csv')
-targetobs = None # ['oname:h_otype:lst_usecol:p32_time:2.0']
 
 
 maxoutputpages=1

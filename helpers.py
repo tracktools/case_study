@@ -78,7 +78,7 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
     try : 
         case_id = int(case_dir.split('_')[1])
     except :
-        case_id = 99. # id for sim
+        case_id = 99 # id for sim
 
     cbc_file = os.path.join(case_dir,ml_name + '.cbc')
     grb_file = os.path.join(case_dir,ml_name + '.disv.grb')
@@ -114,7 +114,7 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
     # write sim file
     if 'river' not in mr.columns : mr['river']=0.
     sim_df = pd.DataFrame(
-            [[case_id]+mr['river'].to_list()],
+            [[f'{case_id:.1f}']+mr['river'].to_list()],
             columns=['time']+mr.index.to_list()
             )
     sim_df.set_index('time',inplace=True)
