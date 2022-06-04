@@ -41,10 +41,12 @@ sr = {i:(x,y) for i,x,y in zip(range(ncpl),
 # drn levels are set to 1, they will be handled with multipliers
 
 # get template drn ext file 
+case_id=2
 tpl_drn_file = os.path.join(cal_dir,'ml_02','ext',f'drn_spd_{case_id:02d}_1.txt')
 tpl_drn_df = pd.read_csv(tpl_drn_file,delim_whitespace=True, header=None)
 
 # fetch parameter from drn ext file 
+case_id=99
 sim_drn_file = os.path.join(cal_dir,sim_dir,'ext',f'drn_spd_{case_id:02d}_1.txt')
 sim_drn_df = pd.read_csv(sim_drn_file,delim_whitespace=True, header=None)
 sim_drn_df.iloc[:,3]=tpl_drn_df.iloc[:,3]
@@ -79,7 +81,7 @@ case_dirs = sorted([d for d in os.listdir(cal_dir) if d.startswith('ml_')])[:-1]
 
 # --- process case independent parameters
 # a = twice largest spacing between pp
-v = pyemu.geostats.ExpVario(contribution=1.0,a=2000.)
+v = pyemu.geostats.ExpVario(contribution=1.0,a=500.)
 grid_gs = pyemu.geostats.GeoStruct(variograms=v, transform='log')
 
 prop_filename =os.path.join(cal_dir,'com_ext','k.txt')
@@ -360,7 +362,7 @@ par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3
 
 
 # --- Derivative calculation
-pst.parameter_groups['forcen'] = 'always_3'
+pst.parameter_groups['forcen'] = 'always_5'
 pst.parameter_groups['dermthd'] = 'best_fit'
 
 pst.parameter_groups.loc['derinc'] = 0.1
@@ -399,7 +401,7 @@ pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=64,
 
 # constraint definition (mr < ref_value)
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
-obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.30
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.1
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obgnme']='l_mr'
 pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
 
