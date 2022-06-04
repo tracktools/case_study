@@ -37,15 +37,15 @@ ncpl = ml.modelgrid.ncpl
 sr = {i:(x,y) for i,x,y in zip(range(ncpl),
     ml.modelgrid.xcellcenters,ml.modelgrid.ycellcenters)}
 
-# new drn cond values should be written in the sim drn ext file 
+# new riv and drn cond values should be written in the sim drn ext file 
 # drn levels are set to 1, they will be handled with multipliers
 
-# get template drn ext file 
+# get template drn ext file (with calibrated cond values)
 case_id=2
 tpl_drn_file = os.path.join(cal_dir,'ml_02','ext',f'drn_spd_{case_id:02d}_1.txt')
 tpl_drn_df = pd.read_csv(tpl_drn_file,delim_whitespace=True, header=None)
 
-# fetch parameter from drn ext file 
+# fetch parameter from drn ext file (with simulation stage values)
 case_id=99
 sim_drn_file = os.path.join(cal_dir,sim_dir,'ext',f'drn_spd_{case_id:02d}_1.txt')
 sim_drn_df = pd.read_csv(sim_drn_file,delim_whitespace=True, header=None)
@@ -55,6 +55,28 @@ sim_drn_df.iloc[:,3]=tpl_drn_df.iloc[:,3]
 with open(sim_drn_file, 'w') as f:
         f.write(
             sim_drn_df.to_string(
+                header=False,
+                index=False,
+            )
+            + '\n'
+        )
+
+
+# get template riv ext file (with calibrated cond values)
+case_id=2
+tpl_riv_file = os.path.join(cal_dir,'ml_02','ext',f'riv_spd_{case_id:02d}_1.txt')
+tpl_riv_df = pd.read_csv(tpl_riv_file,delim_whitespace=True, header=None)
+
+# fetch parameter from riv ext file (with simulation stage values)
+case_id=99
+sim_riv_file = os.path.join(cal_dir,sim_dir,'ext',f'riv_spd_{case_id:02d}_1.txt')
+sim_riv_df = pd.read_csv(sim_riv_file,delim_whitespace=True, header=None)
+sim_riv_df.iloc[:,3]=tpl_riv_df.iloc[:,3]
+
+# write sim df with updated parameter values
+with open(sim_riv_file, 'w') as f:
+        f.write(
+            sim_riv_df.to_string(
                 header=False,
                 index=False,
             )
@@ -392,11 +414,11 @@ pst.control_data.noptmax=-1
 pst.write(os.path.join(pf.new_d, pst_name))
 #pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 
-
+'''
 pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_fosm')
-
+'''
 # ---- Optimization settings
 
 # constraint definition (mr < ref_value)
@@ -436,7 +458,9 @@ pst.write(os.path.join(pf.new_d, pst_name))
 # --- Run pestpp-opt
 #pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
+'''
 # start workers
 pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=10,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_opt')
+'''

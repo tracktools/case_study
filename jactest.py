@@ -89,7 +89,7 @@ pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
 pst.write(os.path.join(opt_dir,pst_name))
 
 # run
-pyemu.helpers.start_workers(opt_dir,'pestpp-swp',pst_name,num_workers=64,
+pyemu.helpers.start_workers(opt_dir,'pestpp-swp',pst_name,num_workers=4,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_swp')
 
