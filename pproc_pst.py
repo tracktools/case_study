@@ -5,16 +5,15 @@ from matplotlib import pyplot as plt
 import matplotlib as mpl
 import flopy
 import pyemu
-#from matplotlib.backends.backend_pdf import PdfPages
-
-# flag to copy calibrated model to cal dir 
-store_cal = True
-store_dir = 'store' # content will be cleared !
 
 # completed PEST run dir - calibrated parameter set
 cal_dir = 'master_glm' 
 cal_pst_name ='cal.pst'
 par_file = cal_pst_name.replace('pst','13.par')
+
+# flag to copy calibrated model to cal dir 
+store_cal = True
+store_dir = 'store' # content will be cleared !
 
 # evaluation dir (calibrated parameters -  noptmax=0) 
 eval_dir = 'pst'  
@@ -101,6 +100,8 @@ for g in ['heads', 'qdrn', 'mr']:
         axis=1)
     fig.savefig(os.path.join('fig',f'one2one_{g}.png'))
 
+
+'''
 
 # --- plot heads and particle tracks for all cases but simulation
 case_dirs = sorted([os.path.join(eval_dir,d) for d in os.listdir(eval_dir) if d.startswith('ml_')])[:-1]
@@ -215,6 +216,8 @@ def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
     if filename is not None:
         plt.savefig(filename)
     return(ax)
+
+'''
 
 '''
 # def split_by_size(x, size):
