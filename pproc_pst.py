@@ -101,7 +101,6 @@ for g in ['heads', 'qdrn', 'mr']:
     fig.savefig(os.path.join('fig',f'one2one_{g}.png'))
 
 
-'''
 
 # --- plot heads and particle tracks for all cases but simulation
 case_dirs = sorted([os.path.join(eval_dir,d) for d in os.listdir(eval_dir) if d.startswith('ml_')])[:-1]
@@ -217,7 +216,6 @@ def plot_phi_progress(pst, filename=None, pest = '++', log = True, **kwargs):
         plt.savefig(filename)
     return(ax)
 
-'''
 
 '''
 # def split_by_size(x, size):

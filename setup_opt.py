@@ -390,8 +390,8 @@ pst.parameter_groups['dermthd'] = 'best_fit'
 pst.parameter_groups.loc['derinc'] = 0.1
 pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
 pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
-pst.parameter_groups.loc['hdrn','derinc'] = 0.05 # m
-pst.parameter_groups.loc['qwel','derinc'] = 10./3600 # m
+pst.parameter_groups.loc['hdrn','derinc'] = 0.20 # m
+pst.parameter_groups.loc['qwel','derinc'] = 50./3600 # m
 
 # --- Prior parameter covariance matrix 
 
@@ -414,11 +414,9 @@ pst.control_data.noptmax=-1
 pst.write(os.path.join(pf.new_d, pst_name))
 #pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 
-'''
 pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=64,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_fosm')
-'''
 # ---- Optimization settings
 
 # constraint definition (mr < ref_value)
@@ -458,9 +456,7 @@ pst.write(os.path.join(pf.new_d, pst_name))
 # --- Run pestpp-opt
 #pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
-'''
 # start workers
 pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=10,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_opt')
-'''
