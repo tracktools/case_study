@@ -59,8 +59,7 @@ hstart= 15. # m
 #  particle tracking settings
 well_shp = os.path.join(gis_dir,'prod_wells.shp')
 drn_shp = os.path.join(gis_dir,'prod_drains.shp')
-d = 25. # m 
-n_part = 200
+n_part = 500
 
 # prior (initial) parameter values 
 par_df = pd.read_excel(os.path.join(data_dir,'par.xlsx'), index_col = 0)
@@ -281,7 +280,7 @@ print('Writing model files files ...')
 sim.write_simulation()
 
 #-----------------------------------#
-#       particle tracking 
+#       particle tracking  edp_df.loc[edp_df.endriv].index
 #-----------------------------------#
 print('Particle tracking setup...')
 

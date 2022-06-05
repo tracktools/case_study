@@ -5,6 +5,12 @@ import flopy
 import pyemu
 import helpers
 
+# optimization under uncertainty
+uu = False
+
+# compute jacobian for FOSM analysis
+fosm = False
+
 # data and gis dir
 data_dir = 'data'
 gis_dir = 'gis'
@@ -98,97 +104,98 @@ pf = pyemu.utils.PstFrom(original_d=cal_dir, new_d=opt_dir,
 # ---  parameter and observation settings for history matching  ---
 # -----------------------------------------------------------------
 
-# fetch list of history matching case directories
-case_dirs = sorted([d for d in os.listdir(cal_dir) if d.startswith('ml_')])[:-1]
+if uu:
+    # fetch list of history matching case directories
+    case_dirs = sorted([d for d in os.listdir(cal_dir) if d.startswith('ml_')])[:-1]
 
-# --- process case independent parameters
-# a = twice largest spacing between pp
-v = pyemu.geostats.ExpVario(contribution=1.0,a=500.)
-grid_gs = pyemu.geostats.GeoStruct(variograms=v, transform='log')
+    # --- process case independent parameters
+    # a = twice largest spacing between pp
+    v = pyemu.geostats.ExpVario(contribution=1.0,a=500.)
+    grid_gs = pyemu.geostats.GeoStruct(variograms=v, transform='log')
 
-prop_filename =os.path.join(cal_dir,'com_ext','k.txt')
-pp_filename =os.path.join('..',gis_dir,'pp.shp')
+    prop_filename =os.path.join(cal_dir,'com_ext','k.txt')
+    pp_filename =os.path.join('..',gis_dir,'pp.shp')
 
-zone_array = np.ones((1,ml.modelgrid.ncpl))
-pargp='hk'
+    zone_array = np.ones((1,ml.modelgrid.ncpl))
+    pargp='hk'
 
-pp_df = pf.add_parameters(filenames=prop_filename, par_type="pilotpoint",
-                   par_name_base='hk',pargp=pargp, geostruct=grid_gs,
-                   lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
-                   ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                   zone_array=zone_array,pp_space=os.path.join('..',gis_dir,'pp.shp'))
+    pp_df = pf.add_parameters(filenames=prop_filename, par_type="pilotpoint",
+                       par_name_base='hk',pargp=pargp, geostruct=grid_gs,
+                       lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                       ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                       zone_array=zone_array,pp_space=os.path.join('..',gis_dir,'pp.shp'))
 
-# get names of outer pp (will be tied)
-ppo_idx = pp_df.loc[pp_df.name.str.startswith('ppo')].index
+    # get names of outer pp (will be tied)
+    ppo_idx = pp_df.loc[pp_df.name.str.startswith('ppo')].index
 
-# recharge
-prop_filename = os.path.join('com_ext','rech_spd_1.txt')
-pargp = 'rech'  
-pf.add_parameters(filenames=prop_filename, 
-                  par_name_base='rc',
-                  pargp=pargp,
-                  lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
-                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                  par_type='constant')
-
-# ghb cond
-prop_filename = os.path.join('com_ext','ghb_spd_1.txt')
-pargp='cghb'
-pf.add_parameters(filenames=prop_filename, 
-                  par_name_base='d',
-                  pargp=pargp, index_cols=[4], 
-                  use_cols=[3],
-                  lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
-                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                  par_type='grid')
-
-# -- Iterate over cases
-for case_dir in case_dirs:
-    case_id = int(case_dir.split('_')[1])
-
-    # --- Case-dependent parameter processing 
-
-    # drn cond
-    prop_filename = os.path.join(case_dir,'ext',f'drn_spd_{case_id:02d}_1.txt')
-    pargp='cdrn'
+    # recharge
+    prop_filename = os.path.join('com_ext','rech_spd_1.txt')
+    pargp = 'rech'  
     pf.add_parameters(filenames=prop_filename, 
-                      par_name_base=['cond'],
+                      par_name_base='rc',
+                      pargp=pargp,
+                      lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                      ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                      par_type='constant')
+
+    # ghb cond
+    prop_filename = os.path.join('com_ext','ghb_spd_1.txt')
+    pargp='cghb'
+    pf.add_parameters(filenames=prop_filename, 
+                      par_name_base='d',
                       pargp=pargp, index_cols=[4], 
                       use_cols=[3],
                       lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
                       ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
                       par_type='grid')
 
-    # river cond
-    prop_filename = os.path.join(case_dir,'ext',f'riv_spd_{case_id:02d}_1.txt')
-    pargp='criv'
-    pf.add_parameters(filenames=prop_filename, 
-                      par_name_base='riv',
-                      pargp=pargp, index_cols=[6], 
-                      use_cols=[3],
-                      lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
-                      ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                      par_type='grid')
+    # -- Iterate over cases
+    for case_dir in case_dirs:
+        case_id = int(case_dir.split('_')[1])
 
-    # --- Observation processing
-    # heads
-    hds_filename = os.path.join(case_dir,'sim','hds.csv')
+        # --- Case-dependent parameter processing 
 
-    hds_df = pf.add_observations(hds_filename, insfile=hds_filename+'.ins',
-            index_cols='time', obsgp = 'heads',
-            prefix='h')
+        # drn cond
+        prop_filename = os.path.join(case_dir,'ext',f'drn_spd_{case_id:02d}_1.txt')
+        pargp='cdrn'
+        pf.add_parameters(filenames=prop_filename, 
+                          par_name_base=['cond'],
+                          pargp=pargp, index_cols=[4], 
+                          use_cols=[3],
+                          lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                          ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                          par_type='grid')
 
-    # drain discharge
-    drn_filename = os.path.join(case_dir,'sim','drn.csv')
+        # river cond
+        prop_filename = os.path.join(case_dir,'ext',f'riv_spd_{case_id:02d}_1.txt')
+        pargp='criv'
+        pf.add_parameters(filenames=prop_filename, 
+                          par_name_base='riv',
+                          pargp=pargp, index_cols=[6], 
+                          use_cols=[3],
+                          lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                          ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                          par_type='grid')
 
-    drn_df = pf.add_observations(drn_filename, insfile=drn_filename+'.ins',
-            index_cols=0, prefix='q', obsgp = 'qdrn')
+        # --- Observation processing
+        # heads
+        hds_filename = os.path.join(case_dir,'sim','hds.csv')
 
-    # mixing ratios 
-    mr_filename = os.path.join(case_dir,'sim','mr.csv')
+        hds_df = pf.add_observations(hds_filename, insfile=hds_filename+'.ins',
+                index_cols='time', obsgp = 'heads',
+                prefix='h')
 
-    mr_df = pf.add_observations(mr_filename, insfile=mr_filename+'.ins',
-            index_cols=0, prefix='mr',obsgp = 'mr')
+        # drain discharge
+        drn_filename = os.path.join(case_dir,'sim','drn.csv')
+
+        drn_df = pf.add_observations(drn_filename, insfile=drn_filename+'.ins',
+                index_cols=0, prefix='q', obsgp = 'qdrn')
+
+        # mixing ratios 
+        mr_filename = os.path.join(case_dir,'sim','mr.csv')
+
+        mr_df = pf.add_observations(mr_filename, insfile=mr_filename+'.ins',
+                index_cols=0, prefix='mr',obsgp = 'mr')
 
 
 # -----------------------------------------------------------------
@@ -270,7 +277,11 @@ forecasts = sim_mr_df.index.to_list() + sim_q_df.index.to_list() + glob_df.index
 # -------------------------------------------------------
 
 # functions for forward_run.py
-pf.add_py_function('helpers.py','run_cases()',is_pre_cmd=False)
+if uu:
+    pf.add_py_function('helpers.py','run_cases()',is_pre_cmd=False)
+else : 
+    pf.add_py_function('helpers.py','run_sim()',is_pre_cmd=False)
+
 pf.add_py_function('helpers.py','run_case()',is_pre_cmd=None)
 pf.add_py_function('helpers.py','ptrack_pproc()',is_pre_cmd=None)
 pf.add_py_function('helpers.py','compute_glob()',is_pre_cmd=None)
@@ -289,65 +300,67 @@ pst.pestpp_options['max_run_fail'] = 5
 # --- Parameter processing
 par = pst.parameter_data 
 
-# tie outer pp to 1st outer pp
-par.loc[ppo_idx[1:],'partrans'] = 'tied'
-par.loc[ppo_idx[1:],'partied'] = ppo_idx[0]
+if uu:
+    # tie outer pp to 1st outer pp
+    par.loc[ppo_idx[1:],'partrans'] = 'tied'
+    par.loc[ppo_idx[1:],'partied'] = ppo_idx[0]
 
-# tie riv and drn conds to 1st case (inst)
-par['inst']=par.inst.astype(int)
-ninst = len(par.loc[par.pargp=='criv','inst'].unique())
+    # tie riv and drn conds to 1st case (inst)
+    par['inst']=par.inst.astype(int)
+    ninst = len(par.loc[par.pargp=='criv','inst'].unique())
 
-riv_inst0_idx = par.loc[(par.pargp=='criv') & (par.inst == 0)].index
-riv_tied_idx = par.loc[(par.pargp=='criv') & (par.inst > 0)].index
+    riv_inst0_idx = par.loc[(par.pargp=='criv') & (par.inst == 0)].index
+    riv_tied_idx = par.loc[(par.pargp=='criv') & (par.inst > 0)].index
 
-drn_inst0_idx = par.loc[(par.pargp=='cdrn') & (par.inst == 0)].index
-drn_tied_idx = par.loc[(par.pargp=='cdrn') & (par.inst > 0)].index
+    drn_inst0_idx = par.loc[(par.pargp=='cdrn') & (par.inst == 0)].index
+    drn_tied_idx = par.loc[(par.pargp=='cdrn') & (par.inst > 0)].index
 
-par.loc[riv_tied_idx,'partrans'] = 'tied'
-par.loc[drn_tied_idx,'partrans'] = 'tied'
+    par.loc[riv_tied_idx,'partrans'] = 'tied'
+    par.loc[drn_tied_idx,'partrans'] = 'tied'
 
-for i in range(1,ninst):
-    # tie criv
-    idx = par.loc[(par.pargp=='criv') & (par.inst == i)].index
-    par.loc[idx,'partied'] = riv_inst0_idx.values
-    # tie cdrn
-    idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
-    par.loc[idx,'partied'] = drn_inst0_idx.values
+    for i in range(1,ninst):
+        # tie criv
+        idx = par.loc[(par.pargp=='criv') & (par.inst == i)].index
+        par.loc[idx,'partied'] = riv_inst0_idx.values
+        # tie cdrn
+        idx = par.loc[(par.pargp=='cdrn') & (par.inst == i)].index
+        par.loc[idx,'partied'] = drn_inst0_idx.values
 
 # ---- Observation processing  
 obs = pst.observation_data
 
-# load observation data
-surveys_df = pd.read_excel(os.path.join(data_dir,'surveys.xlsx'), index_col = 0)
+if uu:
+    # load observation data
+    surveys_df = pd.read_excel(os.path.join(data_dir,'surveys.xlsx'), index_col = 0)
 
-# extract obs type and loc from (long) name
-obs[['prefix','type','loc','time']] = obs.obsnme.apply(
-    lambda x: pd.Series(
-        dict([s.split(':') for s in x.split('_') if ':' in s])))
+    # extract obs type and loc from (long) name
+    obs[['prefix','type','loc','time']] = obs.obsnme.apply(
+        lambda x: pd.Series(
+            dict([s.split(':') for s in x.split('_') if ':' in s])))
 
-# get ob id and case
-obs['id'] = obs[['prefix', 'loc']].agg('_'.join, axis=1).str.upper()
-obs['case'] = obs['time'].astype(float).astype(int)
+    # get ob id and case
+    obs['id'] = obs[['prefix', 'loc']].agg('_'.join, axis=1).str.upper()
+    obs['case'] = obs['time'].astype(float).astype(int)
 
-# set obs values from surveys df
-obs['obsval'] = [surveys_df.loc[case_id,obs_id]
-        for case_id,obs_id in zip(obs.case,obs.id)]
+    # set obs values from surveys df
+    obs['obsval'] = [surveys_df.loc[case_id,obs_id]
+            for case_id,obs_id in zip(obs.case,obs.id)]
 
-# convert discharge rates from m3/h to m3/s
-obs.loc[obs.obgnme == 'qdrn','obsval'] = obs.loc[obs.obgnme == 'qdrn','obsval']*(-1./3600)
+    # convert discharge rates from m3/h to m3/s
+    obs.loc[obs.obgnme == 'qdrn','obsval'] = obs.loc[obs.obgnme == 'qdrn','obsval']*(-1./3600)
 
-# convert mixing ratios from % to [-]
-obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
+    # convert mixing ratios from % to [-]
+    obs.loc[obs.obgnme == 'mr','obsval'] = obs.loc[obs.obgnme == 'mr','obsval']/100.
 
-# adjusting weights from measurement error 
-weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
+    # adjusting weights from measurement error 
+    weights_df = pd.read_excel(os.path.join(data_dir,'weights.xlsx'), index_col = 0)
 
-for obgnme in ['heads','qdrn','mr']:
-    # weighting based on measurement error 
-    obs.loc[obs.obgnme==obgnme,'weight'] = 1./weights_df.loc[obgnme,'sigma']
+    for obgnme in ['heads','qdrn','mr']:
+        # weighting based on measurement error 
+        obs.loc[obs.obgnme==obgnme,'weight'] = 1./weights_df.loc[obgnme,'sigma']
 
-# 0-weight to unavailable obs
-obs.loc[obs.obsval.isna(),['weight','obsval']]=0
+    # 0-weight to unavailable obs
+    obs.loc[obs.obsval.isna(),['weight','obsval']]=0
 
 
 # --- Bounds and initial values for decision variables 
@@ -365,10 +378,10 @@ par.loc[dec_var,'partrans']='none'
 
 
 # initial value
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.2
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 9.
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -100./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -100./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -350./3600
 
 # lower bound
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parlbnd'] = 8.50
@@ -409,14 +422,15 @@ pst.pestpp_options['forecasts'] = forecasts
 pst.observation_data.loc[forecasts,'weight']=0.
 
 # ---- compute jacobian matrix for FOSM
-pst_name = 'fosm.pst'
-pst.control_data.noptmax=-1
-pst.write(os.path.join(pf.new_d, pst_name))
-#pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 
-pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=64,
-                              worker_root= 'workers',cleanup=False,
-                                master_dir='master_fosm')
+if fosm:
+    pst_name = 'fosm.pst'
+    pst.control_data.noptmax=-1
+    pst.write(os.path.join(pf.new_d, pst_name))
+
+    pyemu.helpers.start_workers('opt','pestpp-glm',pst_name,num_workers=min(64,pst.npar),
+                                  worker_root= 'workers',cleanup=False,
+                                    master_dir='master_fosm')
 # ---- Optimization settings
 
 # constraint definition (mr < ref_value)
@@ -438,9 +452,6 @@ pst.pestpp_options['opt_direction'] = 'min'
 pst.pestpp_options['parcov'] = 'pcov.unc'
 
 
-# Number of SLP iterations (if noptmax = 1: LP)
-pst.control_data.noptmax = 5
-
 # SLP options 
 pst.pestpp_options['opt_coin_log'] = 4 # verbosity level of simplex solver 
 pst.pestpp_options['opt_recalc_chance_every'] = 1
@@ -454,9 +465,13 @@ pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
 # --- Run pestpp-opt
-#pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
+pst.control_data.noptmax = 0
+pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
+'''
 # start workers
+pst.control_data.noptmax = 5
 pyemu.helpers.start_workers('opt','pestpp-opt',pst_name,num_workers=10,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_opt')
+'''

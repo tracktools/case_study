@@ -42,7 +42,7 @@ def run(par_file = 'par.dat', info_file='ml_info.csv', cwd='.'):
 
 # run simulation case only
 def run_sim():
-    run_case(case_dir='sim')
+    run_case(case_dir='ml_99')
 
 #  run series of cases 
 def run_cases(cwd='.', cases_dirs = None):
@@ -78,7 +78,8 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
     try : 
         case_id = int(case_dir.split('_')[1])
     except :
-        case_id = 99 # id for sim
+        print("Could not infer case id from case directory, aborting.")
+        return
 
     cbc_file = os.path.join(case_dir,ml_name + '.cbc')
     grb_file = os.path.join(case_dir,ml_name + '.disv.grb')
@@ -86,7 +87,6 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
     pathline_file = os.path.join(case_dir,mp_name + '.mppth')
     mr_file = os.path.join(case_dir,'sim','mr.csv')
     pgrpname_file = os.path.join(case_dir,'pgroups.csv')
-    rivname_file = os.path.join(case_dir,'riv_ids.csv')
 
     ta = TrackingAnalyzer(
             endpoint_file=endpoint_file,
@@ -96,7 +96,6 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
             )
 
     ta.load_pgrp_names(pgrpname_file)
-    #ta.load_rivname_dic(rivname_file)
     ta.load_rivname_dic(mfriv_file= os.path.join(case_dir,'ext', f'riv_spd_{case_id:02d}_1.txt'))
     
     # selection of river reaches to consider as contaminant source

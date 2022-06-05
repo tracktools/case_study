@@ -9,7 +9,7 @@ import pyemu
 # completed PEST run dir - calibrated parameter set
 cal_dir = 'master_glm' 
 cal_pst_name ='cal.pst'
-par_file = cal_pst_name.replace('pst','13.par')
+par_file = cal_pst_name.replace('pst','14.par')
 
 # flag to copy calibrated model to cal dir 
 store_cal = True
@@ -99,8 +99,6 @@ for g in ['heads', 'qdrn', 'mr']:
         size = 8),
         axis=1)
     fig.savefig(os.path.join('fig',f'one2one_{g}.png'))
-
-
 
 # --- plot heads and particle tracks for all cases but simulation
 case_dirs = sorted([os.path.join(eval_dir,d) for d in os.listdir(eval_dir) if d.startswith('ml_')])[:-1]
