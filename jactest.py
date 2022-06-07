@@ -25,6 +25,7 @@ pst.parameter_groups.loc[ 'hdrn','derinc'] = 0.15 # m
 pst.parameter_groups.loc[ 'qwell','derinc'] = 50./3600 # m
 
 par = pst.parameter_data 
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 8.8
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
@@ -89,7 +90,7 @@ pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
 pst.write(os.path.join(opt_dir,pst_name))
 
 # run
-pyemu.helpers.start_workers(opt_dir,'pestpp-swp',pst_name,num_workers=4,
+pyemu.helpers.start_workers(opt_dir,'pestpp-swp',pst_name,num_workers=2,
                               worker_root= 'workers',cleanup=False,
                                 master_dir='master_swp')
 
@@ -195,9 +196,9 @@ for param, group in plotframe.groupby("parameter"):
                     axes[row, col].scatter(
                         group["increment"], group[obs_plotted[count]]
                     )
-                    axes[row, col].plot(
-                        group["increment"], group[obs_plotted[count]], "r"
-                    )
+                    #axes[row, col].plot(
+                    #    group["increment"], group[obs_plotted[count]], "r"
+                    #)
                     axes[row, col].set_title(obs_plotted[count])
                     axes[row, col].tick_params(direction="in")  
                     axes[row, col].xaxis.set_major_formatter(ticker.StrMethodFormatter('{x:.2f}'))

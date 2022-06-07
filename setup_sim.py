@@ -9,28 +9,21 @@ import helpers
 # --- settings
 mf6_exe = 'mf6'
 
-# parameter data (initial values)
-par_df = pd.read_excel(os.path.join('data','par.xlsx'), index_col = 0)
-
 # simulation directory
 sim_dir = 'sim'
 
 # calibrated model 
-org_model_ws = os.path.join('pst','ml_01')
-
-# temporary model 
-tmp_model_ws = os.path.join(sim_dir,'tmp')
+org_model_ws = os.path.join('opt','ml_99')
 
 # simulation model  
+tmp_model_ws = os.path.join(sim_dir,'tmp')
 sim_model_ws = os.path.join(sim_dir,'sim')
 
 # ---- processing
 
-# clear dirs
-helpers.clear_dirs([tmp_model_ws,sim_model_ws])
-
 # clear dir and cp calibrated model
-if os.path.exists(tmp_model_ws): shutil.rmtree(tmp_model_ws)
+if os.path.exists(tmp_model_ws):
+    shutil.rmtree(tmp_model_ws)
 
 shutil.copytree(org_model_ws, tmp_model_ws)
 
@@ -40,7 +33,7 @@ sim = flopy.mf6.MFSimulation.load(sim_ws=org_model_ws, exe_name=mf6_exe)
 # set all_data_internal and write to tmp dir
 sim.set_sim_path(tmp_model_ws)
 sim.write_simulation() 
-sim.tdis.perioddata = [ (1, 1, 1) ]
+sim.tdis.perioddata = [ (99, 1, 1) ]
 
 # clear former ext files 
 ext_dir = os.path.join(tmp_model_ws,'ext')
@@ -48,9 +41,10 @@ helpers.clear_dirs([ext_dir])
 
 # set simulation parameter data as external 
 ml = sim.get_model('ml')
-ml.riv.stress_period_data.store_as_external_file(os.path.join('ext','riv_spd.txt'))
-ml.drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd.txt'))
-ml.wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd.txt'))
+ml.riv.stress_period_data.store_as_external_file(os.path.join('ext','riv_spd_99.txt'))
+ml.drn.stress_period_data.store_as_external_file(os.path.join('ext','drn_spd_99.txt'))
+ml.wel.stress_period_data.store_as_external_file(os.path.join('ext','wel_spd_99.txt'))
+ml.remove_package('obs')
 
 # write simulation with new external files 
 sim.write_simulation()
@@ -67,7 +61,7 @@ pf = pyemu.utils.PstFrom(original_d=tmp_model_ws, new_d=sim_model_ws,
 # ---- parameters  
 
 # drn levels 
-prop_file = os.path.join('ext','drn_spd_1.txt')
+prop_file = os.path.join('ext','drn_spd_99_1.txt')
 pargp='hdrn'
 hdrn_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='h',
@@ -78,7 +72,7 @@ hdrn_df = pf.add_parameters(filenames=prop_file,
                   par_style='direct')
 
 # well discharge rate  
-prop_file = os.path.join('ext','wel_spd_1.txt')
+prop_file = os.path.join('ext','wel_spd_99_1.txt')
 qwel_df = pf.add_parameters(filenames=prop_file, 
                   par_name_base='q',
                   pargp='qwel', index_cols=[3], 
@@ -87,85 +81,19 @@ qwel_df = pf.add_parameters(filenames=prop_file,
                   par_type='grid',
                   par_style='direct')
 
-# ---- observations 
 
-# mixing ratios 
-mr_file = os.path.join('sim', 'mr.csv')
-
-mr_df = pf.add_observations(mr_file, insfile=mr_file+'.ins',
-        index_cols=0, prefix='mr', obsgp = 'mr')
-
-# discharge values 
-q_file = os.path.join('sim','q.csv')
-
-q_df = pf.add_observations(q_file, insfile=q_file+'.ins',
-        index_cols=0, prefix='q',obsgp = 'q')
-
-# global values
-glob_file = os.path.join('sim','glob.csv')
-
-glob_df = pf.add_observations(glob_file, insfile=glob_file+'.ins',
-        index_cols=0, prefix='glob',obsgp = 'glob')
-
-pf.add_py_function('helpers.py', 'run_case()',is_pre_cmd=False)
-pf.add_py_function('helpers.py', 'ptrack_pproc()',is_pre_cmd=None)
-pf.add_py_function('helpers.py', 'compute_glob()',is_pre_cmd=None)
-
-# ---- build Pst  
 pst = pf.build_pst()
-
 par = pst.parameter_data
 
-# get parnames to query par_df excel file 
-idx = (par.pname.str.upper() + '_' + par.idx0.str.upper()).values
-par['parval1'] = par_df.loc[idx,'val'].values
-par['parlbnd'] = par_df.loc[idx,'parlbnd'].values
-par['parubnd'] = par_df.loc[idx,'parubnd'].values
+par = pst.parameter_data 
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:bar','parval1'] = 9.
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:gal','parval1'] = 8.5
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
 
-# set obsval to 0.
-obs = pst.observation_data
-obs['obsval']=0.
-
-# replace python by python3
-pst.model_command = ['python3 forward_run.py'] 
-
-# test model run with pest
-cwd = pf.new_d
-pst_name = 'sim.pst'
-pst.write(os.path.join(pf.new_d, pst_name))
-pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=cwd)
-
-'''
-# jactest
-pst.parameter_groups['inctyp'] = 'absolute'
-pst.parameter_groups.loc['hdrn','derinc']=0.1
-pst.parameter_groups.loc['qwell','derinc']=10./3600
-jactest_df = pyemu.helpers.build_jac_test_csv(pst,5)
-jactest_df.to_csv(os.path.join(cwd,'jactest_in.csv'))
-
-# sweep option
-pst.pestpp_options['sweep_parameter_csv_file'] = 'jactest_in.csv'
-pst.pestpp_options['sweep_output_csv_file'] = 'jactest_out.csv'
-
-# write
-pst.write(os.path.join(cwd,pst_name))
-
-# run
-pyemu.helpers.start_workers(cwd,'pestpp-swp',pst_name,num_workers=64,
-                              worker_root= 'workers',cleanup=False,
-                                master_dir='pst_master')
-
-
-pyemu.plot.plot_utils.plot_jac_test(csv_in,csv_out)
-        targetobs=obs_list,
-        outputdirectory=pdf_dir)
-
-
-
-# --- setup pest-free model interface 
 
 # write initial parameter value file 
-parfile = os.path.join(pf.new_d,'par.dat')
+parfile = os.path.join(sim_model_ws,'par.dat')
 
 with open(parfile,'w') as f:
     f.write(par['parval1'].to_string())
@@ -182,5 +110,4 @@ info_df.to_csv(info_file,index=False)
 import helpers
 cwd = 'sim/sim'
 helpers.run(cwd=cwd)
-'''
 

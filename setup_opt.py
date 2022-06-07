@@ -204,16 +204,17 @@ if uu:
 
 case_id = 99
 
-# river cond
-prop_filename = os.path.join(sim_dir,'ext',f'riv_spd_{case_id:02d}_1.txt')
-pargp='criv'
-pf.add_parameters(filenames=prop_filename, 
-                  par_name_base='riv',
-                  pargp=pargp, index_cols=[6], 
-                  use_cols=[3],
-                  lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
-                  ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
-                  par_type='grid')
+if uu:
+    # river cond
+    prop_filename = os.path.join(sim_dir,'ext',f'riv_spd_{case_id:02d}_1.txt')
+    pargp='criv'
+    pf.add_parameters(filenames=prop_filename, 
+                      par_name_base='riv',
+                      pargp=pargp, index_cols=[6], 
+                      use_cols=[3],
+                      lower_bound=par_df.loc[pargp,'faclbnd'], upper_bound=par_df.loc[pargp,'facubnd'],
+                      ult_lbound=par_df.loc[pargp,'parlbnd'], ult_ubound=par_df.loc[pargp,'parubnd'],
+                      par_type='grid')
 
 # ---- decision variables  
 # drn levels 
@@ -378,10 +379,10 @@ par.loc[dec_var,'partrans']='none'
 
 
 # initial value
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.2
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 9.
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -350./3600
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.5
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 8.5
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -350./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
 
 # lower bound
 par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parlbnd'] = 8.50
@@ -403,8 +404,10 @@ pst.parameter_groups['dermthd'] = 'best_fit'
 pst.parameter_groups.loc['derinc'] = 0.1
 pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
 pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
-pst.parameter_groups.loc['hdrn','derinc'] = 0.20 # m
-pst.parameter_groups.loc['qwel','derinc'] = 50./3600 # m
+#pst.parameter_groups.loc['hdrn','derinc'] = 0.20 # m
+pst.parameter_groups.loc['hdrn','derinc'] = 0.10 # m
+#pst.parameter_groups.loc['qwel','derinc'] = 50./3600 # m
+pst.parameter_groups.loc['qwel','derinc'] = 25./3600 # m
 
 # --- Prior parameter covariance matrix 
 
@@ -435,7 +438,7 @@ if fosm:
 
 # constraint definition (mr < ref_value)
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
-obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.1
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.3
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obgnme']='l_mr'
 pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
 
@@ -464,8 +467,15 @@ pst.pestpp_options['opt_risk'] = risk
 pst_name = f'opt_{int(risk*100):02d}.pst'
 pst.write(os.path.join(pf.new_d, pst_name))
 
-# --- Run pestpp-opt
+# --- Run pestpp-glm with noptmax=0 to get starting simulated values 
 pst.control_data.noptmax = 0
+pst.write(os.path.join(pf.new_d, pst_name))
+pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
+shutil.copy(os.path.join(pf.new_d,'ml_99','sim','glob.csv'), os.path.join(pf.new_d,'glob_it0.csv'))
+
+# --- Run pestpp-opt
+pst.control_data.noptmax = 8
+pst.write(os.path.join(pf.new_d, pst_name))
 pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
 
 '''

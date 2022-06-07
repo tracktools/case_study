@@ -78,8 +78,7 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
     try : 
         case_id = int(case_dir.split('_')[1])
     except :
-        print("Could not infer case id from case directory, aborting.")
-        return
+        case_id = 99
 
     cbc_file = os.path.join(case_dir,ml_name + '.cbc')
     grb_file = os.path.join(case_dir,ml_name + '.disv.grb')
@@ -122,7 +121,10 @@ def ptrack_pproc(case_dir, ml_name, mp_name):
 # compute global variables (Q and mr)
 def compute_glob(case_dir):
 
-    case_id = int(case_dir.split('_')[1])
+    try:
+        case_id = int(case_dir.split('_')[1])
+    except:
+        case_id = 99
     
     # input files 
     mr_file = os.path.join(case_dir,'sim','mr.csv')
