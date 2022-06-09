@@ -11,8 +11,8 @@ pstfile = os.path.join(opt_dir,'opt_50.pst')
 pnames = [
        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar',
        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal',
-       'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21',
-       'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20'
+       'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20',
+       'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21'
        ]
 
 # short parameter names 
@@ -40,13 +40,14 @@ odic = {long:short for long,short in zip(onames,oids)}
 
 # number of completed iterations 
 nit = len(glob.glob1(opt_dir, '*.sim.rei')) 
-
+nit=3
 # get decision variable values from .par files 
 dfs = [ pd.read_csv(pstfile.replace('.pst',f'.{i+1}.par'), skiprows = 1, 
                      header = None, index_col = 0, usecols = [0,1], 
                      names = ['name', 'value'], delim_whitespace = True) \
                      for i in range(nit)]
 
+# concatenate in a single df
 pdf = pd.concat(dfs,axis=1,)
 pdf.columns = [ f'it{i+1}' for i in range(nit)]
 pdf = pdf.T
@@ -67,8 +68,9 @@ odf=odf.T
 # replace with short observation name 
 odf.columns = [odic[oname] if oname in odic.keys() else oname for oname in odf.columns]
 
-# concatenate in a single df
+# concatenate in a single df for the pareto
 df = pd.concat([pdf.loc[:,pids],odf.loc[:,oids]],axis=1)
+df = df.loc[:,~df.columns.duplicated()]
 df['it'] =df.index
 
 # group name by var types
@@ -84,15 +86,26 @@ fig,axs = plt.subplots(3,1,figsize=(4,6))
 ax1,ax2,ax3 = axs
 
 df[qids].plot(ax=ax1)
-df[mrids].plot(ax=ax2)
-df[hids].plot(ax=ax3)
+ax1.set_ylabel('Discharge rate [m$^3$s$^{-1}$]')
 
-fig.savefig(os.path.join('fig','opt_evol.png'))
+df[mrids].plot(ax=ax2)
+ax2.set_ylabel('Mixing ratio [-]')
+
+df[hids].plot(ax=ax3)
+ax3.set_ylabel('Drain stage [m a.s.l.]')
+
+ax3.set_xlabel('SLP iterations')
+
+fig.savefig(os.path.join('fig','opt_evol.pdf'))
+
 
 # plot pareto
-fig,ax= plt.subplots(1,1,figsize=(4,4))
+fig,ax= plt.subplots(1,1,figsize=(5,5))
 df.plot.scatter('Q','MR',ax=ax)
+
+# starting configuration 
 ax.scatter(glob_it0_df.q,glob_it0_df.mr,c='red')
+
 ax.annotate(
         'it0',
         (glob_it0_df.q,glob_it0_df.mr),
@@ -110,5 +123,8 @@ txt = df.apply(lambda x: ax.annotate(
         size = 8),
     axis=1)
 
+ax.set_xlabel('Total discharge rate [m$^3$s$^{-1}$]')
+ax.set_ylabel('Mixing ratio [-]')
+fig.tight_layout()
 fig.savefig(os.path.join('fig','opt_pareto.pdf'))
 

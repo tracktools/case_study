@@ -8,7 +8,7 @@ import pyemu
 
 # completed PEST run dir - calibrated parameter set
 cal_dir = 'master_glm' 
-cal_pst_name ='cal.pst'
+cal_pst_name ='cal_reg1.pst'
 par_file = cal_pst_name.replace('pst','14.par')
 
 # flag to copy calibrated model to cal dir 

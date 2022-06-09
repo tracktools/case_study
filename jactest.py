@@ -48,8 +48,8 @@ if parrep : pst.parrep(os.path.join(opt_dir,par_file))
 pnames = [
        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar',
        'pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal',
-       'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21',
-       'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20'
+       'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20',
+       'pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21'
        ]
 
 # short parameter names 

@@ -226,16 +226,29 @@ if uu:
 
 
 prop_file = os.path.join(sim_dir,'ext',f'drn_spd_{case_id:02d}_1.txt')
-drn_df = pf.add_parameters(filenames=prop_file, 
-                  par_name_base=['h','cond'],
-                  pargp=['hdrn','cdrn'], index_cols=[4], 
-                  lower_bound=[par_df.loc['hdrn','parlbnd'],par_df.loc['cdrn','parlbnd']],
-                  upper_bound=[par_df.loc['hdrn','parubnd'], par_df.loc['cdrn','parubnd']],
-                  ult_lbound=[par_df.loc['hdrn','parlbnd'], par_df.loc['cdrn','parlbnd']],
-                  ult_ubound=[par_df.loc['hdrn','parubnd'],par_df.loc['cdrn','parubnd']],
-                  use_cols=[2,3],
-                  par_type='grid'
-                  )
+
+if uu: # consider drain stage and conductance 
+    drn_df = pf.add_parameters(filenames=prop_file, 
+                      par_name_base=['h','cond'],
+                      pargp=['hdrn','cdrn'], index_cols=[4], 
+                      lower_bound=[par_df.loc['hdrn','parlbnd'],par_df.loc['cdrn','parlbnd']],
+                      upper_bound=[par_df.loc['hdrn','parubnd'], par_df.loc['cdrn','parubnd']],
+                      ult_lbound=[par_df.loc['hdrn','parlbnd'], par_df.loc['cdrn','parlbnd']],
+                      ult_ubound=[par_df.loc['hdrn','parubnd'],par_df.loc['cdrn','parubnd']],
+                      use_cols=[2,3],
+                      par_type='grid'
+                      )
+else : # consider drain stage only
+    drn_df = pf.add_parameters(filenames=prop_file, 
+                      par_name_base=['h'],
+                      pargp=['hdrn'], index_cols=[4], 
+                      lower_bound=[par_df.loc['hdrn','parlbnd']],
+                      upper_bound=[par_df.loc['hdrn','parubnd']],
+                      ult_lbound=[par_df.loc['hdrn','parlbnd']],
+                      ult_ubound=[par_df.loc['hdrn','parubnd']],
+                      use_cols=[2],
+                      par_type='grid'
+                      )
 
 # well discharge rate  
 prop_file = os.path.join(sim_dir,'ext',f'wel_spd_{case_id:02d}_1.txt')
@@ -379,20 +392,28 @@ par.loc[dec_var,'partrans']='none'
 
 
 # initial value
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.5
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 8.5
-par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -350./3600
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 9.7
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 7.5
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -250./3600
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -250./3600
+'''
 
+# non-optim
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parval1'] = 14.
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parval1'] = 7.5
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parval1'] = -50./3600
+par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parval1'] = -50./3600
+
+'''
 # lower bound
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parlbnd'] = 8.50
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parlbnd'] = 8.00
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parlbnd'] = 7.00
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parlbnd'] = 7.00
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parlbnd'] = -500./3600
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parlbnd'] = -500./3600
 
 # upper bound
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parubnd'] = 9.65
-par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parubnd'] = 9.65
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:bar','parubnd'] = 15.0
+par.loc['pname:h_inst:0_ptype:gr_usecol:2_pstyle:m_idx0:gal','parubnd'] = 15.0
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r21','parubnd'] = -50./3600 
 par.loc['pname:q_inst:0_ptype:gr_usecol:2_pstyle:d_idx0:r20','parubnd'] = -50./3600
 
@@ -404,10 +425,8 @@ pst.parameter_groups['dermthd'] = 'best_fit'
 pst.parameter_groups.loc['derinc'] = 0.1
 pst.parameter_groups.loc['hdrn','inctyp'] = 'absolute'
 pst.parameter_groups.loc['qwel','inctyp'] = 'absolute'
-#pst.parameter_groups.loc['hdrn','derinc'] = 0.20 # m
-pst.parameter_groups.loc['hdrn','derinc'] = 0.10 # m
-#pst.parameter_groups.loc['qwel','derinc'] = 50./3600 # m
-pst.parameter_groups.loc['qwel','derinc'] = 25./3600 # m
+pst.parameter_groups.loc['hdrn','derinc'] = 0.20 # m
+pst.parameter_groups.loc['qwel','derinc'] = 50./3600 # m
 
 # --- Prior parameter covariance matrix 
 
@@ -438,15 +457,23 @@ if fosm:
 
 # constraint definition (mr < ref_value)
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','weight']=1
-obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.3
+obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obsval']=0.25
 obs.loc['oname:glob_otype:lst_usecol:mr_time:99.0','obgnme']='l_mr'
 pst.pestpp_options['opt_constraint_groups'] = ['l_mr']
+
+#obs.loc['oname:glob_otype:lst_usecol:q_time:99.0','weight']=1
+#obs.loc['oname:glob_otype:lst_usecol:q_time:99.0','obsval']=-1500./3600
+#obs.loc['oname:glob_otype:lst_usecol:q_time:99.0','obgnme']='l_q'
+#pst.pestpp_options['opt_constraint_groups'] = ['l_q']
+
+
 
 # decision variables (well discharge rates and drain levels)
 pst.pestpp_options['opt_dec_var_groups'] = ['qwel','hdrn']
 
 # objective function definition 
 obj_obsnme = 'oname:glob_otype:lst_usecol:q_time:99.0'
+#obj_obsnme = 'oname:glob_otype:lst_usecol:mr_time:99.0'
 obs.loc[obj_obsnme,'weight']=0.
 pst.pestpp_options['opt_obj_func'] = obj_obsnme
 pst.pestpp_options['opt_direction'] = 'min'
@@ -474,10 +501,9 @@ pyemu.helpers.run(f'pestpp-glm {pst_name}', cwd=pf.new_d)
 shutil.copy(os.path.join(pf.new_d,'ml_99','sim','glob.csv'), os.path.join(pf.new_d,'glob_it0.csv'))
 
 # --- Run pestpp-opt
-pst.control_data.noptmax = 8
+pst.control_data.noptmax = 10
 pst.write(os.path.join(pf.new_d, pst_name))
 pyemu.helpers.run(f'pestpp-opt {pst_name}', cwd=pf.new_d)
-
 '''
 # start workers
 pst.control_data.noptmax = 5
