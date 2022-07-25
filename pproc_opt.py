@@ -32,6 +32,7 @@ onames = ['oname:glob_otype:lst_usecol:q_time:99.0',
 
 # short observation name 
 oids = ['Q','MR','Q_R21','Q_R20','Q_GAL','MR_R21','MR_BAR','Q_BAR','MR_R20','MR_GAL']
+oids = ['Q','MR', 'Q_W1', 'Q_W2','Q_D2', 'MR_W1', 'MR_D1', 'Q_D1', 'MR_W2', 'MR_D2']
 
 # replace dics
 pdic = {long:short for long,short in zip(pnames,pids)}
@@ -82,10 +83,10 @@ hids = [pid for pid in pids if pid.startswith('H')]
 glob_it0_df =  pd.read_csv(os.path.join(opt_dir,'glob_it0.csv'))
 
 # plot par vals along iterations 
-fig,axs = plt.subplots(3,1,figsize=(4,6))
+fig,axs = plt.subplots(3,1,figsize=(5,6))
 ax1,ax2,ax3 = axs
 
-df[qids].plot(ax=ax1)
+df[qids].plot(ax=ax1).legend(loc='lower left')
 ax1.set_ylabel('Discharge rate [m$^3$s$^{-1}$]')
 
 df[mrids].plot(ax=ax2)
@@ -95,9 +96,8 @@ df[hids].plot(ax=ax3)
 ax3.set_ylabel('Drain stage [m a.s.l.]')
 
 ax3.set_xlabel('SLP iterations')
-
+fig.tight_layout(pad=1.800)
 fig.savefig(os.path.join('fig','opt_evol.pdf'))
-
 
 # plot pareto
 fig,ax= plt.subplots(1,1,figsize=(5,5))
@@ -127,4 +127,3 @@ ax.set_xlabel('Total discharge rate [m$^3$s$^{-1}$]')
 ax.set_ylabel('Mixing ratio [-]')
 fig.tight_layout()
 fig.savefig(os.path.join('fig','opt_pareto.pdf'))
-
