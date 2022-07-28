@@ -28,6 +28,12 @@ python setup_ml.py
 
 Initial parameter values are provided in `/data/par.xlsx`. Case-specific settings are provided in `/data/surveys.xlsx`. 
 
+The model directory contains an `ext` directory where parameter common to all the cases are written. Case-specific parameters and simulation outputs are written in the `ml_[id]` sub-directories. 
+
+<p align="center">
+<img src="assets/dirtree.png" width="500" align="center">
+</p>
+
 The case with id=99 corresponds to the simulation case for the optimization, it is not considered for parameter estimation.
 
 
@@ -63,6 +69,11 @@ Requirements
 -----------------------------------------------
 
 Tested with Python 3.8.2
+
+*TrackTools*
+
+The `tracktools.py` module should be accessible to Python from where the scripts are run. To do so, you may copy paste this module in the `case_study` folder or, preferably, clone the [TrackTools](https://github.com/tracktools/tracktools) repository and append this location to your `PYTHONPATH` environment variable.
+
 
 *Python packages*
 
