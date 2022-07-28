@@ -1,7 +1,7 @@
 Overview
 -----------------------------------------------
 
-This case-study illustrates the potential of the [TrackTools](https://github.com/tracktools/tracktools) library on a real-world study site presented by [Cousquer et al., 2018](https://doi.org/10.1016/j.jhydrol.2018.01.043). The model simulates steady-state flow with [MODFLOW6](https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model) on a 2D irregular grid. Particle tracking is conducted with [MODPATH7](https://pubs.er.usgs.gov/publication/ofr20161086). 
+This case-study illustrates the potential of the [TrackTools](https://github.com/tracktools/tracktools) library on a real-world study site presented by [Cousquer et al., 2018](https://doi.org/10.1016/j.jhydrol.2018.01.043). The model simulates steady-state flow with [MODFLOW6](https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model) on a 2D unstructured grid. Particle tracking is conducted with [MODPATH7](https://pubs.er.usgs.gov/publication/ofr20161086). 
 
 This case study also provides an example of interfacing with the [PESTPP++](https://github.com/usgs/pestpp/) suite considering a series of pseudo steady states. Observations used for history matching were collected during historic surveys with contrasting climatic and operation settings, hereafter named *cases*. A generic *template* model is generated and replicated for each of the historic cases.
 
@@ -28,14 +28,6 @@ python setup_ml.py
 
 Initial parameter values are provided in `/data/par.xlsx`. Case-specific settings are provided in `/data/surveys.xlsx`. 
 
-The model directory contains an `ext` directory where parameter common to all the cases are written. Case-specific parameters and simulation outputs are written in the `ml_[id]` sub-directories. 
-
-<p align="center">
-<img src="assets/dirtree.png" width="500" align="center">
-</p>
-
-The case with id=99 corresponds to the simulation case for the optimization, it is not considered for parameter estimation.
-
 
 Parameter estimation
 -----------------------------------------------
@@ -47,6 +39,14 @@ python setup_pst.py
 - Processing of case-specific parameters and observations.
 - Processing of the PEST control file
 - Execution of PESTPP-GLM in parallel.
+
+The model directory replicated with`pyemu.helpers.start_workers()`. Worker directories contain an `ext` directory where parameter common to all the cases are written. Case-specific parameters and simulation outputs are written in the `ml_[id]` sub-directories. 
+
+<p align="center">
+<img src="assets/dirtree.png" width="500" align="center">
+</p>
+
+The case with id=99 corresponds to the simulation case for the optimization, it is not considered for parameter estimation.
 
 Post-processing is conducted with `pproc_pst.py`. Model files with the "best" parameter set in the `store` directory.
 
