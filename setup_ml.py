@@ -35,9 +35,9 @@ grd_dir = 'grd'
 com_ext_dir = os.path.join(ml_dir,'com_ext')
 sim_dir = os.path.join(tpl_ml_dir,'sim')
 ext_dir = os.path.join(tpl_ml_dir,'ext')
-
+workers_dir = 'workers'
 dir_list = [tpl_ml_dir, ml_dir, grd_dir, 
-        com_ext_dir, sim_dir, ext_dir]
+        com_ext_dir, sim_dir, ext_dir, workers_dir]
 
 # clean and (re)-build directory tree
 for d in dir_list:
