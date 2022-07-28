@@ -82,7 +82,9 @@ The `tracktools.py` module should be accessible to Python from where the scripts
 - FloPy 3.3.6
 
 
-*Executables*
+*Binaries*
+
+Binaries for Windows, Mac, and Linux (Ubuntu distribution) can be found in the `binaries` directory of this repository. 
 
 - modflow6 Version **6.2.2** 07/30/2021
 - modpath7 Version 7.2.001
